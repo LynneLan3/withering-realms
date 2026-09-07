@@ -1,0 +1,97 @@
+---
+type MediaItem = {
+	slot: string;
+	caption: string;
+	status: string;
+	src?: string | null;
+	alt?: string;
+	width?: number;
+	height?: number;
+	grade?: string;
+	sourceUrl?: string;
+	timestamp?: string;
+};
+
+type Props = {
+	slots?: string[];
+	mediaBySlot: Record<string, MediaItem | undefined>;
+};
+
+const { slots = [], mediaBySlot } = Astro.props;
+const items = slots.map((slot) => mediaBySlot[slot]).filter(Boolean) as MediaItem[];
+---
+{items.map((slot) =>
+	slot.status === 'READY' && slot.src ? (
+		<figure class="media-slot media-slot--ready" data-slot={slot.slot} data-grade={slot.grade ?? undefined}>
+			<img
+				src={slot.src}
+				alt={slot.alt ?? slot.caption}
+				width={slot.width ?? 1600}
+				height={slot.height ?? 900}
+				loading="lazy"
+				decoding="async"
+			/>
+			<figcaption>
+				<span class="section-kicker">{slot.grade ?? 'Evidence'}</span>
+				<strong>{slot.caption}</strong>
+				{(slot.sourceUrl || slot.timestamp) && (
+					<small>
+						{slot.sourceUrl && <a href={slot.sourceUrl}>{slot.sourceUrl}</a>}
+						{slot.timestamp && <> · t={slot.timestamp}</>}
+					</small>
+				)}
+			</figcaption>
+		</figure>
+	) : (
+		<div class="media-slot" data-slot={slot.slot}>
+			<span class="section-kicker">Media pending</span>
+			<strong>{slot.slot}</strong>
+			<p>{slot.caption}</p>
+		</div>
+	)
+)}
+
+<style>
+	.media-slot {
+		margin-top: 16px;
+		padding: 16px 18px;
+		border: 1px dashed rgba(229, 224, 211, 0.28);
+		background: rgba(23, 29, 24, 0.65);
+	}
+	.media-slot--ready {
+		padding: 0;
+		border-style: solid;
+		overflow: hidden;
+	}
+	.media-slot--ready img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.media-slot--ready figcaption {
+		padding: 12px 16px 14px;
+	}
+	.media-slot--ready small {
+		display: block;
+		margin-top: 6px;
+		color: #8c8b82;
+		font-size: 11px;
+		line-height: 1.5;
+		word-break: break-all;
+	}
+	.media-slot--ready small a {
+		color: #b7a356;
+	}
+	.media-slot strong {
+		display: block;
+		margin: 8px 0 6px;
+		font-family: 'Libre Baskerville', serif;
+		font-size: 15px;
+		color: #e5e0d3;
+	}
+	.media-slot p {
+		margin: 0;
+		color: #8c8b82;
+		font-size: 12px;
+	}
+</style>

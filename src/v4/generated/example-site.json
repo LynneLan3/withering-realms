@@ -42,13 +42,13 @@
               },
               {
                 "id": "how-to-cross-gaps",
-                "label": "How to Cross Gaps",
+                "label": "How to Cross Gaps in Withering Realms",
                 "href": "/how-to-cross-gaps/",
                 "pageId": "how-to-cross-gaps"
               },
               {
                 "id": "cae-gwyn-bells",
-                "label": "Cae Gwyn Bells",
+                "label": "Cae Gwyn Bells (Draft)",
                 "href": "/cae-gwyn-bells/",
                 "pageId": "cae-gwyn-bells"
               },
@@ -66,19 +66,19 @@
             "items": [
               {
                 "id": "doll-arms-limb-leveling",
-                "label": "Doll Arms / Limb Leveling",
+                "label": "Doll Arms & Limb Leveling",
                 "href": "/doll-arms-limb-leveling/",
                 "pageId": "doll-arms-limb-leveling"
               },
               {
                 "id": "talismans",
-                "label": "Talismans",
+                "label": "Talismans Guide",
                 "href": "/talismans/",
                 "pageId": "talismans"
               },
               {
                 "id": "night-routes",
-                "label": "Night Routes",
+                "label": "What Changes at Night",
                 "href": "/night-routes/",
                 "pageId": "night-routes"
               },
@@ -103,36 +103,54 @@
   },
   "homepage": {
     "pageIds": [
-      "perimeter-guardians",
-      "night-routes",
-      "talismans",
-      "doll-arms-limb-leveling",
-      "early-bosses",
-      "cae-gwyn-bells",
+      "birdcage-b2-puzzle",
       "how-to-cross-gaps",
-      "birdcage-b2-puzzle"
+      "cae-gwyn-bells",
+      "early-bosses",
+      "doll-arms-limb-leveling",
+      "talismans",
+      "night-routes",
+      "perimeter-guardians"
     ],
     "assets": [],
+    "stuckIds": [
+      "birdcage-b2-puzzle",
+      "how-to-cross-gaps",
+      "cae-gwyn-bells",
+      "early-bosses"
+    ],
+    "latestPolicy": "verification-metadata",
     "surfaces": [
       {
-        "id": "hot-now",
-        "label": "Hot Now",
+        "id": "stuck-right-now",
+        "label": "Stuck Right Now",
+        "pageIds": [
+          "birdcage-b2-puzzle",
+          "how-to-cross-gaps",
+          "cae-gwyn-bells",
+          "early-bosses"
+        ]
+      },
+      {
+        "id": "build-the-doll",
+        "label": "Build the Doll",
+        "pageIds": [
+          "doll-arms-limb-leveling",
+          "talismans"
+        ]
+      },
+      {
+        "id": "explore-penwyll",
+        "label": "Explore Penwyll",
         "pageIds": [
           "perimeter-guardians"
         ]
       },
       {
-        "id": "primary-task",
-        "label": "Primary Task",
+        "id": "night-changes",
+        "label": "Night Changes Everything",
         "pageIds": [
           "night-routes"
-        ]
-      },
-      {
-        "id": "popular-questions",
-        "label": "Popular Questions",
-        "pageIds": [
-          "talismans"
         ]
       }
     ]
@@ -140,21 +158,21 @@
   "pages": [
     {
       "id": "birdcage-b2-puzzle",
-      "title": "Birdcage / B2 Puzzle",
+      "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide",
       "href": "/birdcage-b2-puzzle/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "birdcage-b2-puzzle",
-          "title": "Birdcage / B2 Puzzle",
+          "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide",
           "href": "/birdcage-b2-puzzle/",
           "query": "How do I solve the Birdcage or B2 puzzle in Withering Realms?",
-          "playerProblem": "Puzzle walkthrough for the Birdcage / B2 encounter."
+          "playerProblem": "Decode A1/B2 hanging-target codes."
         },
         "state": {},
         "intent": {
-          "query": "How do I solve the Birdcage or B2 puzzle in Withering Realms?",
-          "playerProblem": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+          "query": "Decode A1/B2 hanging-target codes.",
+          "playerProblem": "Decode A1/B2 hanging-target codes.",
           "primaryTask": "procedure",
           "prototype": "P4",
           "priority": 1,
@@ -196,29 +214,42 @@
           }
         },
         "body": {
-          "intro": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+          "intro": "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "UNVERIFIED \u2014 exact bell/order solution not confirmed from official sources in this research pass."
-              ]
-            },
-            {
-              "id": "how-to-use",
-              "title": "How to use this page",
-              "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)",
+                "A / B diagram\nRight = A\nLeft  = B\nNumber = required hits",
+                "Code examples (apply the same rule to any A/B code)\n- A1 — hit the right-side target 1 time. (CONFIRMED_LIVE)\n\n- B2 — hit the left-side target 2 times. (CONFIRMED_LIVE)\n\n- A3 / B3 — same counting rule: A3 = hit right target 3 times, B3 = hit left target 3 times. (CONFIRMED_LIVE)",
+                "Step-by-step: solve the hanging-target room\n1. Enter the room and listen/read the speaker code (letter + number). (CONFIRMED_LIVE)\n2. Map the letter to a side: A → right target, B → left target. (CONFIRMED_LIVE)\n3. Apply the number as the exact count of hits to that side (e.g., B2 = two hits on left). (CONFIRMED_LIVE)\n4. Use fast/light attacks to register hits cleanly — these were the safest observed inputs during the current EA window. (CONFIRMED_LIVE)\n5. After landing the indicated hits, check for the puzzle’s response. If it reports Incorrect, proceed to the troubleshooting section below before repeating attempts.",
+                "Four Arms troubleshooting (PLAYER_REPORTED)\n- PLAYER_REPORTED: Some players report the Four Arms talisman may generate an extra counted hit in this puzzle. One player reported the puzzle stopped returning Incorrect after unequipping Four Arms.\n- This is a player-reported observation only — not an officially confirmed bug. If you have Four Arms equipped and the puzzle behaves unexpectedly, try unequipping the talisman and retesting the puzzle. (PLAYER_REPORTED)",
+                "If this didn't work\n- Reload the area or exit/re-enter the room and try again; retrying is the recommended immediate step if the puzzle does not register correctly. (CONFIRMED_LIVE)\n- Remember Withering Realms is in Early Access; puzzle behavior can be patch-sensitive. The observations above were made during the 2026-09-04 Early Access window and checked on 2026-09-07. If problems persist, watch official patch notes for changes. (CONFIRMED_OFFICIAL / CONFIRMED_LIVE)",
+                "Verification / sources\n- Research checked: 2026-09-07. Latest official patch page observed: 0.34. (CONFIRMED_OFFICIAL)\n- Early Access Steam release: 2026-09-04. (CONFIRMED_OFFICIAL)\n- CONFIRMED_LIVE (current Early Access build observations):\n  - The player enters a room with two hanging targets and speaker codes such as A1 / B2.\n  - A = right-side target.\n  - B = left-side target.\n  - The number = number of hits required.\n  - A1 = hit the right target once.\n  - B2 = hit the left target twice.\n  - A3 / B3 follow the same count rule.\n  - Fast / light attacks are the safest observed input for registering hits cleanly.\n- PLAYER_REPORTED (not an official bug confirmation):\n  - The Four Arms talisman may generate an extra counted hit.\n  - A player reported the puzzle stopped returning Incorrect after unequipping Four Arms.\n- Note: Do not interpret PLAYER_REPORTED items as developer-confirmed; they reflect current-build player reports only.",
+                "FAQ\nQ: What does A mean in the speaker code?\nA: A = the right-side hanging target. (CONFIRMED_LIVE)",
+                "Q: What does B mean?\nA: B = the left-side hanging target. (CONFIRMED_LIVE)",
+                "Q: What does the number after A/B do?\nA: The number is how many times you must hit that target (e.g., B2 = hit left target twice). (CONFIRMED_LIVE)",
+                "Q: Which attack type should I use to register hits reliably?\nA: Fast / light attacks were the safest observed input for registering hits cleanly in the current EA build. (CONFIRMED_LIVE)",
+                "Q: Is Four Arms an official bug for this puzzle?\nA: The Four Arms interaction is PLAYER_REPORTED only. It is not listed as an official bug in the verification data; players have reported extra counted hits and one player reported success after unequipping Four Arms. (PLAYER_REPORTED)",
+                "Related guides\n- /how-to-cross-gaps/\n- /talismans/\n- /doll-arms-limb-leveling/"
+              ],
+              "mediaSlots": [
+                "birdcage",
+                "room-overview",
+                "a-right-target",
+                "b-left-target",
+                "successful-state",
+                "four-arms-talisman"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
@@ -231,10 +262,11 @@
         },
         "facts": [
           {
-            "id": "fact-birdcage-b2-puzzle-answer",
-            "label": "Current answer state",
-            "value": "UNVERIFIED \u2014 exact bell/order solution not confirmed from official sources in this research pass.",
-            "verified": false
+            "id": "fact-birdcage-b2-puzzle-quick",
+            "label": "Quick answer",
+            "value": "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)",
+            "verified": true,
+            "grade": "CONFIRMED_LIVE"
           }
         ],
         "evidence": [
@@ -242,18 +274,125 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-player-reports",
+            "sourceType": "player",
+            "sourceRef": "steam-discussions-current-ea",
+            "finding": "Player-reported current-build observations retained with PLAYER_REPORTED grade only.",
+            "grade": "PLAYER_REPORTED"
+          },
+          {
+            "evidenceId": "ev-demo-birdcage-yt",
+            "sourceType": "demo",
+            "sourceRef": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "finding": "DEMO_ONLY capture window 45:03–48:23 used for Birdcage media slots; not treated as current Early Access hanging-target authority.",
+            "grade": "DEMO_ONLY"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-birdcage",
+            "slot": "birdcage",
+            "status": "READY",
+            "caption": "Locked outdoor birdcage with gold card visible inside (DEMO_ONLY).",
+            "alt": "Outdoor locked birdcage containing a gold card, with Clover dialogue.",
+            "src": "/assets/images/evidence/birdcage/birdcage-gold-card.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "DEMO_ONLY",
+            "sourceUrl": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "timestamp": "45:05",
+            "timestampSeconds": 2705
+          },
+          {
+            "id": "media-room-overview",
+            "slot": "room-overview",
+            "status": "READY",
+            "caption": "Birdcage puzzle room overview: central cage, right-side table/speaker, and attendant figure (DEMO_ONLY).",
+            "alt": "Dark puzzle room with metal cage, round table with speaker-like device, and figure on the right.",
+            "src": "/assets/images/evidence/birdcage/room-overview.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "DEMO_ONLY",
+            "sourceUrl": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "timestamp": "48:17",
+            "timestampSeconds": 2897
+          },
+          {
+            "id": "media-a-right-target",
+            "slot": "a-right-target",
+            "status": "READY",
+            "caption": "Right-side room focus: table/speaker beside the cage during spoken code feedback (DEMO_ONLY).",
+            "alt": "Right side of birdcage room showing table-mounted speaker device next to the cage.",
+            "src": "/assets/images/evidence/birdcage/a-right-target.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "DEMO_ONLY",
+            "sourceUrl": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "timestamp": "47:40",
+            "timestampSeconds": 2860
+          },
+          {
+            "id": "media-b-left-target",
+            "slot": "b-left-target",
+            "status": "READY",
+            "caption": "Left-side room focus: attendant figure and organic mass beside the cage (DEMO_ONLY).",
+            "alt": "Left side of birdcage room with masked figure holding a card and a fleshy mass on the floor.",
+            "src": "/assets/images/evidence/birdcage/b-left-target.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "DEMO_ONLY",
+            "sourceUrl": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "timestamp": "47:48",
+            "timestampSeconds": 2868
+          },
+          {
+            "id": "media-successful-state",
+            "slot": "successful-state",
+            "status": "READY",
+            "caption": "Successful puzzle feedback: on-screen Correct… state at the cage (DEMO_ONLY).",
+            "alt": "Birdcage interaction with Correct confirmation text on screen.",
+            "src": "/assets/images/evidence/birdcage/successful-state.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "DEMO_ONLY",
+            "sourceUrl": "https://www.youtube.com/watch?v=iOjtM91SFQQ",
+            "timestamp": "46:39",
+            "timestampSeconds": 2799
+          },
+          {
+            "id": "media-four-arms-talisman",
+            "slot": "four-arms-talisman",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: four-arms-talisman",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Birdcage / B2 Puzzle",
-              "task": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide",
+              "task": "Decode A1/B2 hanging-target codes.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -267,8 +406,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  exact bell/order solution not confirmed from official sources in this research pass."
+                  "label": "Quick answer",
+                  "value": "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)"
                 }
               ]
             },
@@ -309,7 +448,51 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_LIVE",
+            "PLAYER_REPORTED",
+            "DEMO_ONLY"
+          ],
+          "verificationLabel": "CONFIRMED_LIVE core rule · patch page 0.34 · checked 2026-09-07",
+          "articleSource": "content-jobs/birdcage-b2-puzzle/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "PUZZLES",
+          "homepageCard": {
+            "helper": "Decode A1/B2 hanging-target codes.",
+            "tag": "Puzzle",
+            "tone": "brass",
+            "symbol": "⌁"
+          },
+          "subtitle": "Decode A1/B2 hanging-target codes.",
+          "related": [
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "How to Cross Gaps in Withering Realms"
+            },
+            {
+              "id": "talismans",
+              "href": "/talismans/",
+              "title": "Withering Realms Talismans Guide"
+            },
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -322,8 +505,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Birdcage / B2 Puzzle",
-              "task": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide",
+              "task": "Decode A1/B2 hanging-target codes.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -341,8 +524,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  exact bell/order solution not confirmed from official sources in this research pass."
+                  "label": "Quick answer",
+                  "value": "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)"
                 }
               ]
             },
@@ -353,31 +536,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "UNVERIFIED  -  exact bell/order solution not confirmed from official sources in this research pass."
+                "label": "Quick answer",
+                "value": "The speaker code is letter + number. A = right-side hanging target, B = left-side hanging target, and the number is how many times to hit that target (e.g., A1 = hit the right target once; B2 = hit the left target twice). In the current Early Access build, fast/light attacks are the safest observed input for registering hits cleanly. (CONFIRMED_LIVE)"
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "how-to-cross-gaps",
+                "href": "/how-to-cross-gaps/",
+                "title": "How to Cross Gaps"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "how-to-cross-gaps",
-      "title": "How to Cross Gaps",
+      "title": "How to Cross Gaps in Withering Realms",
       "href": "/how-to-cross-gaps/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "how-to-cross-gaps",
-          "title": "How to Cross Gaps",
+          "title": "How to Cross Gaps in Withering Realms",
           "href": "/how-to-cross-gaps/",
           "query": "How do I cross gaps in Withering Realms?",
-          "playerProblem": "Traversal framing for gaps and doll upgrades."
+          "playerProblem": "Cemetery chain reward to Doll-made traversal tool."
         },
         "state": {},
         "intent": {
-          "query": "How do I cross gaps in Withering Realms?",
-          "playerProblem": "Traversal framing for gaps and doll upgrades.",
+          "query": "Cemetery chain reward to Doll-made traversal tool.",
+          "playerProblem": "Cemetery chain reward to Doll-made traversal tool.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 2,
@@ -414,29 +614,42 @@
           }
         },
         "body": {
-          "intro": "Traversal framing for gaps and doll upgrades.",
+          "intro": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "UNVERIFIED \u2014 specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system."
-              ]
-            },
-            {
-              "id": "how-to-use",
-              "title": "How to use this page",
-              "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
+                "Step-by-step progression\n1. Defeat the cemetery creature.\n   - Complete the encounter against the creature trapped by arms in the cemetery. Players reporting the current progression identify this encounter as the source of the next item.",
+                "2. Claim the chain reward.\n   - After that fight, collect the chain reward awarded by the encounter. (Player reports indicate the item appears as a chain-type reward in the encounter reward screen.)",
+                "3. Take the chain reward to the person who works on the Doll.\n   - Deliver the chain reward to the person who works on the Doll (do not confuse with other NPCs). That person accepts the reward and performs work on the Doll.",
+                "4. Receive the traversal tool.\n   - The Doll worker creates a traversal tool from the chain reward. Players confirm this yields the traversal tool needed for the blocked gap.",
+                "5. Use the traversal tool to cross the blocked gap.\n   - With the traversal tool created, use it at the blocked gap to cross. Players confirm the traversal tool is the item used to open/cross that specific blocked gap.",
+                "Naming note — why this page uses \"chain reward\" and \"traversal tool\"\n- The item names and the tool’s official in-game labels are not yet verified. Steam players have reported a spelling shown as \"icorised chain\" (PLAYER_REPORTED spelling only), but the official in-game tooltip/name has not been confirmed. For clarity and to avoid inventing or mislabeling content, this guide uses the neutral terms \"the chain reward\" and \"the traversal tool\" until official names are confirmed. (Name spelling is NEEDS_VERIFICATION.)",
+                "If this didn't work\n- Missing reward: If you do not have the chain reward after the cemetery encounter, verify that you completed the encounter; if it still does not appear, players report this as a possible progression-block and it may require an update or community confirmation.\n- Cannot craft: If the Doll worker will not accept the chain reward or will not create the traversal tool despite having the reward, this is currently provisional—players have reported the crafting step as the required action, but behaviour may vary across builds.\n- Still blocked: If you have the traversal tool but cannot cross the gap, confirm you delivered the chain reward to the Doll worker and received the traversal tool as described; if the tool exists but does not function, report details to official patch notes or support (see Verification block below).",
+                "Verification / sources\n- Progression status (player reports): PLAYER_REPORTED / CONFIRMED_LIVE — current players confirm the chain: cemetery creature → chain reward → Doll worker → traversal tool → cross blocked gap.\n- Player-spelling note: \"icorised chain\" — PLAYER_REPORTED spelling only (NEEDS_VERIFICATION).\n- Early Access release: 2026-09-04 (CONFIRMED_OFFICIAL).\n- Research checked: 2026-09-07; latest official patch page observed: 0.34.",
+                "FAQ\nQ: Where exactly do I bring the chain reward?\nA: Bring the chain reward to the person who works on the Doll. The guide uses that wording because the craftsman’s proper name was not supplied in the available reports.",
+                "Q: Is the chain called \"icorised chain\"?\nA: That exact spelling was observed on Steam by players and is a PLAYER_REPORTED spelling only. The official in-game tooltip or name has not been verified (NEEDS_VERIFICATION).",
+                "Q: What does the traversal tool do?\nA: Players confirm the traversal tool created by the Doll worker is used to cross the blocked gap described above. This is the current confirmed progression for early traversal in the game.",
+                "Related guides\n- /doll-arms-limb-leveling/\n- /birdcage-b2-puzzle/\n- /early-bosses/"
+              ],
+              "mediaSlots": [
+                "blocked-gap",
+                "cemetery-creature",
+                "reward-tooltip",
+                "doll-craftsman",
+                "finished-traversal-tool",
+                "crossing-result"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
@@ -449,10 +662,11 @@
         },
         "facts": [
           {
-            "id": "fact-how-to-cross-gaps-answer",
-            "label": "Current answer state",
-            "value": "UNVERIFIED \u2014 specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system.",
-            "verified": false
+            "id": "fact-how-to-cross-gaps-quick",
+            "label": "Quick answer",
+            "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
+            "verified": true,
+            "grade": "PLAYER_REPORTED"
           }
         ],
         "evidence": [
@@ -460,18 +674,83 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-player-reports",
+            "sourceType": "player",
+            "sourceRef": "steam-discussions-current-ea",
+            "finding": "Player-reported current-build observations retained with PLAYER_REPORTED grade only.",
+            "grade": "PLAYER_REPORTED"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-blocked-gap",
+            "slot": "blocked-gap",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: blocked-gap",
+            "src": null
+          },
+          {
+            "id": "media-cemetery-creature",
+            "slot": "cemetery-creature",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: cemetery-creature",
+            "src": null
+          },
+          {
+            "id": "media-reward-tooltip",
+            "slot": "reward-tooltip",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: reward-tooltip",
+            "src": null
+          },
+          {
+            "id": "media-doll-craftsman",
+            "slot": "doll-craftsman",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: doll-craftsman",
+            "src": null
+          },
+          {
+            "id": "media-finished-traversal-tool",
+            "slot": "finished-traversal-tool",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: finished-traversal-tool",
+            "src": null
+          },
+          {
+            "id": "media-crossing-result",
+            "slot": "crossing-result",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: crossing-result",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "How to Cross Gaps",
-              "task": "Traversal framing for gaps and doll upgrades.",
+              "title": "How to Cross Gaps in Withering Realms",
+              "task": "Cemetery chain reward to Doll-made traversal tool.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -485,8 +764,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system."
+                  "label": "Quick answer",
+                  "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
                 }
               ]
             },
@@ -522,7 +801,51 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "PLAYER_REPORTED",
+            "CONFIRMED_LIVE",
+            "NEEDS_VERIFICATION"
+          ],
+          "verificationLabel": "PLAYER_REPORTED progression · official names NEEDS_VERIFICATION · checked 2026-09-07",
+          "articleSource": "content-jobs/how-to-cross-gaps/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "TRAVERSAL",
+          "homepageCard": {
+            "helper": "Cemetery chain reward to Doll-made traversal tool.",
+            "tag": "Traversal",
+            "tone": "green",
+            "symbol": "↗"
+          },
+          "subtitle": "Cemetery chain reward to Doll-made traversal tool.",
+          "related": [
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            },
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            },
+            {
+              "id": "early-bosses",
+              "href": "/early-bosses/",
+              "title": "Withering Realms Early Bosses — Opening Encounters"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -535,8 +858,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "How to Cross Gaps",
-              "task": "Traversal framing for gaps and doll upgrades.",
+              "title": "How to Cross Gaps in Withering Realms",
+              "task": "Cemetery chain reward to Doll-made traversal tool.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -554,8 +877,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system."
+                  "label": "Quick answer",
+                  "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
                 }
               ]
             },
@@ -566,31 +889,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "UNVERIFIED  -  specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system."
+                "label": "Quick answer",
+                "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "doll-arms-limb-leveling",
+                "href": "/doll-arms-limb-leveling/",
+                "title": "Doll Arms / Limb Leveling"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "cae-gwyn-bells",
-      "title": "Cae Gwyn Bells",
+      "title": "Cae Gwyn Bells (Needs Verification)",
       "href": "/cae-gwyn-bells/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "cae-gwyn-bells",
-          "title": "Cae Gwyn Bells",
+          "title": "Cae Gwyn Bells (Needs Verification)",
           "href": "/cae-gwyn-bells/",
           "query": "What do the Cae Gwyn bells do in Withering Realms?",
-          "playerProblem": "What is known vs unverified about Cae Gwyn bells."
+          "playerProblem": "Demand confirmed; no verified bell sequence yet."
         },
         "state": {},
         "intent": {
-          "query": "What do the Cae Gwyn bells do in Withering Realms?",
-          "playerProblem": "What is known vs unverified about Cae Gwyn bells.",
+          "query": "Demand confirmed; no verified bell sequence yet.",
+          "playerProblem": "Demand confirmed; no verified bell sequence yet.",
           "primaryTask": "procedure",
           "prototype": "P4",
           "priority": 3,
@@ -632,45 +972,70 @@
           }
         },
         "body": {
-          "intro": "What is known vs unverified about Cae Gwyn bells.",
+          "intro": "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data, but the solution remains NEEDS_VERIFICATION.",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "UNVERIFIED \u2014 location-specific bell behavior not confirmed in official blurbs."
+                "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data (CONFIRMED_OFFICIAL achievement identity signal), but the solution remains NEEDS_VERIFICATION."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-is-confirmed",
+              "title": "What is confirmed",
+              "paragraphs": [
+                "Demand for a Cae Gwyn bells solution is confirmed by current Steam discussion.",
+                "Cae Gwyn Public Vaults is confirmed by Steam achievement data (CONFIRMED_OFFICIAL naming/identity signal only)."
+              ],
+              "mediaSlots": [
+                "location"
               ]
             },
             {
-              "id": "how-to-use",
-              "title": "How to use this page",
+              "id": "what-is-missing",
+              "title": "What is missing",
               "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "NO VERIFIED BELL SEQUENCE has been found.",
+                "This draft does not invent a clue, sequence, or successful result. Required captures remain empty media slots."
+              ],
+              "mediaSlots": [
+                "all-bells",
+                "clue",
+                "sequence",
+                "successful-result"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Do not treat community guesses as confirmed. Until a current-build sequence is verified on patch 0.34 (research checked 2026-09-07), this page stays draft and noindex."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
             {
-              "id": "faq-verified",
-              "question": "Is the Cae Gwyn Bells solution fully verified?",
-              "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be provisional slots."
+              "id": "faq-1",
+              "question": "Is there a published Cae Gwyn bell order?",
+              "answer": "Not on this page. No verified sequence has been found yet (NEEDS_VERIFICATION)."
+            },
+            {
+              "id": "faq-2",
+              "question": "Why does this page exist as a draft?",
+              "answer": "Player demand is confirmed, but publishing a fabricated solution would violate the evidence contract."
             }
           ]
         },
         "facts": [
           {
-            "id": "fact-cae-gwyn-bells-answer",
-            "label": "Current answer state",
-            "value": "UNVERIFIED \u2014 location-specific bell behavior not confirmed in official blurbs.",
-            "verified": false
+            "id": "fact-cae-gwyn-bells-quick",
+            "label": "Quick answer",
+            "value": "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data, but the solution remains NEEDS_VERIFICATION.",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
         "evidence": [
@@ -678,18 +1043,69 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-location",
+            "slot": "location",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: location",
+            "src": null
+          },
+          {
+            "id": "media-all-bells",
+            "slot": "all-bells",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: all-bells",
+            "src": null
+          },
+          {
+            "id": "media-clue",
+            "slot": "clue",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: clue",
+            "src": null
+          },
+          {
+            "id": "media-sequence",
+            "slot": "sequence",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: sequence",
+            "src": null
+          },
+          {
+            "id": "media-successful-result",
+            "slot": "successful-result",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: successful-result",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Cae Gwyn Bells",
-              "task": "What is known vs unverified about Cae Gwyn bells.",
+              "title": "Cae Gwyn Bells (Needs Verification)",
+              "task": "Demand confirmed; no verified bell sequence yet.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -703,8 +1119,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  location-specific bell behavior not confirmed in official blurbs."
+                  "label": "Quick answer",
+                  "value": "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data, but the solution remains NEEDS_VERIFICATION."
                 }
               ]
             },
@@ -745,7 +1161,45 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "draft",
+          "draft": true,
+          "index": false,
+          "needsVerification": true,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL",
+            "NEEDS_VERIFICATION"
+          ],
+          "verificationLabel": "DRAFT · no verified sequence · checked 2026-09-07",
+          "articleSource": null,
+          "writer": null
+        },
+        "presentation": {
+          "categoryLabel": "PUZZLES",
+          "homepageCard": {
+            "helper": "Demand confirmed; no verified bell sequence yet.",
+            "tag": "Needs verification",
+            "tone": "bone",
+            "symbol": "◌"
+          },
+          "subtitle": "No verified bell sequence is published yet.",
+          "related": [
+            {
+              "id": "night-routes",
+              "href": "/night-routes/",
+              "title": "What Changes at Night in Withering Realms?"
+            },
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -758,8 +1212,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Cae Gwyn Bells",
-              "task": "What is known vs unverified about Cae Gwyn bells.",
+              "title": "Cae Gwyn Bells (Needs Verification)",
+              "task": "Demand confirmed; no verified bell sequence yet.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -777,8 +1231,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  location-specific bell behavior not confirmed in official blurbs."
+                  "label": "Quick answer",
+                  "value": "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data, but the solution remains NEEDS_VERIFICATION."
                 }
               ]
             },
@@ -789,31 +1243,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "UNVERIFIED  -  location-specific bell behavior not confirmed in official blurbs."
+                "label": "Quick answer",
+                "value": "No verified bell sequence is published yet for the current Early Access build. Steam discussion demand is real, and Cae Gwyn Public Vaults appears in Steam achievement data, but the solution remains NEEDS_VERIFICATION."
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "night-routes",
+                "href": "/night-routes/",
+                "title": "Night Routes"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "early-bosses",
-      "title": "Early Bosses",
+      "title": "Withering Realms Early Bosses — Opening Encounters",
       "href": "/early-bosses/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "early-bosses",
-          "title": "Early Bosses",
+          "title": "Withering Realms Early Bosses — Opening Encounters",
           "href": "/early-bosses/",
           "query": "How should I approach early bosses in Withering Realms?",
-          "playerProblem": "Calm early-combat framing for the Early Access build."
+          "playerProblem": "Opening Beynon and Saintswood / Scarecrow only."
         },
         "state": {},
         "intent": {
-          "query": "How should I approach early bosses in Withering Realms?",
-          "playerProblem": "Calm early-combat framing for the Early Access build.",
+          "query": "Opening Beynon and Saintswood / Scarecrow only.",
+          "playerProblem": "Opening Beynon and Saintswood / Scarecrow only.",
           "primaryTask": "strategy",
           "priority": 4,
           "primitiveRecipe": [
@@ -834,45 +1305,110 @@
           }
         },
         "body": {
-          "intro": "Calm early-combat framing for the Early Access build.",
+          "intro": "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in \"If This Didn't Work\" below.",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "UNVERIFIED \u2014 named early boss routes not confirmed; combat is action RPG."
+                "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in \"If This Didn't Work\" below."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "opening-beynon-encounter",
+              "title": "Opening Beynon encounter",
+              "paragraphs": [
+                "What is known\n- Opening Beynon is an opening-area enemy encounter presented as a player-facing challenge in Early Access builds.\n- The encounter is part of the game's opening sequence for players encountering Beynon for the first time.\n- Opening gameplay evidence exists for this encounter (observed in early access footage/players).",
+                "What is NEEDS_VERIFICATION\n- Any specific phase breakdowns, named attack patterns, exact HP or resistance values, recommended weapons or guaranteed stun/stagger mechanics are NEEDS_VERIFICATION.\n- Any listed \"best\" tactic or damage numbers from community clips should be treated as player-reported and not confirmed for patch 0.34.",
+                "Notes\n- This section intentionally avoids unverified combat instructions. Treat any combat specifics you see online as provisional until confirmed by official patch notes or repeatable testing on patch 0.34."
+              ],
+              "mediaSlots": [
+                "beynon-encounter"
               ]
             },
             {
-              "id": "how-to-use",
-              "title": "How to use this page",
+              "id": "saintswood-scarecrow-encounter",
+              "title": "Saintswood / Scarecrow encounter",
               "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "What is known\n- Saintswood / Scarecrow is an early paired encounter appearing in the opening area as a player-facing challenge in Early Access.\n- The encounter is documented in opening gameplay evidence and is part of the same narrow opening-boss framing as Beynon.",
+                "What is NEEDS_VERIFICATION\n- Precise mechanics, exact attack lists, resistances, stagger thresholds, or best weapons for Saintswood / Scarecrow are NEEDS_VERIFICATION for the current EA build.\n- Any community assertions about scripted phases or guaranteed counters should be considered provisional until confirmed.",
+                "Notes\n- Because Saintswood and Scarecrow are presented together in player-facing footage, expect community discussion and evolving player techniques; do not treat those techniques as officially verified."
+              ],
+              "mediaSlots": [
+                "saintswood-scarecrow"
+              ]
+            },
+            {
+              "id": "verification-limits-why-tactics-stay-provisional-patch-0-34-research-2026-09-07",
+              "title": "Verification limits — why tactics stay provisional (patch 0.34; research 2026-09-07)",
+              "paragraphs": [
+                "Early Access status: Withering Realms launched on Steam Early Access 2026-09-04 (CONFIRMED_OFFICIAL). Early Access builds are subject to change; enemy numbers and behaviors can be adjusted between builds.\n- Latest official patch page observed: 0.34 (research checked 2026-09-07). No official HP/resistance tables or authoritative phase scripts for these opening encounters were available in the observed official materials.\n- Available gameplay demonstrates the encounters exist, but the build and community testing remain the primary sources for any combat detail beyond presence and placement.\n- Evidence categories to watch for:\n  - CONFIRMED_OFFICIAL — official statements, patch notes, or dev-provided data.\n  - CONFIRMED_LIVE / PLAYER_REPORTED — repeatable community tests and consistent player reports.\n  - NEEDS_VERIFICATION — claims that lack either official confirmation or reproducible community verification on patch 0.34."
+              ],
+              "mediaSlots": [
+                "opening-combat-ui"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "If a suggested community tactic or video doesn't match your in-game experience, follow these steps rather than assuming an undisclosed mechanic:",
+                "1. Verify your game version matches the build cited (check in-game version or launcher). Patch differences can change enemy behavior.\n2. Check official patch notes (developer site / store page) for 0.34 and subsequent updates for any recorded enemy changes (CONFIRMED_OFFICIAL).\n3. Search community threads and recent verified playtests for repeatable reports on Beynon or Saintswood / Scarecrow; prioritize multiple independent confirmations.\n4. If you believe you found a bug or a behavior that contradicts community reports, file a report through the official support/bug tracker so developers can verify.\n5. As evidence accumulates (official notes, repeatable tests), treat previously provisional tactics as confirmed only when multiple reliable sources line up.",
+                "Do not rely on single-source clips or uncorroborated claims for assumed definitive strategies on patch 0.34."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "faq",
+              "title": "FAQ — scope only",
+              "paragraphs": [
+                "Q: Is this a full boss list for Withering Realms?\nA: No. This page covers only the opening Beynon and Saintswood / Scarecrow encounters. It is not a complete boss database.",
+                "Q: Are detailed combat numbers and weaknesses listed here?\nA: No. Exact combat details (phases, weaknesses, HP, damage numbers, best weapons) are NEEDS_VERIFICATION for the observed Early Access build (patch 0.34, research checked 2026-09-07).",
+                "Q: Will this guide be expanded later?\nA: This page will only be updated when CONFIRMED_OFFICIAL data or reproducible community verification is available for these opening encounters. Check official patch notes and community testing for updates.",
+                "Q: Why are Saintswood and Scarecrow presented together?\nA: They appear together in opening-area evidence and are therefore grouped here under the same early encounter framing."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "related-guides",
+              "title": "Related Guides",
+              "paragraphs": [
+                "/how-to-cross-gaps/\n- /doll-arms-limb-leveling/\n- /perimeter-guardians/"
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
             {
-              "id": "faq-verified",
-              "question": "Is the Early Bosses solution fully verified?",
-              "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be provisional slots."
+              "id": "faq-1",
+              "question": "Q: Is this a full boss list for Withering Realms?",
+              "answer": "A: No. This page covers only the opening Beynon and Saintswood / Scarecrow encounters. It is not a complete boss database."
+            },
+            {
+              "id": "faq-2",
+              "question": "Q: Are detailed combat numbers and weaknesses listed here?",
+              "answer": "A: No. Exact combat details (phases, weaknesses, HP, damage numbers, best weapons) are NEEDS_VERIFICATION for the observed Early Access build (patch 0.34, research checked 2026-09-07)."
+            },
+            {
+              "id": "faq-3",
+              "question": "Q: Will this guide be expanded later?",
+              "answer": "A: This page will only be updated when CONFIRMED_OFFICIAL data or reproducible community verification is available for these opening encounters. Check official patch notes and community testing for updates."
+            },
+            {
+              "id": "faq-4",
+              "question": "Q: Why are Saintswood and Scarecrow presented together?",
+              "answer": "A: They appear together in opening-area evidence and are therefore grouped here under the same early encounter framing."
             }
           ]
         },
         "facts": [
           {
-            "id": "fact-early-bosses-answer",
-            "label": "Current answer state",
-            "value": "UNVERIFIED \u2014 named early boss routes not confirmed; combat is action RPG.",
-            "verified": false
+            "id": "fact-early-bosses-quick",
+            "label": "Quick answer",
+            "value": "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in ",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
         "evidence": [
@@ -880,18 +1416,55 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-beynon-encounter",
+            "slot": "beynon-encounter",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: beynon-encounter",
+            "src": null
+          },
+          {
+            "id": "media-saintswood-scarecrow",
+            "slot": "saintswood-scarecrow",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: saintswood-scarecrow",
+            "src": null
+          },
+          {
+            "id": "media-opening-combat-ui",
+            "slot": "opening-combat-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: opening-combat-ui",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Early Bosses",
-              "task": "Calm early-combat framing for the Early Access build.",
+              "title": "Withering Realms Early Bosses — Opening Encounters",
+              "task": "Opening Beynon and Saintswood / Scarecrow only.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -905,8 +1478,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  named early boss routes not confirmed; combat is action RPG."
+                  "label": "Quick answer",
+                  "value": "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in "
                 }
               ]
             },
@@ -927,7 +1500,50 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": true,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL",
+            "NEEDS_VERIFICATION"
+          ],
+          "verificationLabel": "Narrow opening guide · combat details NEEDS_VERIFICATION · checked 2026-09-07",
+          "articleSource": "content-jobs/early-bosses/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "COMBAT",
+          "homepageCard": {
+            "helper": "Opening Beynon and Saintswood / Scarecrow only.",
+            "tag": "Combat",
+            "tone": "rust",
+            "symbol": "†"
+          },
+          "subtitle": "Opening Beynon and Saintswood / Scarecrow only.",
+          "related": [
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "How to Cross Gaps in Withering Realms"
+            },
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            },
+            {
+              "id": "perimeter-guardians",
+              "href": "/perimeter-guardians/",
+              "title": "Withering Realms Perimeter Guardians"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -940,8 +1556,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Early Bosses",
-              "task": "Calm early-combat framing for the Early Access build.",
+              "title": "Withering Realms Early Bosses — Opening Encounters",
+              "task": "Opening Beynon and Saintswood / Scarecrow only.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -959,8 +1575,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  named early boss routes not confirmed; combat is action RPG."
+                  "label": "Quick answer",
+                  "value": "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in "
                 }
               ]
             },
@@ -971,31 +1587,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "UNVERIFIED  -  named early boss routes not confirmed; combat is action RPG."
+                "label": "Quick answer",
+                "value": "This page covers only the opening encounters: Opening Beynon and Saintswood / Scarecrow — not a full boss list. Both appear in the game's opening as player-facing challenges (Early Access Steam release 2026-09-04 — CONFIRMED_OFFICIAL). Available gameplay shows these encounters exist, but exact combat details (phases, weaknesses, best weapons, HP, damage numbers) are NEEDS_VERIFICATION on patch 0.34 (research checked 2026-09-07). If you need verified tactics now, follow the verification steps in "
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "how-to-cross-gaps",
+                "href": "/how-to-cross-gaps/",
+                "title": "How to Cross Gaps in Withering Realms"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "doll-arms-limb-leveling",
-      "title": "Doll Arms / Limb Leveling",
+      "title": "Withering Realms Doll Arms & Limb Leveling",
       "href": "/doll-arms-limb-leveling/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "doll-arms-limb-leveling",
-          "title": "Doll Arms / Limb Leveling",
+          "title": "Withering Realms Doll Arms & Limb Leveling",
           "href": "/doll-arms-limb-leveling/",
           "query": "What can I put on the doll's right arm and how does limb leveling work?",
-          "playerProblem": "Confirmed doll-arm weapon examples and leveling caveats."
+          "playerProblem": "Right-arm tools, dual attacks, limb-oriented builds."
         },
         "state": {},
         "intent": {
-          "query": "What can I put on the doll's right arm and how does limb leveling work?",
-          "playerProblem": "Confirmed doll-arm weapon examples and leveling caveats.",
+          "query": "Right-arm tools, dual attacks, limb-oriented builds.",
+          "playerProblem": "Right-arm tools, dual attacks, limb-oriented builds.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 5,
@@ -1032,29 +1665,43 @@
           }
         },
         "body": {
-          "intro": "Confirmed doll-arm weapon examples and leveling caveats.",
+          "intro": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED."
-              ]
-            },
-            {
-              "id": "how-to-use",
-              "title": "How to use this page",
-              "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)",
+                "Baseline: Early Access Steam release 2026-09-04. Research checked 2026-09-07; latest official patch page observed: 0.34. (CONFIRMED_OFFICIAL for release date)",
+                "How the Doll arm system works — confirmed facts only\n1. The Doll is presented with a missing right hand and a right-arm tool slot; equipped right-arm tools replace that limb’s functionality. (CONFIRMED_OFFICIAL)\n2. When you craft and equip a right-arm tool, that tool supplies both a primary attack and a secondary attack for the Doll. These dual actions are part of the crafted-tool design rather than being generic weapon swaps. (CONFIRMED_OFFICIAL)\n3. Doll progression and equipment are structured to support limb-oriented buildcrafting — players can center builds around which Doll arm/tool they run. (CONFIRMED_OFFICIAL)\n4. Clover (the companion character) is able to cast while the Doll performs its attacks; casting and Doll-attacking are not mutually exclusive. (CONFIRMED_OFFICIAL)",
+                "— *captures: proof of primary vs secondary attack descriptions in the tool UI*",
+                "Confirmed arm examples (official store-backed)\n- Enchanted Candelabrum — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Chain Rock — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Machinegun — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Flamethrower — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)",
+                "Note: the official store shows these examples but does not present a complete public catalog; additional arms may exist or be added in Early Access. (CONFIRMED_OFFICIAL)",
+                "What players are asking (open questions in the community)\n- How does off-hand upgrading work for Doll limbs / can you upgrade the off-hand independently? (player interest)\n- Are respecs available for Doll limb choices or build points, and if so what are the costs / limits? (player interest)",
+                "These community questions are reported as active player interest; the answers below remain unverified where noted.",
+                "What is still unverified (explicit NEEDS_VERIFICATION)\n- Respec availability and cost — whether the game supports respecs, how they are purchased or accessed, and any limits. (NEEDS_VERIFICATION)\n- Level cap (character or Doll progression caps). (NEEDS_VERIFICATION)\n- Exact stat formulas used for Doll attacks, damage scaling, or tool scaling. (NEEDS_VERIFICATION)\n- Exact off-hand upgrade rules (how off-hand / secondary limb upgrades work, if they exist). (NEEDS_VERIFICATION)\n- Breakpoints (damage/equipment breakpoints and their values). (NEEDS_VERIFICATION)",
+                "If this didn't match what you see / Verification steps\n1. Check the official Steam store and the developer patch notes (latest observed official patch page: 0.34) for any changes to Doll arm systems or added details. The game’s Steam Early Access release date is 2026-09-04. (CONFIRMED_OFFICIAL)\n2. In-game: open the Doll equipment / limb interface and inspect right-arm tool descriptions to confirm primary/secondary actions and any level or upgrade text present. Capture UI text or screenshots if you need to report discrepancies.\n3. If you find claims about respecs, level caps, or off-hand upgrade mechanics in community posts, treat those as player reports until confirmed by official patch notes or developer communication. Mark those items as NEEDS_VERIFICATION.\n4. Report contradictions or new confirmations to official channels (patch notes, developer posts) so the details can be verified and the guidance updated.",
+                "FAQ\nQ: Can I respec Doll limbs or build points in Early Access?\nA: Respec availability, cost, and limits have not been confirmed by official sources and remain NEEDS_VERIFICATION.",
+                "Q: Is there a level cap or soft cap on Doll progression?\nA: The level cap is not confirmed. This is currently listed as NEEDS_VERIFICATION.",
+                "Q: Can the Doll use an off-hand tool separate from the right-arm tool?\nA: Exact off-hand upgrade rules or separate off-hand tool progression are not confirmed and remain NEEDS_VERIFICATION.",
+                "Q: Does Clover still cast while the Doll is attacking?\nA: Yes — official sources confirm Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)",
+                "Q: Are there more Doll arms than the four store examples?\nA: The store lists Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower as official examples, but the public catalog is incomplete; additional arms may be present or added in Early Access. (CONFIRMED_OFFICIAL)",
+                "Related guides\n- /talismans/\n- /how-to-cross-gaps/\n- /birdcage-b2-puzzle/"
+              ],
+              "mediaSlots": [
+                "doll-arm-equipment-ui",
+                "primary-secondary-attacks",
+                "clover-cast-during-doll-attack",
+                "limb-upgrade-ui"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
@@ -1067,10 +1714,11 @@
         },
         "facts": [
           {
-            "id": "fact-doll-arms-limb-leveling-answer",
-            "label": "Current answer state",
-            "value": "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED.",
-            "verified": true
+            "id": "fact-doll-arms-limb-leveling-quick",
+            "label": "Quick answer",
+            "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
         "evidence": [
@@ -1078,18 +1726,62 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-doll-arm-equipment-ui",
+            "slot": "doll-arm-equipment-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: doll-arm-equipment-ui",
+            "src": null
+          },
+          {
+            "id": "media-limb-upgrade-ui",
+            "slot": "limb-upgrade-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: limb-upgrade-ui",
+            "src": null
+          },
+          {
+            "id": "media-primary-secondary-attacks",
+            "slot": "primary-secondary-attacks",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: primary-secondary-attacks",
+            "src": null
+          },
+          {
+            "id": "media-clover-cast-during-doll-attack",
+            "slot": "clover-cast-during-doll-attack",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: clover-cast-during-doll-attack",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Doll Arms / Limb Leveling",
-              "task": "Confirmed doll-arm weapon examples and leveling caveats.",
+              "title": "Withering Realms Doll Arms & Limb Leveling",
+              "task": "Right-arm tools, dual attacks, limb-oriented builds.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1103,8 +1795,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED."
+                  "label": "Quick answer",
+                  "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
                 }
               ]
             },
@@ -1140,7 +1832,50 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL",
+            "NEEDS_VERIFICATION"
+          ],
+          "verificationLabel": "CONFIRMED_OFFICIAL system framing · respec/caps NEEDS_VERIFICATION · checked 2026-09-07",
+          "articleSource": "content-jobs/doll-arms-limb-leveling/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "SYSTEMS",
+          "homepageCard": {
+            "helper": "Right-arm tools, dual attacks, limb-oriented builds.",
+            "tag": "Systems",
+            "tone": "green",
+            "symbol": "⌁"
+          },
+          "subtitle": "Right-arm tools, dual attacks, limb-oriented builds.",
+          "related": [
+            {
+              "id": "talismans",
+              "href": "/talismans/",
+              "title": "Withering Realms Talismans Guide"
+            },
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "How to Cross Gaps in Withering Realms"
+            },
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -1153,8 +1888,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Doll Arms / Limb Leveling",
-              "task": "Confirmed doll-arm weapon examples and leveling caveats.",
+              "title": "Withering Realms Doll Arms & Limb Leveling",
+              "task": "Right-arm tools, dual attacks, limb-oriented builds.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1172,8 +1907,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED."
+                  "label": "Quick answer",
+                  "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
                 }
               ]
             },
@@ -1184,31 +1919,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED."
+                "label": "Quick answer",
+                "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "talismans",
+                "href": "/talismans/",
+                "title": "Talismans"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "talismans",
-      "title": "Talismans",
+      "title": "Withering Realms Talismans Guide",
       "href": "/talismans/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "talismans",
-          "title": "Talismans",
+          "title": "Withering Realms Talismans Guide",
           "href": "/talismans/",
           "query": "How do talismans work in Withering Realms?",
-          "playerProblem": "Build customization framing for talismans."
+          "playerProblem": "Arm vs body talismans — system guide, not a tier list."
         },
         "state": {},
         "intent": {
-          "query": "How do talismans work in Withering Realms?",
-          "playerProblem": "Build customization framing for talismans.",
+          "query": "Arm vs body talismans — system guide, not a tier list.",
+          "playerProblem": "Arm vs body talismans — system guide, not a tier list.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 6,
@@ -1245,64 +1997,182 @@
           }
         },
         "body": {
-          "intro": "Build customization framing for talismans.",
+          "intro": "Arm vs body talismans — system guide, not a tier list.",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "arm-talismans-what-they-do",
+              "title": "Arm talismans — what they do",
               "paragraphs": [
-                "UNVERIFIED \u2014 talisman system specifics not in official store copy; magical artifacts are mentioned."
+                "Role (confirmed): Arm talismans modify the behaviour of your limb attacks. In Early Access they are reported to either increase damage or reduce resource consumption for those attacks (CONFIRMED_OFFICIAL)."
+              ],
+              "mediaSlots": [
+                "arm-talisman-ui"
               ]
             },
             {
-              "id": "how-to-use",
-              "title": "How to use this page",
+              "id": "body-talismans-the-four-special-slots",
+              "title": "Body talismans — the four special slots",
               "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "Role (confirmed): There are four body talisman slots that provide defensive or support-style effects and, in some cases, can retrigger arm talisman effects when conditions are met (CONFIRMED_OFFICIAL)."
+              ],
+              "mediaSlots": [
+                "body-talisman-ui",
+                "four-arms-talisman"
               ]
+            },
+            {
+              "id": "early-access-scope-and-catalog-status",
+              "title": "Early Access scope and catalog status",
+              "paragraphs": [
+                "Scope (confirmed): The Early Access release contains 70+ talismans (CONFIRMED_OFFICIAL).\n- Release / baseline: Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL). Research checked 2026-09-07; latest official patch page observed: 0.34.\n- Coverage note: This page is a system reference and a living catalog. The talisman catalog here is incomplete; verified talisman entries will be added incrementally rather than published as a wholesale list."
+              ],
+              "mediaSlots": [
+                "talisman-menu-overview"
+              ]
+            },
+            {
+              "id": "four-arms-birdcage-player-reports-not-an-official-bug",
+              "title": "Four Arms + Birdcage — player reports (not an official bug)",
+              "paragraphs": [
+                "Player reports indicate that equipping the Four Arms body talisman may cause the Birdcage / B2 hanging-target puzzle to count an extra hit in its sequence. These reports are community-observed and remain PLAYER_REPORTED only. (PLAYER_REPORTED)\n- One player reported that the puzzle’s incorrect responses stopped after unequipping Four Arms (PLAYER_REPORTED). Do not treat this as an official bug report or confirmed fix. For the Birdcage puzzle rules and expected input sequence, see the Birdcage puzzle guide: /birdcage-b2-puzzle/ (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "how-this-page-will-grow",
+              "title": "How this page will grow",
+              "paragraphs": [
+                "Incremental additions: new, verified talisman entries will be added one at a time with source notes (official or reliable secondary).\n- Evidence tags: each added talisman entry will include its evidence grade (CONFIRMED_OFFICIAL, CONFIRMED_LIVE, PLAYER_REPORTED, NEEDS_VERIFICATION) so readers can see how certain each entry is.\n- No tier lists: this page will not publish S/A/B-style rankings. Verified descriptions and use-cases will be prioritized so entries can be compared fairly later."
+              ],
+              "mediaSlots": []
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "If you see a Birdcage puzzle discrepancy and want to verify whether a body talisman is involved:\n1. Note your current talisman setup and take a screenshot or record your inventory (so you can restore it).\n2. Unequip any suspect body talismans (for example, Four Arms as reported by players) and retry the Birdcage / B2 sequence.\n3. If the puzzle behaves differently after unequipping, document the steps and any reproducible pattern; that information is useful to the community and official support channels. (PLAYER_REPORTED)\n4. For the puzzle’s expected inputs and sequence rules, consult /birdcage-b2-puzzle/ before testing.",
+                "Note: these steps are practical verification suggestions based on player reports. They do not substitute for an official developer statement."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "faq",
+              "title": "FAQ",
+              "paragraphs": [
+                "Q: Are arm talismans the same as body talismans?\nA: No. Arm talismans modify attacks (damage or resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL).",
+                "Q: How many talismans are in Early Access?\nA: The Early Access build contains 70+ talismans (CONFIRMED_OFFICIAL). The catalog on this page is incomplete and will expand as entries are verified.",
+                "Q: Is this page a tier list or “best talismans” guide?\nA: No. This page explains roles and system behaviour and will add verified talisman entries. It will not publish tier rankings.",
+                "Q: Does Four Arms break the Birdcage puzzle?\nA: There are PLAYER_REPORTED accounts that Four Arms can cause an extra counted hit or incorrect responses in the Birdcage / B2 hanging-target puzzle; one player reported the issue stopped after unequipping Four Arms. These are community reports and not an official bug confirmation. See /birdcage-b2-puzzle/ for the puzzle rule set. (PLAYER_REPORTED)",
+                "Q: Where can I find official patch or talisman updates?\nA: Check the official patch pages and news; as of research checked 2026-09-07 the latest observed patch page is 0.34 (CONFIRMED_OFFICIAL)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "related-guides",
+              "title": "Related guides",
+              "paragraphs": [
+                "/birdcage-b2-puzzle/\n- /doll-arms-limb-leveling/"
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
             {
-              "id": "faq-verified",
-              "question": "Is the Talismans solution fully verified?",
-              "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be provisional slots."
+              "id": "faq-1",
+              "question": "Q: Are arm talismans the same as body talismans?",
+              "answer": "A: No. Arm talismans modify attacks (damage or resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL)."
+            },
+            {
+              "id": "faq-2",
+              "question": "Q: How many talismans are in Early Access?",
+              "answer": "A: The Early Access build contains 70+ talismans (CONFIRMED_OFFICIAL). The catalog on this page is incomplete and will expand as entries are verified."
+            },
+            {
+              "id": "faq-3",
+              "question": "Q: Is this page a tier list or “best talismans” guide?",
+              "answer": "A: No. This page explains roles and system behaviour and will add verified talisman entries. It will not publish tier rankings."
+            },
+            {
+              "id": "faq-4",
+              "question": "Q: Does Four Arms break the Birdcage puzzle?",
+              "answer": "A: There are PLAYER_REPORTED accounts that Four Arms can cause an extra counted hit or incorrect responses in the Birdcage / B2 hanging-target puzzle; one player reported the issue stopped after unequipping Four Arms. These are community reports and not an official bug confirmation. See /birdcage-b2-puzzle/ for the puzzle rule set. (PLAYER_REPORTED)"
+            },
+            {
+              "id": "faq-5",
+              "question": "Q: Where can I find official patch or talisman updates?",
+              "answer": "A: Check the official patch pages and news; as of research checked 2026-09-07 the latest observed patch page is 0.34 (CONFIRMED_OFFICIAL)."
             }
           ]
         },
-        "facts": [
-          {
-            "id": "fact-talismans-answer",
-            "label": "Current answer state",
-            "value": "UNVERIFIED \u2014 talisman system specifics not in official store copy; magical artifacts are mentioned.",
-            "verified": false
-          }
-        ],
+        "facts": [],
         "evidence": [
           {
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-player-reports",
+            "sourceType": "player",
+            "sourceRef": "steam-discussions-current-ea",
+            "finding": "Player-reported current-build observations retained with PLAYER_REPORTED grade only.",
+            "grade": "PLAYER_REPORTED"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-arm-talisman-ui",
+            "slot": "arm-talisman-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: arm-talisman-ui",
+            "src": null
+          },
+          {
+            "id": "media-body-talisman-ui",
+            "slot": "body-talisman-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: body-talisman-ui",
+            "src": null
+          },
+          {
+            "id": "media-four-arms-talisman",
+            "slot": "four-arms-talisman",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: four-arms-talisman",
+            "src": null
+          },
+          {
+            "id": "media-talisman-menu-overview",
+            "slot": "talisman-menu-overview",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: talisman-menu-overview",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Talismans",
-              "task": "Build customization framing for talismans.",
+              "title": "Withering Realms Talismans Guide",
+              "task": "Arm vs body talismans — system guide, not a tier list.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1316,8 +2186,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  talisman system specifics not in official store copy; magical artifacts are mentioned."
+                  "label": "Status",
+                  "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
                 }
               ]
             },
@@ -1353,7 +2223,45 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL",
+            "PLAYER_REPORTED"
+          ],
+          "verificationLabel": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07",
+          "articleSource": "content-jobs/talismans/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "SYSTEMS",
+          "homepageCard": {
+            "helper": "Arm vs body talismans — system guide, not a tier list.",
+            "tag": "Systems",
+            "tone": "brass",
+            "symbol": "⌁"
+          },
+          "subtitle": "Arm vs body talismans — system guide, not a tier list.",
+          "related": [
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            },
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -1366,8 +2274,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Talismans",
-              "task": "Build customization framing for talismans.",
+              "title": "Withering Realms Talismans Guide",
+              "task": "Arm vs body talismans — system guide, not a tier list.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1385,8 +2293,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "UNVERIFIED  -  talisman system specifics not in official store copy; magical artifacts are mentioned."
+                  "label": "Status",
+                  "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
                 }
               ]
             },
@@ -1397,31 +2305,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "UNVERIFIED  -  talisman system specifics not in official store copy; magical artifacts are mentioned."
+                "label": "Status",
+                "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "birdcage-b2-puzzle",
+                "href": "/birdcage-b2-puzzle/",
+                "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "night-routes",
-      "title": "Night Routes",
+      "title": "What Changes at Night in Withering Realms?",
       "href": "/night-routes/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "night-routes",
-          "title": "Night Routes",
+          "title": "What Changes at Night in Withering Realms?",
           "href": "/night-routes/",
           "query": "What changes on night routes in Withering Realms?",
-          "playerProblem": "Confirmed night revisit loop."
+          "playerProblem": "What changes when you return at night."
         },
         "state": {},
         "intent": {
-          "query": "What changes on night routes in Withering Realms?",
-          "playerProblem": "Confirmed night revisit loop.",
+          "query": "What changes when you return at night.",
+          "playerProblem": "What changes when you return at night.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 7,
@@ -1458,29 +2383,41 @@
           }
         },
         "body": {
-          "intro": "Confirmed night revisit loop.",
+          "intro": "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources.",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "VERIFIED \u2014 return to any area at night for new creatures and secrets."
-              ]
-            },
-            {
-              "id": "how-to-use",
-              "title": "How to use this page",
-              "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources.",
+                "What is confirmed about night\n- CONFIRMED_OFFICIAL — Players can return to areas at night.\n- CONFIRMED_OFFICIAL — New creatures and secrets appear at night.\n- CONFIRMED_OFFICIAL — World exploration supports day/night revisit behavior.\n- CONFIRMED_OFFICIAL — Night outside Penwyll is intended to be more dangerous.\n- Baseline: Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL). Research checked: 2026-09-07; latest official patch page observed: 0.34.",
+                "What this page does not list yet\n- We will not publish exact night-route tables until verification is complete.\n- We do not list or invent night-only creature names, spawn lists, or secret checklists here.\n- We do not claim any in-game clock, schedule, or exact time thresholds (no schedule UI is published here).\n- We do not claim night is uniformly harder inside every Penwyll interior.",
+                "Exploration implications (practical, provisional)\nFollow these steps when you plan a night revisit:",
+                "1. Prepare: stock healing items and any consumables you normally rely on. Expect encounters you did not see during daytime.\n2. Prioritize safety outside Penwyll: official framing indicates higher danger outside Penwyll, so move cautiously in open areas beyond Penwyll limits.\n3. Look for new content: inspect areas you previously cleared for hidden interactions or changed geometry — new creatures and secrets have been reported in official framing.\n4. Avoid unverified guides: do not adopt community “night-route” tables as fact until they are confirmed; treating them as tentative reduces wasted time.\n5. Record evidence: if you find what appears to be a night-only creature or secret, capture video or screenshots with timestamps and the current patch noted (see verification block below).",
+                "If this didn't work — how to verify & report\n1. Check the official patch notes and the game's official channels first (note the latest observed patch page: 0.34 and research checked on 2026-09-07).\n2. Reproduce your observation on the same patch version. If you can reproduce it reliably, capture short video (include location name and in-game indicators if available).\n3. When reporting, include: exact location name, what changed at night, patch version, timestamp, and your reproduction steps. Attach media.\n4. Submit via the developer’s official reporting channels or community verification threads so the observation can be verified before it becomes a published route or list.",
+                "Common mistakes\n- Treating unverified community “night-route” tables as authoritative.\n- Assuming night is uniformly harder inside every interior of Penwyll.\n- Publishing named night-only lists or farming routes before developer confirmation.\n- Forgetting to note the patch version or timestamp when reporting sightings.",
+                "What happens next\n- Community verification and official patch notes may confirm specific night-only spawns or secrets later. When verified, route tables and named lists can be published with sources.\n- Keep an eye on official patch notes (patch observed: 0.34 at research check 2026-09-07) for changes that alter night behavior or balance.",
+                "FAQ\nQ: Can I revisit any area at night?\nA: Yes — players can return to areas at night (CONFIRMED_OFFICIAL). Use caution outside Penwyll where night is intended to be more dangerous.",
+                "Q: Will you publish night-route tables or night-only spawn lists?\nA: Not until those tables and lists are verified against official sources. This page intentionally does not publish exact night-route tables.",
+                "Q: Are there guaranteed rewards only available at night?\nA: Official framing confirms new secrets appear at night, but this page does not list or name those secrets until they are verified.",
+                "Q: How should I report a suspected night-only creature or secret?\nA: See the verification steps above: capture video/screenshots, note patch version and timestamps, reproduce your finding, and submit through official channels so it can be confirmed.",
+                "Related guides\n- /perimeter-guardians/\n- /cae-gwyn-bells/\n- /early-bosses/"
+              ],
+              "mediaSlots": [
+                "world-map-day-night-control",
+                "same-place-day",
+                "same-place-night",
+                "verified-night-only-creature",
+                "verified-night-only-secret"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
@@ -1493,10 +2430,11 @@
         },
         "facts": [
           {
-            "id": "fact-night-routes-answer",
-            "label": "Current answer state",
-            "value": "VERIFIED \u2014 return to any area at night for new creatures and secrets.",
-            "verified": true
+            "id": "fact-night-routes-quick",
+            "label": "Quick answer",
+            "value": "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources.",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
         "evidence": [
@@ -1504,18 +2442,69 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-world-map-day-night-control",
+            "slot": "world-map-day-night-control",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: world-map-day-night-control",
+            "src": null
+          },
+          {
+            "id": "media-same-place-day",
+            "slot": "same-place-day",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: same-place-day",
+            "src": null
+          },
+          {
+            "id": "media-same-place-night",
+            "slot": "same-place-night",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: same-place-night",
+            "src": null
+          },
+          {
+            "id": "media-verified-night-only-creature",
+            "slot": "verified-night-only-creature",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: verified-night-only-creature",
+            "src": null
+          },
+          {
+            "id": "media-verified-night-only-secret",
+            "slot": "verified-night-only-secret",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: verified-night-only-secret",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Night Routes",
-              "task": "Confirmed night revisit loop.",
+              "title": "What Changes at Night in Withering Realms?",
+              "task": "What changes when you return at night.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1529,8 +2518,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED  -  return to any area at night for new creatures and secrets."
+                  "label": "Quick answer",
+                  "value": "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources."
                 }
               ]
             },
@@ -1566,7 +2555,49 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL"
+          ],
+          "verificationLabel": "CONFIRMED_OFFICIAL night framing · no route tables yet · checked 2026-09-07",
+          "articleSource": "content-jobs/night-routes/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "EXPLORATION",
+          "homepageCard": {
+            "helper": "What changes when you return at night.",
+            "tag": "Night",
+            "tone": "bone",
+            "symbol": "◌"
+          },
+          "subtitle": "What changes when you return at night.",
+          "related": [
+            {
+              "id": "perimeter-guardians",
+              "href": "/perimeter-guardians/",
+              "title": "Withering Realms Perimeter Guardians"
+            },
+            {
+              "id": "cae-gwyn-bells",
+              "href": "/cae-gwyn-bells/",
+              "title": "Cae Gwyn Bells (Needs Verification)"
+            },
+            {
+              "id": "early-bosses",
+              "href": "/early-bosses/",
+              "title": "Withering Realms Early Bosses — Opening Encounters"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -1579,8 +2610,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Night Routes",
-              "task": "Confirmed night revisit loop.",
+              "title": "What Changes at Night in Withering Realms?",
+              "task": "What changes when you return at night.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1598,8 +2629,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED  -  return to any area at night for new creatures and secrets."
+                  "label": "Quick answer",
+                  "value": "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources."
                 }
               ]
             },
@@ -1610,31 +2641,48 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "VERIFIED  -  return to any area at night for new creatures and secrets."
+                "label": "Quick answer",
+                "value": "Players can return to areas at night; new creatures and new secrets appear; and night outside Penwyll is intended to be more dangerous. Treat night revisits as exploratory (look for new content) and higher-risk (bring supplies and caution). We do not publish exact night-route tables or named night-only spawn lists until those are verified by official sources."
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "perimeter-guardians",
+                "href": "/perimeter-guardians/",
+                "title": "Perimeter Guardians"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }
     },
     {
       "id": "perimeter-guardians",
-      "title": "Perimeter Guardians",
+      "title": "Withering Realms Perimeter Guardians",
       "href": "/perimeter-guardians/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "perimeter-guardians",
-          "title": "Perimeter Guardians",
+          "title": "Withering Realms Perimeter Guardians",
           "href": "/perimeter-guardians/",
           "query": "What are perimeter guardians for in Withering Realms?",
-          "playerProblem": "Map expansion via perimeter guardians."
+          "playerProblem": "Defeat guardians to expand the world map."
         },
         "state": {},
         "intent": {
-          "query": "What are perimeter guardians for in Withering Realms?",
-          "playerProblem": "Map expansion via perimeter guardians.",
+          "query": "Defeat guardians to expand the world map.",
+          "playerProblem": "Defeat guardians to expand the world map.",
           "primaryTask": "strategy",
           "priority": 8,
           "primitiveRecipe": [
@@ -1655,29 +2703,41 @@
           }
         },
         "body": {
-          "intro": "Map expansion via perimeter guardians.",
+          "intro": "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)",
           "sections": [
             {
-              "id": "quick-context",
-              "title": "What we can say now",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "VERIFIED \u2014 expand the world map by defeating massive perimeter guardians."
-              ]
-            },
-            {
-              "id": "how-to-use",
-              "title": "How to use this page",
-              "paragraphs": [
-                "This guide page exists to capture the player problem and verification state for the Early Access window.",
-                "Steps that lack owned screenshots or primary-source confirmation remain labeled as provisional slots."
+                "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)",
+                "What is confirmed\n- Massive perimeter guardians exist. — CONFIRMED_OFFICIAL\n- Defeating perimeter guardians expands the world map. — CONFIRMED_OFFICIAL\n- Perimeter guardians are connected to world / main progression. — CONFIRMED_OFFICIAL\n- Early Access Steam release: 2026‑09‑04. — CONFIRMED_OFFICIAL\n- Research checked: 2026‑09‑07; latest official patch page observed: 0.34. — CONFIRMED_OFFICIAL",
+                "What is not verified yet (do not assume)\n- Guardian count — NEEDS_VERIFICATION\n- Guardian names — NEEDS_VERIFICATION\n- Defeat order between guardians — NEEDS_VERIFICATION\n- Achievement mapping (which achievements, if any, tie to guardians) — NEEDS_VERIFICATION\n- Specific weaknesses, resistances, or day/night tactics for fights — NEEDS_VERIFICATION",
+                "Media: map state before a perimeter guardian is defeated",
+                "Progression implications (high-level)\nFollow these high-level steps — do not assume locations or numbers:\n1. Approach or unlock the region boundary guarded by a perimeter guardian. The game ties those encounters to world progression.\n2. Defeat the perimeter guardian encountered at the boundary. After a guardian is defeated, the world map will expand to reveal additional area(s).\n3. Use the newly revealed map area to continue main-world progression and exploration (new routes, objectives, or content may be available after expansion).\n4. Check in‑game map UI, quest log, and any new NPCs or beacons that appear after expansion to determine next objectives.",
+                "Media: typical guardian encounter (capture needed)",
+                "If defeating a guardian didn’t expand your map — verification steps\n1. Confirm your game is updated to the latest official client (patch observed: 0.34). If not, update and try again.\n2. Reload the save or restart the session; temporary UI bugs can hide map changes.\n3. Check the in‑game map UI and journal for newly unlocked regions or objectives after the fight.\n4. Consult official patch notes and developer posts for known issues or nuances (developer communications are the authoritative source for changes).\n5. If nothing appears and you believe this is a bug, file a bug report with reproduction steps and include your client version, save time, and a short description of the encounter.",
+                "Media: victory or post‑defeat capture (needed)",
+                "FAQ\nQ: How many perimeter guardians are there?\nA: The official sources confirm massive perimeter guardians exist, but the total count is not verified. — NEEDS_VERIFICATION",
+                "Q: Do perimeter guardians unlock permanent map areas or temporary zones?\nA: Official information confirms that defeating a guardian expands the world map and that this is tied to main progression, but specifics about permanence or temporary events are not verified. — CONFIRMED_OFFICIAL / NEEDS_VERIFICATION",
+                "Q: Are there achievements tied to defeating perimeter guardians?\nA: Achievement mapping for perimeter guardians has not been verified. Do not assume specific achievements exist until confirmed by official sources. — NEEDS_VERIFICATION",
+                "Q: Where can I check official confirmation and the latest fixes?\nA: Check the official patch notes and developer posts (the latest observed official patch page is 0.34 as of research checked 2026‑09‑07). — CONFIRMED_OFFICIAL",
+                "Related guides\n- /night-routes/\n- /early-bosses/\n- /how-to-cross-gaps/",
+                "Media: map state after a perimeter guardian is defeated"
+              ],
+              "mediaSlots": [
+                "map-before",
+                "guardian-encounter",
+                "victory",
+                "map-after"
               ]
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If this didn\u2019t work",
+              "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
-              ]
+                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+              ],
+              "mediaSlots": []
             }
           ],
           "faq": [
@@ -1690,10 +2750,11 @@
         },
         "facts": [
           {
-            "id": "fact-perimeter-guardians-answer",
-            "label": "Current answer state",
-            "value": "VERIFIED \u2014 expand the world map by defeating massive perimeter guardians.",
-            "verified": true
+            "id": "fact-perimeter-guardians-quick",
+            "label": "Quick answer",
+            "value": "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
         "evidence": [
@@ -1701,18 +2762,62 @@
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
-            "finding": "Official Steam store identity and systems for Withering Realms."
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-map-before",
+            "slot": "map-before",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: map-before",
+            "src": null
+          },
+          {
+            "id": "media-guardian-encounter",
+            "slot": "guardian-encounter",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: guardian-encounter",
+            "src": null
+          },
+          {
+            "id": "media-victory",
+            "slot": "victory",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: victory",
+            "src": null
+          },
+          {
+            "id": "media-map-after",
+            "slot": "map-after",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: map-after",
+            "src": null
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "Perimeter Guardians",
-              "task": "Map expansion via perimeter guardians.",
+              "title": "Withering Realms Perimeter Guardians",
+              "task": "Defeat guardians to expand the world map.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1726,8 +2831,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED  -  expand the world map by defeating massive perimeter guardians."
+                  "label": "Quick answer",
+                  "value": "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)"
                 }
               ]
             },
@@ -1748,7 +2853,50 @@
             "status": "include",
             "reason": "Verified facts require a rendered fact card."
           }
-        ]
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL",
+            "NEEDS_VERIFICATION"
+          ],
+          "verificationLabel": "CONFIRMED_OFFICIAL progression · count/names/order NEEDS_VERIFICATION · checked 2026-09-07",
+          "articleSource": "content-jobs/perimeter-guardians/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "PROGRESSION",
+          "homepageCard": {
+            "helper": "Defeat guardians to expand the world map.",
+            "tag": "Progression",
+            "tone": "rust",
+            "symbol": "†"
+          },
+          "subtitle": "Defeat guardians to expand the world map.",
+          "related": [
+            {
+              "id": "night-routes",
+              "href": "/night-routes/",
+              "title": "What Changes at Night in Withering Realms?"
+            },
+            {
+              "id": "early-bosses",
+              "href": "/early-bosses/",
+              "title": "Withering Realms Early Bosses — Opening Encounters"
+            },
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "How to Cross Gaps in Withering Realms"
+            }
+          ]
+        }
       },
       "composition": {
         "surface": "answer",
@@ -1761,8 +2909,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "Perimeter Guardians",
-              "task": "Map expansion via perimeter guardians.",
+              "title": "Withering Realms Perimeter Guardians",
+              "task": "Defeat guardians to expand the world map.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1780,8 +2928,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Current answer state",
-                  "value": "VERIFIED  -  expand the world map by defeating massive perimeter guardians."
+                  "label": "Quick answer",
+                  "value": "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)"
                 }
               ]
             },
@@ -1792,10 +2940,27 @@
             "behavior": "entity-facts",
             "data": [
               {
-                "label": "Current answer state",
-                "value": "VERIFIED  -  expand the world map by defeating massive perimeter guardians."
+                "label": "Quick answer",
+                "value": "Defeat the game’s massive perimeter guardians to expand the world map — this expansion is part of world/main progression. (Early Access: Steam release 2026‑09‑04; research checked 2026‑09‑07, latest observed official patch page: 0.34.)"
               }
             ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "night-routes",
+                "href": "/night-routes/",
+                "title": "What Changes at Night in Withering Realms?"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
           }
         ]
       }

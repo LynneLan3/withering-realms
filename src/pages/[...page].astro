@@ -3,6 +3,7 @@ import generated from '../v4/generated/example-site.json';
 import RealmsShell from '../presentation/RealmsShell.astro';
 import RealmsHeader from '../presentation/RealmsHeader.astro';
 import RealmsFooter from '../presentation/RealmsFooter.astro';
+import MediaSlots from '../presentation/MediaSlots.astro';
 import { icon } from '../presentation/icons';
 
 export function getStaticPaths() {
@@ -12,29 +13,52 @@ export function getStaticPaths() {
 type PageProp = (typeof generated.pages)[number];
 const page = Astro.props.page as PageProp;
 const body = page.pageData.body;
-const facts = page.pageData.facts ?? [];
-const primaryFact = facts[0];
-const answerLead = primaryFact?.value ?? body.intro ?? page.pageData.intent.playerProblem;
-const quickSection = body.sections.find((section) => /quick|what we can say/i.test(section.title)) ?? body.sections[0];
-const failSection = body.sections.find((section) => /didn.?t work|if this/i.test(section.title) || section.id.includes('didnt'));
-const stepSections = body.sections.filter((section) => section !== quickSection && section !== failSection);
-const nextPage = generated.pages.find((item) => item.id !== page.id && item.href);
-const related = generated.pages.find((item) => item.id !== page.id && item.id !== nextPage?.id) ?? nextPage;
-const categoryLabel = page.pageData.intent.primaryTask?.toUpperCase?.() ?? 'GUIDE';
-const verified = Boolean(primaryFact?.verified);
+const publishing = (page.pageData as any).publishing ?? {};
+const presentation = (page.pageData as any).presentation ?? {};
+const media = (page.pageData.media ?? []) as Array<{
+	slot: string;
+	caption: string;
+	status: string;
+	src?: string | null;
+	alt?: string;
+	width?: number;
+	height?: number;
+	grade?: string;
+	sourceUrl?: string;
+	timestamp?: string;
+}>;
+const mediaBySlot = Object.fromEntries(media.map((item) => [item.slot, item]));
+const related = (presentation.related ?? []) as Array<{ id: string; href: string; title: string }>;
+const evidence = page.pageData.evidence ?? [];
+
+const quickSection = body.sections.find((section) => section.id === 'quick-answer' || /quick/i.test(section.title));
+const failSection = body.sections.find((section) => section.id === 'if-this-didnt-work' || /didn.?t work|if this/i.test(section.title));
+const faqSection = body.sections.find((section) => section.id === 'faq' || /^faq$/i.test(section.title));
+const contentSections = body.sections.filter((section) => section !== quickSection && section !== failSection && section !== faqSection);
+
+const quickText = quickSection?.paragraphs?.[0] ?? body.intro ?? page.pageData.intent.playerProblem;
+const categoryLabel = presentation.categoryLabel ?? page.pageData.intent.primaryTask?.toUpperCase?.() ?? 'GUIDE';
+const subtitle = presentation.subtitle ?? page.pageData.intent.playerProblem;
+const verificationLabel = publishing.verificationLabel ?? (publishing.needsVerification ? 'Needs verification on current Early Access build' : 'Checked against current Early Access research window');
+const robots = publishing.index === false || publishing.draft ? 'noindex,follow' : 'index,follow';
+const titleParts = page.title.includes('—') ? page.title.split('—') : page.title.includes(':') ? page.title.split(':') : null;
+const h1Main = titleParts ? titleParts[0].trim() : page.title;
+const h1Em = titleParts ? titleParts.slice(1).join('—').trim() : subtitle;
+
 const toc = [
 	{ label: 'Quick answer', href: '#quick-answer' },
-	...stepSections.slice(0, 2).map((section, index) => ({ label: section.title, href: `#step-${index}` })),
+	...contentSections.slice(0, 2).map((section, index) => ({ label: section.title, href: `#section-${index}` })),
 	...(failSection ? [{ label: failSection.title, href: '#didnt-work' }] : []),
 ].slice(0, 4);
 ---
 <RealmsShell
 	title={`${page.title} / ${generated.game.name}`}
-	description={page.pageData.intent.playerProblem}
+	description={quickText}
 	canonicalPath={page.href}
+	robots={robots}
 >
 	<RealmsHeader variant="solid" currentPath={page.href} />
-	<main class="article-page page-width" data-v4-page={page.id}>
+	<main class="article-page page-width" data-v4-page={page.id} data-draft={publishing.draft ? 'true' : 'false'}>
 		<div class="article-breadcrumb">
 			<a href="/category/"><span set:html={icon.arrowLeft}></span> All guides</a>
 			<span>/</span>
@@ -43,48 +67,41 @@ const toc = [
 		<div class="article-layout">
 			<article>
 				<div class="article-category">{categoryLabel} <span>·</span> {generated.game.name.toUpperCase()}</div>
-				<h1>{page.title.includes(':') ? (
-					<>
-						{page.title.split(':')[0]}:<br /><em>{page.title.split(':').slice(1).join(':').trim() || page.pageData.intent.playerProblem}</em>
-					</>
-				) : (
-					<>
-						{page.title}<br /><em>{page.pageData.intent.playerProblem}</em>
-					</>
-				)}</h1>
-				<p class="article-answer">{answerLead}</p>
-				<div class="article-hero">
-					<img src="/assets/images/screenshots/screenshot_city.jpg" alt="" />
-					<span>PENWYLL / FIELD NOTE</span>
+				<h1>{h1Main}{h1Em && (<><br /><em>{h1Em}</em></>)}</h1>
+				<p class="article-answer">{quickText}</p>
+				<div class="answer-status" style="margin: -18px 0 28px; color: #79b99a; font-size: 10px; display: flex; gap: 8px; align-items: center;">
+					<span set:html={icon.shieldSm}></span>
+					<span>{verificationLabel}</span>
+					{publishing.draft && <span class="state-tags"><span class="muted">Draft</span><span class="muted">noindex</span></span>}
 				</div>
+
 				<div class="quick-answer" id="quick-answer">
 					<div class="quick-icon"><span set:html={icon.sparklesLg}></span></div>
 					<div>
 						<span class="section-kicker">Quick answer</span>
-						<p>{quickSection?.paragraphs?.[0] ?? answerLead}</p>
+						{(quickSection?.paragraphs ?? [quickText]).map((paragraph) => <p>{paragraph}</p>)}
 						<span class="answer-status">
 							<span set:html={icon.shieldSm}></span>
-							{verified ? 'Confirmed mechanic · Verified on current build' : 'Provisional · Needs verification on current Early Access build'}
+							{verificationLabel}
 						</span>
 					</div>
 				</div>
-				{stepSections.length > 0 && (
-					<div class="steps">
-						{stepSections.map((section, index) => (
-							<div class="step" id={`step-${index}`}>
-								<span class="step-number">{String(index + 1).padStart(2, '0')}</span>
-								<div>
-									<h3>{section.title}</h3>
-									{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-								</div>
-								<div class="step-photo">
-									<div class="photo-haze"></div>
-									<span>FIELD NOTE {String(index + 1).padStart(2, '0')}</span>
-								</div>
+
+				<MediaSlots slots={(quickSection as any)?.mediaSlots || []} mediaBySlot={mediaBySlot} />
+
+				{contentSections.map((section, index) => (
+					<div class="steps" id={`section-${index}`}>
+						<div class="step" style="grid-template-columns: 50px minmax(0, 1fr);">
+							<span class="step-number">{String(index + 1).padStart(2, '0')}</span>
+							<div>
+								<h3>{section.title}</h3>
+								{section.paragraphs.map((paragraph) => <p set:html={paragraph.replace(/\n/g, '<br />')}></p>)}
+								<MediaSlots slots={(section as any).mediaSlots || []} mediaBySlot={mediaBySlot} />
 							</div>
-						))}
+						</div>
 					</div>
-				)}
+				))}
+
 				{failSection && (
 					<div class="didnt-work" id="didnt-work">
 						<div class="warning-mark">!</div>
@@ -93,37 +110,56 @@ const toc = [
 							<h3>{failSection.title}</h3>
 							{failSection.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 							<div class="state-tags">
-								<span>{verified ? 'Confirmed mechanic' : 'Needs verification'}</span>
-								<span>Patch-sensitive</span>
-								<span class="muted">Early Access</span>
+								{(publishing.evidenceSummary ?? []).map((grade: string) => <span>{grade}</span>)}
+								<span class="muted">EA {publishing.eaRelease ?? '2026-09-04'}</span>
+								<span class="muted">Patch page {publishing.patchObserved ?? '0.34'}</span>
 							</div>
 						</div>
 					</div>
 				)}
+
 				{(body.faq?.length ?? 0) > 0 && (
-					<div class="steps" style="margin-top: 48px;">
+					<div class="steps" style="margin-top: 48px;" id="faq">
 						{body.faq.map((item, index) => (
-							<div class="step" id={`faq-${index}`}>
+							<div class="step" style="grid-template-columns: 50px minmax(0, 1fr);">
 								<span class="step-number">Q{index + 1}</span>
 								<div>
 									<h3>{item.question}</h3>
 									<p>{item.answer}</p>
 								</div>
-								<div class="step-photo">
-									<div class="photo-haze"></div>
-									<span>FAQ</span>
-								</div>
 							</div>
 						))}
 					</div>
 				)}
-				{nextPage && (
+
+				<div class="rail-block" style="margin-top: 52px; border-top: 1px solid rgba(229,224,211,.16); padding-top: 20px;">
+					<span class="section-kicker">Evidence / sources</span>
+					{evidence.map((item: any) => (
+						<p style="color: #aeb0a6; font-size: 12px; line-height: 1.6; margin: 0 0 10px;">
+							<strong style="color: #79b99a;">{item.grade ?? item.sourceType}</strong>
+							{' — '}
+							{item.finding}
+							{item.sourceRef?.startsWith('http') ? (
+								<> (<a href={item.sourceRef} style="color: #b7a356;">{item.sourceRef}</a>)</>
+							) : item.sourceRef ? (
+								<> ({item.sourceRef})</>
+							) : null}
+						</p>
+					))}
+					<p style="color: #8c8b82; font-size: 10px; letter-spacing: .08em; text-transform: uppercase;">
+						Research checked {publishing.researchChecked ?? '2026-09-07'} · Patch page {publishing.patchObserved ?? '0.34'}
+					</p>
+				</div>
+
+				{related.length > 0 && (
 					<div class="article-next">
-						<span class="section-kicker">Next problem</span>
-						<a href={nextPage.href}>
-							<span>{nextPage.title}</span>
-							<span set:html={icon.arrowRight}></span>
-						</a>
+						<span class="section-kicker">Related guides</span>
+						{related.map((item) => (
+							<a href={item.href}>
+								<span>{item.title}</span>
+								<span set:html={icon.arrowRight}></span>
+							</a>
+						))}
 					</div>
 				)}
 			</article>
@@ -135,14 +171,14 @@ const toc = [
 					))}
 				</div>
 				<div class="rail-block patch-block">
-					<span class="section-kicker">Current patch</span>
-					<strong>Early Access</strong>
-					<span class="verified"><span set:html={icon.shieldSm}></span> Check against live build</span>
+					<span class="section-kicker">Verification</span>
+					<strong>{publishing.draft ? 'Draft' : 'EA live'}</strong>
+					<span class="verified"><span set:html={icon.shieldSm}></span> {verificationLabel}</span>
 				</div>
-				{related && (
+				{related[0] && (
 					<div class="rail-block related-block">
 						<span class="section-kicker">Related guide</span>
-						<a href={related.href}>{related.title} <span set:html={icon.external}></span></a>
+						<a href={related[0].href}>{related[0].title} <span set:html={icon.external}></span></a>
 					</div>
 				)}
 			</aside>

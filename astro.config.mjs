@@ -31,5 +31,13 @@ function gwGa4Runtime() {
 
 export default defineConfig({
 	site: "https://withering-realms.vercel.app/",
-	integrations: [sitemap(), gwGa4Runtime()],
+	integrations: [
+		sitemap({
+			filter: (page) =>
+				!page.includes('/category/') &&
+				!page.includes('/search/') &&
+				!page.includes('/cae-gwyn-bells/'),
+		}),
+		gwGa4Runtime(),
+	],
 });

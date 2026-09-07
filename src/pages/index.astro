@@ -6,20 +6,22 @@ import RealmsFooter from '../presentation/RealmsFooter.astro';
 import { icon } from '../presentation/icons';
 
 const pagesById = Object.fromEntries(generated.pages.map((page) => [page.id, page]));
-const stuckIds = ['birdcage-b2-puzzle', 'how-to-cross-gaps', 'cae-gwyn-bells', 'early-bosses'] as const;
-const stuckMeta = [
-	{ helper: 'The order for the four bells.', tag: 'Puzzle', tone: 'brass', symbol: '⌁' },
-	{ helper: 'Find the Doll arm upgrade that reaches them.', tag: 'Traversal', tone: 'green', symbol: '↗' },
-	{ helper: 'What changes after the first chime.', tag: 'Cae Gwyn', tone: 'bone', symbol: '◌' },
-	{ helper: 'A calm route through the first encounters.', tag: 'Combat', tone: 'rust', symbol: '†' },
-] as const;
+const stuckIds = ((generated.homepage as any).stuckIds ?? ['birdcage-b2-puzzle', 'how-to-cross-gaps', 'cae-gwyn-bells', 'early-bosses']) as string[];
+
 const stuckGuides = stuckIds.map((id, index) => {
 	const page = pagesById[id];
+	const card = (page?.pageData as any)?.presentation?.homepageCard ?? {};
+	const publishing = (page?.pageData as any)?.publishing ?? {};
 	return {
-		...stuckMeta[index],
 		title: page?.title ?? id,
-		href: page?.href ?? `/${id}/`,
+		href: publishing.draft ? `${page?.href ?? `/${id}/`}#quick-answer` : (page?.href ?? `/${id}/`),
+		helper: card.helper ?? page?.pageData?.intent?.playerProblem ?? '',
+		tag: card.tag ?? 'Guide',
+		tone: card.tone ?? 'brass',
+		symbol: card.symbol ?? '⌁',
 		index,
+		draft: Boolean(publishing.draft),
+		verificationLabel: publishing.verificationLabel ?? '',
 	};
 });
 
@@ -28,25 +30,35 @@ const guideImages = [
 	'characters/character_cutouts.jpg',
 	'screenshots/screenshot_world_map.jpg',
 ] as const;
-const guideCategories = ['Puzzles', 'Weapons', 'Night routes'] as const;
-const latestIds = ['birdcage-b2-puzzle', 'doll-arms-limb-leveling', 'night-routes'] as const;
-const latestGuides = latestIds.map((id, index) => {
-	const page = pagesById[id];
-	return {
-		title: page?.title ?? id,
-		href: page?.href ?? `/${id}/`,
-		category: guideCategories[index],
-		image: guideImages[index],
-		status: page?.pageData?.facts?.[0]?.verified ? 'Verified on current build' : 'Needs verification',
-		time: 'Field note',
-	};
-});
+
+function latestGuidesFromMetadata() {
+	const scored = generated.pages
+		.map((page, index) => {
+			const publishing = (page.pageData as any).publishing ?? {};
+			if (publishing.draft || publishing.publishStatus !== 'published') return null;
+			const grades = publishing.evidenceSummary ?? [];
+			const rank = grades.includes('CONFIRMED_OFFICIAL') ? 3 : grades.includes('CONFIRMED_LIVE') ? 2 : grades.includes('PLAYER_REPORTED') ? 1 : 0;
+			return { page, publishing, rank, index };
+		})
+		.filter(Boolean) as Array<{ page: (typeof generated.pages)[number]; publishing: any; rank: number; index: number }>;
+	scored.sort((a, b) => b.rank - a.rank || a.index - b.index);
+	return scored.slice(0, 3).map((item, index) => ({
+		title: item.page.title,
+		href: item.page.href,
+		category: (item.page.pageData as any).presentation?.categoryLabel ?? 'Guide',
+		image: guideImages[index % guideImages.length],
+		status: item.publishing.verificationLabel ?? 'Checked on current EA research window',
+		time: `Checked ${item.publishing.researchChecked ?? '2026-09-07'}`,
+	}));
+}
+
+const latestGuides = latestGuidesFromMetadata();
 
 const locations = [
 	{ label: 'Penwyll', href: '/category/' },
-	{ label: 'Beynon House', href: '/category/' },
-	{ label: 'Saintswood', href: '/how-to-cross-gaps/' },
-	{ label: 'Graveyards', href: '/category/' },
+	{ label: 'Beynon House', href: '/early-bosses/' },
+	{ label: 'Saintswood', href: '/early-bosses/' },
+	{ label: 'Graveyards', href: '/how-to-cross-gaps/' },
 	{ label: 'Tombs', href: '/category/' },
 	{ label: 'Rotting Estates', href: '/perimeter-guardians/' },
 	{ label: 'Night Routes', href: '/night-routes/' },
@@ -61,6 +73,7 @@ const dollLinks = [
 ];
 
 const primaryGuide = pagesById['birdcage-b2-puzzle']?.href ?? '/category/';
+const nightPage = pagesById['night-routes'];
 const tagline = 'A practical field guide for the places Penwyll would rather keep hidden.';
 ---
 <RealmsShell title={`${generated.game.name} Guide`} description={tagline} canonicalPath="/">
@@ -74,11 +87,11 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 				<p class="hero-lede">{tagline}</p>
 				<div class="hero-actions">
 					<a class="button button-primary" href={primaryGuide}>Find a guide <span set:html={icon.arrowRight}></span></a>
-					<a class="button button-quiet" href="/category/"><span set:html={icon.map}></span> Explore Penwyll</a>
+					<a class="button button-quiet" href="/perimeter-guardians/"><span set:html={icon.map}></span> Explore Penwyll</a>
 				</div>
 				<div class="status-row">
 					<span class="status-chip"><span class="live-dot"></span> Early Access</span>
-					<span class="verified"><span set:html={icon.shield}></span> Verified on current build</span>
+					<span class="verified"><span set:html={icon.shield}></span> Research checked 2026-09-07</span>
 				</div>
 			</div>
 			<div class="hero-caption">PENWYLL / SOUTHERN APPROACH <span>01</span></div>
@@ -113,7 +126,7 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 						</div>
 						<div class="problem-copy">
 							<span>{guide.tag}</span>
-							<h3>{guide.title}</h3>
+							<h3>{guide.draft ? 'Cae Gwyn Bells' : guide.title.replace(/^Withering Realms\s+/i, '').split('—')[0].trim()}</h3>
 							<p>{guide.helper}</p>
 							<span class="card-arrow" set:html={icon.arrowRight}></span>
 						</div>
@@ -128,7 +141,7 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 					<span class="section-kicker">A living map of the county</span>
 					<h2>EXPLORE PENWYLL</h2>
 				</div>
-				<a class="text-link heading-link" href="/category/">Open full map <span set:html={icon.arrowRightSm}></span></a>
+				<a class="text-link heading-link" href="/perimeter-guardians/">Open full map <span set:html={icon.arrowRightSm}></span></a>
 			</div>
 			<a class="map-feature" href="/perimeter-guardians/">
 				<img src="/assets/images/screenshots/screenshot_world_map.jpg" alt="Map of Penwyll" />
@@ -140,7 +153,7 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 				<div class="map-copy">
 					<span class="section-kicker">The county map</span>
 					<h3>Every road leads<br /><em>somewhere.</em></h3>
-					<p>Locations, shortcuts, night changes and the things no signpost mentions.</p>
+					<p>Perimeter guardians expand the map. Exact counts and names remain unverified.</p>
 					<span class="text-link">Browse locations <span set:html={icon.arrowRightSm}></span></span>
 				</div>
 			</a>
@@ -159,7 +172,7 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 			<div class="doll-copy">
 				<span class="section-kicker">A mechanic, not a menu</span>
 				<h2>BUILD<br /><em>THE DOLL</em></h2>
-				<p>The Doll is assembled for the problem in front of you. Find the right arm, bind a talisman, let Clover see what Althea cannot.</p>
+				<p>The Doll is assembled for the problem in front of you. Start with Doll Arms / Limb Leveling, then Talismans.</p>
 				<div class="doll-links">
 					{dollLinks.map((item, index) => (
 						<a href={item.href}>
@@ -205,12 +218,12 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 			</div>
 		</section>
 
-		<a class="night-section page-width" href="/night-routes/">
+		<a class="night-section page-width" href={nightPage?.href ?? '/night-routes/'}>
 			<div class="night-image"></div>
 			<div class="night-copy">
 				<span class="section-kicker">The same place. A different truth.</span>
 				<h2>NIGHT CHANGES<br /><em>EVERYTHING.</em></h2>
-				<p>Routes close. Enemies move. The dead become conversational.</p>
+				<p>{nightPage?.pageData?.intent?.playerProblem ?? 'Return at night for new creatures and secrets.'}</p>
 				<span class="button button-primary">Explore night guides <span set:html={icon.arrowRight}></span></span>
 			</div>
 			<span class="night-coordinate">51° 54' N / 3° 23' W</span>
