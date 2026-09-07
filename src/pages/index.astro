@@ -12,8 +12,15 @@ const stuckGuides = stuckIds.map((id, index) => {
 	const page = pagesById[id];
 	const card = (page?.pageData as any)?.presentation?.homepageCard ?? {};
 	const publishing = (page?.pageData as any)?.publishing ?? {};
+	const fullTitle = page?.title ?? id;
+	const shortTitle =
+		card.shortTitle ??
+		(fullTitle.startsWith('Withering Realms — ')
+			? fullTitle.slice('Withering Realms — '.length).trim()
+			: fullTitle.replace(/^Withering Realms\s+/i, '').split('—')[0].trim());
 	return {
-		title: page?.title ?? id,
+		title: fullTitle,
+		cardTitle: shortTitle,
 		href: publishing.draft ? `${page?.href ?? `/${id}/`}#quick-answer` : (page?.href ?? `/${id}/`),
 		helper: card.helper ?? page?.pageData?.intent?.playerProblem ?? '',
 		tag: card.tag ?? 'Guide',
@@ -126,7 +133,7 @@ const tagline = 'A practical field guide for the places Penwyll would rather kee
 						</div>
 						<div class="problem-copy">
 							<span>{guide.tag}</span>
-							<h3>{guide.draft ? 'Cae Gwyn Bells' : guide.title.replace(/^Withering Realms\s+/i, '').split('—')[0].trim()}</h3>
+							<h3>{guide.draft ? 'Cae Gwyn Bells' : guide.cardTitle}</h3>
 							<p>{guide.helper}</p>
 							<span class="card-arrow" set:html={icon.arrowRight}></span>
 						</div>

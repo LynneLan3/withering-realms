@@ -41,6 +41,12 @@
                 "pageId": "birdcage-b2-puzzle"
               },
               {
+                "id": "institute-code-words-puzzle",
+                "label": "Institute Code Words Puzzle",
+                "href": "/institute-code-words-puzzle/",
+                "pageId": "institute-code-words-puzzle"
+              },
+              {
                 "id": "how-to-cross-gaps",
                 "label": "How to Cross Gaps in Withering Realms",
                 "href": "/how-to-cross-gaps/",
@@ -104,6 +110,7 @@
   "homepage": {
     "pageIds": [
       "birdcage-b2-puzzle",
+      "institute-code-words-puzzle",
       "how-to-cross-gaps",
       "cae-gwyn-bells",
       "early-bosses",
@@ -115,6 +122,7 @@
     "assets": [],
     "stuckIds": [
       "birdcage-b2-puzzle",
+      "institute-code-words-puzzle",
       "how-to-cross-gaps",
       "cae-gwyn-bells",
       "early-bosses"
@@ -126,6 +134,7 @@
         "label": "Stuck Right Now",
         "pageIds": [
           "birdcage-b2-puzzle",
+          "institute-code-words-puzzle",
           "how-to-cross-gaps",
           "cae-gwyn-bells",
           "early-bosses"
@@ -551,6 +560,380 @@
                 "id": "how-to-cross-gaps",
                 "href": "/how-to-cross-gaps/",
                 "title": "How to Cross Gaps"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "institute-code-words-puzzle",
+      "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
+      "href": "/institute-code-words-puzzle/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "institute-code-words-puzzle",
+          "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
+          "href": "/institute-code-words-puzzle/",
+          "query": "How do I solve the Bellflower Occult Institute code words / basement puzzle in Withering Realms?",
+          "playerProblem": "Randomized basement code uses book-word order — not a fixed online password."
+        },
+        "state": {},
+        "intent": {
+          "query": "Randomized basement code uses book-word order — not a fixed online password.",
+          "playerProblem": "Randomized basement code uses book-word order — not a fixed online password.",
+          "primaryTask": "procedure",
+          "prototype": "P4",
+          "priority": 1,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P01",
+              "status": "conditional",
+              "reason": "Requirements need real prerequisites."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "include",
+              "reason": "Procedure answers are ordered actions."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the procedure."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is written in blood on the floor; count the dots and use those numbers for Book 1’s word numbers when the clue points there (PLAYER_REPORTED).",
+          "sections": [
+            {
+              "id": "quick-answer",
+              "title": "Quick Answer",
+              "paragraphs": [
+                "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is written in blood on the floor; count the dots and use those numbers for Book 1’s word numbers when the clue points there (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "how-book-word-order-works",
+              "title": "How Book-Word Order Works",
+              "paragraphs": [
+                "The code on the basement door is read as book number → word number. Each pair points to a specific word in a specific book. Example method (for clarity only):  \n  - 1-6 = Book 1, word 6  \n  - 2-3 = Book 2, word 3  \n- Do not treat any concrete word sequences you find online as a guaranteed solution for your game; players report the code is randomized (PLAYER_REPORTED).  \n- Players in the discussion reported one observed book-order labeling as Book 1 = Raum, Book 2 = Glasya, Book 3 = Astaroth — present here only as player-reported examples of names seen on the board, not as canonical lore or a universal order (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "where-to-find-the-book-order",
+              "title": "Where to Find the Book Order",
+              "paragraphs": [
+                "1. Go to the institute’s upper floor.  \n2. Look for the board/blackboard that lists the books or shows the current order — players report the upper-floor board displays the book order you must use (PLAYER_REPORTED).  \n3. Note the exact order and any names shown there before you return to the basement puzzle. Do not assume the order from someone else’s screenshot or forum post; confirm it in your own game."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "how-to-solve-the-bathroom-code",
+              "title": "How to Solve the Bathroom Code",
+              "paragraphs": [
+                "The bathroom stall clue is written in blood on the floor (PLAYER_REPORTED). The intended method reported by players is to count the dots.  \n- Use the dot counts as numbers that correspond to Book 1’s word numbers. Example (method only): if you count 3 dots, then one of the Book 1 positions to use is word 3.  \n- Steps:  \n  1. Enter the bathroom stall with the blood-marked floor.  \n  2. Count the distinct dots carefully (don’t include accidental stains).  \n  3. Record those numbers in order — those numbers map to word positions within whatever book is currently Book 1 (as shown on the upper-floor board)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "how-to-solve-the-basement-code",
+              "title": "How to Solve the Basement Code",
+              "paragraphs": [
+                "Follow these steps in player order:",
+                "1. Confirm book order upstairs: read the board/blackboard on the upper floor and write down which book is Book 1, Book 2, Book 3 (PLAYER_REPORTED evidence says the board shows the order).  \n2. Use the bathroom clue (if present): count the dots on the bathroom stall floor and note those numbers as Book 1 word positions (PLAYER_REPORTED).  \n3. Locate the physical books indicated by the board order and open each book to the word index or simply count words in the book text to find the number-th word for each pair. Example interpretation: a code pair 2-3 means “from the book currently labeled Book 2, take word number 3.” (This is the reading method; actual pairs will vary per game.)  \n4. Enter the words into the basement door/panel in the exact sequence the puzzle requires (follow the UI prompt in your game).  \n5. If the door rejects your input, re-check: the upper-floor board for book order, your dot counts in the bathroom, and make sure you counted words in the correct book and in the correct order. Repeat the steps above — the puzzle is randomized per game instance (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "why-online-codes-may-not-match-your-game",
+              "title": "Why Online Codes May Not Match Your Game",
+              "paragraphs": [
+                "Players report the basement code is randomized, so a code posted online will often not match your playthrough (PLAYER_REPORTED). Never assume an online string is universal.  \n- Some forum posts show concrete examples (for example: “RAUM 3 2 1” or “RAUM 1 GLASYA 5 4”) — those are examples players have seen or posted, not guaranteed answers for everyone. Do not use them as a universal solution."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "common-mistakes",
+              "title": "Common Mistakes",
+              "paragraphs": [
+                "Using another player’s full code without checking your own upper-floor book order.  \n- Misreading pair format (treating the pair as word→book instead of book→word). The correct reading is book number → word number.  \n- Failing to confirm the board upstairs before extracting words from books.  \n- Miscounting the bathroom dots or including unrelated floor stains as dots.  \n- Assuming book names or order are fixed across all games — player reports show order is something you must confirm in your own run (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "faq",
+              "title": "FAQ",
+              "paragraphs": [
+                "Q: Is there one code that opens everyone’s basement door?  \nA: No. Players report the basement code is randomized, so there is no single universal password (PLAYER_REPORTED).",
+                "Q: How do I read a pair like “1-6”?  \nA: Read it as Book 1 → word 6: go to whichever book the upper-floor board labels Book 1 and take the sixth word (example method only).",
+                "Q: Where do I find the book order?  \nA: On the upper floor — a board/blackboard shows the current book order (PLAYER_REPORTED). Check it in your game before attempting the basement puzzle.",
+                "Q: What is the bathroom clue and how does it help?  \nA: Players report a bathroom-stall clue written in blood on the floor; you count the dots and use those numbers as Book 1 word positions (PLAYER_REPORTED).",
+                "Q: Someone posted a working code online — why didn’t it work for me?  \nA: Because the basement code appears to be randomized per playthrough. That online code was valid for that player’s game state only (PLAYER_REPORTED)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "sources",
+              "title": "Sources",
+              "paragraphs": [
+                "Steam discussion thread (PLAYER_REPORTED): https://steamcommunity.com/app/3441990/discussions/0/591814398006493805/ — accepted answer and follow-up posts reporting: “The code is in book-word order,” book-order is shown upstairs, the basement code is randomized, and bathroom dots method.  \n- Withering Realms (CONFIRMED_OFFICIAL): Early Access Steam release 2026-09-04. Research checked 2026-09-07; latest official patch page observed: 0.34."
+              ],
+              "mediaSlots": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Is there one code that opens everyone’s basement door?",
+              "answer": "No. Players report the basement code is randomized, so there is no single universal password (PLAYER_REPORTED)."
+            },
+            {
+              "id": "faq-2",
+              "question": "How do I read a pair like “1-6”?",
+              "answer": "Read it as Book 1 → word 6: go to whichever book the upper-floor board labels Book 1 and take the sixth word (example method only)."
+            },
+            {
+              "id": "faq-3",
+              "question": "Where do I find the book order?",
+              "answer": "On the upper floor — a board/blackboard shows the current book order (PLAYER_REPORTED). Check it in your game before attempting the basement puzzle."
+            },
+            {
+              "id": "faq-4",
+              "question": "What is the bathroom clue and how does it help?",
+              "answer": "Players report a bathroom-stall clue written in blood on the floor; you count the dots and use those numbers as Book 1 word positions (PLAYER_REPORTED)."
+            },
+            {
+              "id": "faq-5",
+              "question": "Someone posted a working code online — why didn’t it work for me?",
+              "answer": "Because the basement code appears to be randomized per playthrough. That online code was valid for that player’s game state only (PLAYER_REPORTED)."
+            }
+          ],
+          "metaDescription": "The Bellflower Occult Institute basement code is randomized; learn book-word order, confirm books on the upper floor, and use bathroom dots for Book 1 — not a fixed online password."
+        },
+        "facts": [
+          {
+            "id": "fact-institute-code-words-puzzle-quick",
+            "label": "Quick answer",
+            "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w",
+            "verified": true,
+            "grade": "PLAYER_REPORTED"
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "ev-steam-discussion",
+            "sourceType": "player",
+            "sourceRef": "https://steamcommunity.com/app/3441990/discussions/0/591814398006493805/",
+            "finding": "Steam discussion: accepted book-word-order answer; players report randomized basement code, upper-floor book board, and bathroom dots method.",
+            "grade": "PLAYER_REPORTED"
+          },
+          {
+            "evidenceId": "ev-steam",
+            "sourceType": "official",
+            "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+            "finding": "Official Steam store identity and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-official-site",
+            "sourceType": "official",
+            "sourceRef": "https://witheringrealms.com/",
+            "finding": "Official Withering Realms site.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          }
+        ],
+        "media": [],
+        "assets": [],
+        "primitiveData": [
+          {
+            "instanceId": "answer-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
+              "task": "Randomized basement code uses book-word order — not a fixed online password.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam-discussion"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "verified-facts",
+            "primitiveId": "E01",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam-discussion"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P01",
+            "status": "omit",
+            "reason": "Requirements need real prerequisites."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "include",
+            "reason": "Procedure answers are ordered actions."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "omit",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the procedure."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "evidenceSummary": [
+            "PLAYER_REPORTED",
+            "CONFIRMED_OFFICIAL"
+          ],
+          "verificationLabel": "PLAYER_REPORTED book-word rule · randomized code · checked 2026-09-07",
+          "articleSource": "content-jobs/institute-code-words-puzzle/article.md",
+          "writer": "APIMart/shared-article-writer",
+          "metaDescription": "The Bellflower Occult Institute basement code is randomized; learn book-word order, confirm books on the upper floor, and use bathroom dots for Book 1 — not a fixed online password."
+        },
+        "presentation": {
+          "categoryLabel": "PUZZLES",
+          "homepageCard": {
+            "helper": "Randomized basement code uses book-word order — not a fixed online password.",
+            "tag": "Puzzle",
+            "tone": "brass",
+            "symbol": "⌁",
+            "shortTitle": "Institute Code Words Puzzle"
+          },
+          "subtitle": "Randomized basement code uses book-word order — not a fixed online password.",
+          "related": [
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            }
+          ]
+        }
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "answer-header",
+            "payload": {
+              "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
+              "task": "Randomized basement code uses book-word order — not a fixed online password.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam-discussion"
+            ],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "E01",
+            "label": "Fact Card",
+            "interactive": false,
+            "instanceId": "verified-facts",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam-discussion"
+            ],
+            "mediaRefs": [],
+            "behavior": "entity-facts",
+            "data": [
+              {
+                "label": "Quick answer",
+                "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+              }
+            ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "birdcage-b2-puzzle",
+                "href": "/birdcage-b2-puzzle/",
+                "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
               }
             },
             "evidenceRefs": [],

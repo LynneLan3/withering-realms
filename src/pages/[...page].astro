@@ -37,6 +37,7 @@ const faqSection = body.sections.find((section) => section.id === 'faq' || /^faq
 const contentSections = body.sections.filter((section) => section !== quickSection && section !== failSection && section !== faqSection);
 
 const quickText = quickSection?.paragraphs?.[0] ?? body.intro ?? page.pageData.intent.playerProblem;
+const metaDescription = publishing.metaDescription ?? (body as any).metaDescription ?? quickText;
 const categoryLabel = presentation.categoryLabel ?? page.pageData.intent.primaryTask?.toUpperCase?.() ?? 'GUIDE';
 const subtitle = presentation.subtitle ?? page.pageData.intent.playerProblem;
 const verificationLabel = publishing.verificationLabel ?? (publishing.needsVerification ? 'Needs verification on current Early Access build' : 'Checked against current Early Access research window');
@@ -53,7 +54,7 @@ const toc = [
 ---
 <RealmsShell
 	title={`${page.title} / ${generated.game.name}`}
-	description={quickText}
+	description={metaDescription}
 	canonicalPath={page.href}
 	robots={robots}
 >
