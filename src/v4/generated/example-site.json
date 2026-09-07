@@ -48,9 +48,15 @@
               },
               {
                 "id": "how-to-cross-gaps",
-                "label": "How to Cross Gaps in Withering Realms",
+                "label": "Grappling Hook / Cross Gaps",
                 "href": "/how-to-cross-gaps/",
                 "pageId": "how-to-cross-gaps"
+              },
+              {
+                "id": "bellflower-institute-stuck-first-floor",
+                "label": "Institute Stuck First Floor",
+                "href": "/bellflower-institute-stuck-first-floor/",
+                "pageId": "bellflower-institute-stuck-first-floor"
               },
               {
                 "id": "cae-gwyn-bells",
@@ -112,6 +118,7 @@
       "birdcage-b2-puzzle",
       "institute-code-words-puzzle",
       "how-to-cross-gaps",
+      "bellflower-institute-stuck-first-floor",
       "cae-gwyn-bells",
       "early-bosses",
       "doll-arms-limb-leveling",
@@ -124,6 +131,7 @@
       "birdcage-b2-puzzle",
       "institute-code-words-puzzle",
       "how-to-cross-gaps",
+      "bellflower-institute-stuck-first-floor",
       "cae-gwyn-bells",
       "early-bosses"
     ],
@@ -136,6 +144,7 @@
           "birdcage-b2-puzzle",
           "institute-code-words-puzzle",
           "how-to-cross-gaps",
+          "bellflower-institute-stuck-first-floor",
           "cae-gwyn-bells",
           "early-bosses"
         ]
@@ -488,7 +497,7 @@
             {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
-              "title": "How to Cross Gaps in Withering Realms"
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             },
             {
               "id": "talismans",
@@ -946,24 +955,24 @@
     },
     {
       "id": "how-to-cross-gaps",
-      "title": "How to Cross Gaps in Withering Realms",
+      "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)",
       "href": "/how-to-cross-gaps/",
       "pageData": {
         "pageDataVersion": "v4",
         "page": {
           "id": "how-to-cross-gaps",
-          "title": "How to Cross Gaps in Withering Realms",
+          "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)",
           "href": "/how-to-cross-gaps/",
-          "query": "How do I cross gaps in Withering Realms?",
-          "playerProblem": "Cemetery chain reward to Doll-made traversal tool."
+          "query": "How do I get the grappling hook / Chain Hook to cross gaps in Withering Realms?",
+          "playerProblem": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits."
         },
         "state": {},
         "intent": {
-          "query": "Cemetery chain reward to Doll-made traversal tool.",
-          "playerProblem": "Cemetery chain reward to Doll-made traversal tool.",
-          "primaryTask": "mechanics",
-          "prototype": "P7",
-          "priority": 2,
+          "query": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
+          "playerProblem": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
+          "primaryTask": "procedure",
+          "prototype": "P4",
+          "priority": 1,
           "primitiveRecipe": [
             {
               "primitiveId": "A01",
@@ -971,19 +980,19 @@
               "reason": "Every answer surface identifies its task."
             },
             {
-              "primitiveId": "A03",
+              "primitiveId": "P02",
               "status": "include",
-              "reason": "Mechanics need scope and conditions."
+              "reason": "Procedure answers are ordered actions."
             },
             {
-              "primitiveId": "X03",
-              "status": "omit",
-              "reason": "Formula needs an explicit relationship."
-            },
-            {
-              "primitiveId": "X04",
+              "primitiveId": "P04",
               "status": "conditional",
-              "reason": "Calculator needs meaningful variables and decision value."
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the procedure."
             },
             {
               "primitiveId": "E01",
@@ -997,28 +1006,26 @@
           }
         },
         "body": {
-          "intro": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
+          "intro": "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool.",
+          "metaDescription": "Current Early Access route from the cemetery Chain Giant's Ichorised Chain reward to Rakesh's Chain Hook traversal tool for crossing pits.",
           "sections": [
             {
               "id": "quick-answer",
               "title": "Quick Answer",
               "paragraphs": [
-                "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
-                "Step-by-step progression\n1. Defeat the cemetery creature.\n   - Complete the encounter against the creature trapped by arms in the cemetery. Players reporting the current progression identify this encounter as the source of the next item.",
-                "2. Claim the chain reward.\n   - After that fight, collect the chain reward awarded by the encounter. (Player reports indicate the item appears as a chain-type reward in the encounter reward screen.)",
-                "3. Take the chain reward to the person who works on the Doll.\n   - Deliver the chain reward to the person who works on the Doll (do not confuse with other NPCs). That person accepts the reward and performs work on the Doll.",
-                "4. Receive the traversal tool.\n   - The Doll worker creates a traversal tool from the chain reward. Players confirm this yields the traversal tool needed for the blocked gap.",
-                "5. Use the traversal tool to cross the blocked gap.\n   - With the traversal tool created, use it at the blocked gap to cross. Players confirm the traversal tool is the item used to open/cross that specific blocked gap.",
-                "Naming note — why this page uses \"chain reward\" and \"traversal tool\"\n- The item names and the tool’s official in-game labels are not yet verified. Steam players have reported a spelling shown as \"icorised chain\" (PLAYER_REPORTED spelling only), but the official in-game tooltip/name has not been confirmed. For clarity and to avoid inventing or mislabeling content, this guide uses the neutral terms \"the chain reward\" and \"the traversal tool\" until official names are confirmed. (Name spelling is NEEDS_VERIFICATION.)",
-                "If this didn't work\n- Missing reward: If you do not have the chain reward after the cemetery encounter, verify that you completed the encounter; if it still does not appear, players report this as a possible progression-block and it may require an update or community confirmation.\n- Cannot craft: If the Doll worker will not accept the chain reward or will not create the traversal tool despite having the reward, this is currently provisional—players have reported the crafting step as the required action, but behaviour may vary across builds.\n- Still blocked: If you have the traversal tool but cannot cross the gap, confirm you delivered the chain reward to the Doll worker and received the traversal tool as described; if the tool exists but does not function, report details to official patch notes or support (see Verification block below).",
-                "Verification / sources\n- Progression status (player reports): PLAYER_REPORTED / CONFIRMED_LIVE — current players confirm the chain: cemetery creature → chain reward → Doll worker → traversal tool → cross blocked gap.\n- Player-spelling note: \"icorised chain\" — PLAYER_REPORTED spelling only (NEEDS_VERIFICATION).\n- Early Access release: 2026-09-04 (CONFIRMED_OFFICIAL).\n- Research checked: 2026-09-07; latest official patch page observed: 0.34.",
-                "FAQ\nQ: Where exactly do I bring the chain reward?\nA: Bring the chain reward to the person who works on the Doll. The guide uses that wording because the craftsman’s proper name was not supplied in the available reports.",
-                "Q: Is the chain called \"icorised chain\"?\nA: That exact spelling was observed on Steam by players and is a PLAYER_REPORTED spelling only. The official in-game tooltip or name has not been verified (NEEDS_VERIFICATION).",
-                "Q: What does the traversal tool do?\nA: Players confirm the traversal tool created by the Doll worker is used to cross the blocked gap described above. This is the current confirmed progression for early traversal in the game.",
-                "Related guides\n- /doll-arms-limb-leveling/\n- /birdcage-b2-puzzle/\n- /early-bosses/"
+                "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool."
               ],
               "mediaSlots": [
-                "blocked-gap",
+                "blocked-gap"
+              ]
+            },
+            {
+              "id": "step-by-step-progression",
+              "title": "Step-by-step progression",
+              "paragraphs": [
+                "1. Defeat the Chain Giant.  \n   - The cemetery encounter shows the enemy name on the HUD as \"Chain Giant.\"  \n   - \n2. Claim the Ichorised Chain reward.  \n   - After the fight the encounter reward popup reads exactly: \"You found... Ichorised Chain\" (a Crafting Material). The on-screen tooltip description: \"A rare length of chain unearthed deep within a mine. Having been saturated in ichor for many years, it is remarkably strong and light.\" / \"In the right hands, several powerful tools could be fashioned from it.\"  \n   - \n3. Bring the Ichorised Chain to Rakesh (the Doll craftsman).  \n   - The NPC is identified on the dialogue/UI as Rakesh; dialogue shown: \"So, you have found a length of Ichorised Chain.\" Deliver the chain to him at his workbench.  \n   - \n4. Receive the Chain Hook (Doll Left Hand).  \n   - Rakesh provides the finished traversal tool named \"Chain Hook\" for £1. The Chain Hook tooltip text on-screen reads: \"A length of ichorised chain tipped with a weighted dagger. Can be cast into wooden pilings to cross pits, or into enemies to close the distance quickly.\" Controls and stats shown in the same UI: \"+Left Trigger Throw hook (Dexterity/Precision)\"; 5 physical | 15 poise; 8 stamina toll.  \n   - \n5. Use the Chain Hook at blocked gaps / pits.  \n   - The Chain Hook’s on-screen description states it can be cast into wooden pilings to cross pits. The preservation of the progression chain is: defeat cemetery creature → claim Ichorised Chain → take to Rakesh → receive Chain Hook → use tool to cross blocked gaps.  \n   -  (MISSING) — a direct in-VOD clip showing the player actually swinging across the gap was not captured in the available footage; the tool’s tooltip is the source for its pit-crossing function."
+              ],
+              "mediaSlots": [
                 "cemetery-creature",
                 "reward-tooltip",
                 "doll-craftsman",
@@ -1027,19 +1034,52 @@
               ]
             },
             {
+              "id": "naming-note",
+              "title": "Naming note — grappling hook → Chain Hook",
+              "paragraphs": [
+                "- Public search queries for a \"grappling hook\" or \"hook shot\" should be mapped to the official in-game tool name: Chain Hook. The streamer used vernacular like \"hook shot\" or \"grappling-hook-like tool,\" but the verified, on-screen name is Chain Hook and the chain item is spelled Ichorised Chain. Do not treat \"grappling hook\" as a separate official item name."
+              ],
+              "mediaSlots": []
+            },
+            {
               "id": "if-this-didnt-work",
               "title": "If This Didn't Work",
               "paragraphs": [
-                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+                "- Missing reward: If the Ichorised Chain does not appear after the cemetery fight, confirm the encounter completed. If still missing, this has been reported as a possible progression issue across builds and may need further verification from patch notes or support.",
+                "- Cannot trade/craft: If Rakesh will not accept the chain or will not provide the Chain Hook despite having Ichorised Chain, ensure you spoke to the correct Doll craftsman (Rakesh) and that you have the chain in your inventory. Behavior may vary by build.",
+                "- Tool exists but gap still blocked: The Chain Hook’s tooltip states it crosses pits, but a captured in-game clip of the crossing result is not present in the current footage. If you have the Chain Hook and cannot progress, record steps and report to official support or check later patch notes."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "verification-sources",
+              "title": "Verification / sources",
+              "paragraphs": [
+                "- CONFIRMED_LIVE — Jerma Streams - Withering Realms (Part 2), VOD k3croypZQXA:\n  - Chain Giant name on HUD (approx. 00:31:05–00:33:10).  \n  - Reward popup (00:33:14): exact on-screen spelling \"You found... Ichorised Chain\" and the reward tooltip text quoted above.  \n  - Rakesh dialogue/UI (00:34:33): \"So, you have found a length of Ichorised Chain.\"  \n  - Finished traversal tool UI (00:35:24): Chain Hook name, cost \"£1\", on-screen description, and shown controls/stats.  \n- Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL).  \n- Research checked: 2026-09-07; latest official patch page observed: 0.34."
               ],
               "mediaSlots": []
             }
           ],
           "faq": [
             {
-              "id": "faq-verified",
-              "question": "Is the How to Cross Gaps solution fully verified?",
-              "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be provisional slots."
+              "id": "faq-1",
+              "question": "Is the \"grappling hook\" in Withering Realms called the Chain Hook?",
+              "answer": "Yes — the official on-screen name is Chain Hook. Public vernacular like \"grappling hook\" or \"hook shot\" refers to this tool."
+            },
+            {
+              "id": "faq-2",
+              "question": "Where do I bring the Ichorised Chain?",
+              "answer": "Bring it to Rakesh, the Doll craftsman at his workbench (dialogue/UI identifies him as Rakesh)."
+            },
+            {
+              "id": "faq-3",
+              "question": "What does the Chain Hook do?",
+              "answer": "The on-screen description: \"A length of ichorised chain tipped with a weighted dagger. Can be cast into wooden pilings to cross pits, or into enemies to close the distance quickly.\" Controls shown: \"+Left Trigger Throw hook (Dexterity/Precision)\"; stats: 5 physical | 15 poise; 8 stamina toll."
+            },
+            {
+              "id": "faq-4",
+              "question": "Is the Ichorised Chain spelling confirmed?",
+              "answer": "Yes — the on-screen reward popup spells it exactly as \"Ichorised Chain.\""
             }
           ]
         },
@@ -1047,9 +1087,9 @@
           {
             "id": "fact-how-to-cross-gaps-quick",
             "label": "Quick answer",
-            "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap.",
+            "value": "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool.",
             "verified": true,
-            "grade": "PLAYER_REPORTED"
+            "grade": "CONFIRMED_LIVE"
           }
         ],
         "evidence": [
@@ -1061,11 +1101,11 @@
             "grade": "CONFIRMED_OFFICIAL"
           },
           {
-            "evidenceId": "ev-official-site",
-            "sourceType": "official",
-            "sourceRef": "https://witheringrealms.com/",
-            "finding": "Official Withering Realms site.",
-            "grade": "CONFIRMED_OFFICIAL"
+            "evidenceId": "ev-jerma-part2",
+            "sourceType": "live",
+            "sourceRef": "https://www.youtube.com/watch?v=k3croypZQXA",
+            "finding": "Jerma Streams - Withering Realms (Part 2): Chain Giant → Ichorised Chain → Rakesh → Chain Hook UI timestamps 00:31:05–00:35:24.",
+            "grade": "CONFIRMED_LIVE"
           },
           {
             "evidenceId": "ev-research-window",
@@ -1073,13 +1113,6 @@
             "sourceRef": "research-checked:2026-09-07",
             "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
             "grade": "CONFIRMED_OFFICIAL"
-          },
-          {
-            "evidenceId": "ev-player-reports",
-            "sourceType": "player",
-            "sourceRef": "steam-discussions-current-ea",
-            "finding": "Player-reported current-build observations retained with PLAYER_REPORTED grade only.",
-            "grade": "PLAYER_REPORTED"
           }
         ],
         "media": [
@@ -1093,36 +1126,64 @@
           {
             "id": "media-cemetery-creature",
             "slot": "cemetery-creature",
-            "status": "MISSING",
-            "caption": "Media slot pending capture: cemetery-creature",
-            "src": null
+            "status": "READY",
+            "caption": "Cemetery Chain Giant fight (CONFIRMED_LIVE, Jerma Part 2 @ 00:31:05).",
+            "alt": "HUD labels the cemetery boss as Chain Giant during the fight.",
+            "src": "/assets/images/evidence/how-to-cross-gaps/cemetery-creature.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=k3croypZQXA",
+            "timestamp": "00:31:05",
+            "timestampSeconds": 1865
           },
           {
             "id": "media-reward-tooltip",
             "slot": "reward-tooltip",
-            "status": "MISSING",
-            "caption": "Media slot pending capture: reward-tooltip",
-            "src": null
+            "status": "READY",
+            "caption": "Reward popup: You found... Ichorised Chain (CONFIRMED_LIVE @ 00:33:14).",
+            "alt": "On-screen reward popup showing Ichorised Chain crafting material.",
+            "src": "/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=k3croypZQXA",
+            "timestamp": "00:33:14",
+            "timestampSeconds": 1994
           },
           {
             "id": "media-doll-craftsman",
             "slot": "doll-craftsman",
-            "status": "MISSING",
-            "caption": "Media slot pending capture: doll-craftsman",
-            "src": null
+            "status": "READY",
+            "caption": "Rakesh at the doll workbench accepting Ichorised Chain (CONFIRMED_LIVE @ 00:34:33).",
+            "alt": "Dialogue with Rakesh beside a doll on the workbench.",
+            "src": "/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=k3croypZQXA",
+            "timestamp": "00:34:33",
+            "timestampSeconds": 2073
           },
           {
             "id": "media-finished-traversal-tool",
             "slot": "finished-traversal-tool",
-            "status": "MISSING",
-            "caption": "Media slot pending capture: finished-traversal-tool",
-            "src": null
+            "status": "READY",
+            "caption": "Chain Hook tool UI: cast into wooden pilings to cross pits (CONFIRMED_LIVE @ 00:35:24).",
+            "alt": "Chain Hook purchase UI showing pit-crossing description and £1 cost.",
+            "src": "/assets/images/evidence/how-to-cross-gaps/finished-traversal-tool.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=k3croypZQXA",
+            "timestamp": "00:35:24",
+            "timestampSeconds": 2124
           },
           {
             "id": "media-crossing-result",
             "slot": "crossing-result",
             "status": "MISSING",
-            "caption": "Media slot pending capture: crossing-result",
+            "caption": "Media slot pending capture: crossing-result (no pit-swing clip in specified VODs)",
             "src": null
           }
         ],
@@ -1132,8 +1193,8 @@
             "instanceId": "answer-header",
             "primitiveId": "A01",
             "payload": {
-              "title": "How to Cross Gaps in Withering Realms",
-              "task": "Cemetery chain reward to Doll-made traversal tool.",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)",
+              "task": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1148,7 +1209,7 @@
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
+                  "value": "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool."
                 }
               ]
             },
@@ -1165,19 +1226,19 @@
             "reason": "Every answer surface identifies its task."
           },
           {
-            "primitiveId": "A03",
+            "primitiveId": "P02",
             "status": "include",
-            "reason": "Mechanics need scope and conditions."
+            "reason": "Procedure answers are ordered actions."
           },
           {
-            "primitiveId": "X03",
-            "status": "omit",
-            "reason": "Formula needs an explicit relationship."
+            "primitiveId": "P04",
+            "status": "conditional",
+            "reason": "Recovery needs real failure states."
           },
           {
-            "primitiveId": "X04",
-            "status": "omit",
-            "reason": "Calculator needs meaningful variables and decision value."
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the procedure."
           },
           {
             "primitiveId": "E01",
@@ -1193,25 +1254,30 @@
           "researchChecked": "2026-09-07",
           "patchObserved": "0.34",
           "eaRelease": "2026-09-04",
+          "metaDescription": "Current Early Access route from the cemetery Chain Giant's Ichorised Chain reward to Rakesh's Chain Hook traversal tool for crossing pits.",
           "evidenceSummary": [
-            "PLAYER_REPORTED",
             "CONFIRMED_LIVE",
-            "NEEDS_VERIFICATION"
+            "CONFIRMED_OFFICIAL"
           ],
-          "verificationLabel": "PLAYER_REPORTED progression · official names NEEDS_VERIFICATION · checked 2026-09-07",
+          "verificationLabel": "CONFIRMED_LIVE Chain Hook route · patch page 0.34 · checked 2026-09-07",
           "articleSource": "content-jobs/how-to-cross-gaps/article.md",
           "writer": "APIMart/shared-article-writer"
         },
         "presentation": {
           "categoryLabel": "TRAVERSAL",
           "homepageCard": {
-            "helper": "Cemetery chain reward to Doll-made traversal tool.",
+            "helper": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
             "tag": "Traversal",
             "tone": "green",
             "symbol": "↗"
           },
-          "subtitle": "Cemetery chain reward to Doll-made traversal tool.",
+          "subtitle": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
           "related": [
+            {
+              "id": "bellflower-institute-stuck-first-floor",
+              "href": "/bellflower-institute-stuck-first-floor/",
+              "title": "Withering Realms Bellflower Institute Stuck on First Floor"
+            },
             {
               "id": "doll-arms-limb-leveling",
               "href": "/doll-arms-limb-leveling/",
@@ -1241,8 +1307,8 @@
             "interactive": false,
             "instanceId": "answer-header",
             "payload": {
-              "title": "How to Cross Gaps in Withering Realms",
-              "task": "Cemetery chain reward to Doll-made traversal tool.",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)",
+              "task": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -1261,7 +1327,7 @@
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
+                  "value": "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool."
                 }
               ]
             },
@@ -1273,7 +1339,7 @@
             "data": [
               {
                 "label": "Quick answer",
-                "value": "Defeat the creature trapped by arms in the cemetery → pick up the chain reward dropped by that encounter → take the chain reward to the person who works on the Doll → they will create a traversal tool → use that traversal tool to cross the blocked gap. This progression is the currently player-confirmed route to open the blocked gap."
+                "value": "Defeat the Chain Giant in the cemetery → pick up the Ichorised Chain reward → take the Ichorised Chain to the Doll craftsman Rakesh → obtain the Chain Hook (the game’s grappling-hook tool) for £1 → use the Chain Hook to cast into wooden pilings or enemies to cross pits. This is the current Early Access progression from reward to traversal tool."
               }
             ]
           },
@@ -1284,9 +1350,411 @@
             "instanceId": "next-step",
             "payload": {
               "next": {
-                "id": "doll-arms-limb-leveling",
-                "href": "/doll-arms-limb-leveling/",
-                "title": "Doll Arms / Limb Leveling"
+                "id": "bellflower-institute-stuck-first-floor",
+                "href": "/bellflower-institute-stuck-first-floor/",
+                "title": "Bellflower Institute Stuck on First Floor"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "bellflower-institute-stuck-first-floor",
+      "title": "Withering Realms Bellflower Institute Stuck on First Floor",
+      "href": "/bellflower-institute-stuck-first-floor/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "bellflower-institute-stuck-first-floor",
+          "title": "Withering Realms Bellflower Institute Stuck on First Floor",
+          "href": "/bellflower-institute-stuck-first-floor/",
+          "query": "How do I get unstuck on the Bellflower Institute first floor in Withering Realms?",
+          "playerProblem": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs."
+        },
+        "state": {},
+        "intent": {
+          "query": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+          "playerProblem": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+          "primaryTask": "procedure",
+          "prototype": "P4",
+          "priority": 1,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "P02",
+              "status": "include",
+              "reason": "Procedure answers are ordered actions."
+            },
+            {
+              "primitiveId": "P04",
+              "status": "conditional",
+              "reason": "Recovery needs real failure states."
+            },
+            {
+              "primitiveId": "N01",
+              "status": "include",
+              "reason": "A next task continues the procedure."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles).",
+          "metaDescription": "If the first-floor corridor ends in a gap or ghost-hands door, return to the foyer and use the unmarked rear stairs.",
+          "sections": [
+            {
+              "id": "quick-answer",
+              "title": "Quick Answer",
+              "paragraphs": [
+                "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-the-stuck-state-looks-like",
+              "title": "What the stuck state looks like",
+              "paragraphs": [
+                "- Common presentation: an apparent dead‑end in the first‑floor corridor with either a visible gap in the floor/route or a door that displays glowing hands and an Open (A) prompt."
+              ],
+              "mediaSlots": [
+                "ghost-hands-door"
+              ]
+            },
+            {
+              "id": "exact-steps",
+              "title": "Exact steps back to the foyer rear exit",
+              "paragraphs": [
+                "Follow these steps in order:\n1. Stop trying to force the blocked door or push past the gap. Turn and walk back the way you came down the corridor toward the foyer.\n2. Enter the foyer and move to the rear edge of that room where the corridor meets the foyer (the area shown in the footage as the foyer/corridor transition).\n3. Look for a vertical transit prompt at the rear of the foyer — the game shows Climb Up (A) or Climb Down (A) when you’re in the correct spot.  \n  \n4. Use the Climb Up (A) prompt (or Climb Down if you need to go lower) to take the wooden rear stairs / climb exit. The wooden rear stairs are visually present at the foyer rear; the mini‑map does not show a stair icon for this exit."
+              ],
+              "mediaSlots": [
+                "climb-up-exit",
+                "foyer-rear-stairs"
+              ]
+            },
+            {
+              "id": "common-failure-modes",
+              "title": "Common failure modes",
+              "paragraphs": [
+                "- Searching farther forward down the blocked corridor instead of backtracking — players repeatedly try to find a forward path and miss the actual exit behind them.  \n- Trusting the mini‑map to show every climb/stair — this rear vertical exit does not appear as a labeled stair icon on the in‑game mini‑map in observed footage."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-happens-next",
+              "title": "What happens next",
+              "paragraphs": [
+                "- After using the rear climb/stairs, the location banner in observed Early Access footage changes to Bellflower Occult Institute - Upper (when ascending). The vertical exit can be used both up and down (Climb Up / Climb Down prompts were visible in the footage).  \n  \n- Using the rear exit moves you out of the blocked first‑floor corridor and continues normal progression from the foyer vertical transit."
+              ],
+              "mediaSlots": [
+                "upper-progression"
+              ]
+            },
+            {
+              "id": "if-this-didnt-work",
+              "title": "If This Didn't Work",
+              "paragraphs": [
+                "- I don’t see a Climb Up/Down prompt: move closer to the rear wall of the foyer where the corridor meets the room. The prompt only appears when you’re in the small climb/stairs interaction zone.",
+                "- Mini‑map shows the foyer but no stair icon: this is expected — the stair/climb exit is not marked on the in‑game mini‑map in observed footage. Do not rely on a map icon to find it.",
+                "- If you still can’t find it, backtrack fully to the foyer entrance and sweep the rear edge of the room where the corridor connects; the climb prompt is near that transition."
+              ],
+              "mediaSlots": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Why doesn’t the mini‑map show the rear stairs or climb?",
+              "answer": "In Early Access footage the mini‑map displays the foyer geometry but does not mark this climb/stair as a labeled stair icon. The climb is visible in the world and appears as a Climb Up (A) / Climb Down (A) prompt when you stand in the interaction zone."
+            },
+            {
+              "id": "faq-2",
+              "question": "Is this the Institute Code Words / basement door puzzle?",
+              "answer": "No. The blocked corridor (gap / ghost‑hands door) that requires returning to the foyer rear climb is a separate issue. The Institute Code Words and basement‑door puzzles are distinct and are covered by their own guides."
+            }
+          ]
+        },
+        "facts": [
+          {
+            "id": "fact-bellflower-institute-stuck-first-floor-quick",
+            "label": "Quick answer",
+            "value": "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles).",
+            "verified": true,
+            "grade": "CONFIRMED_LIVE"
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "ev-steam",
+            "sourceType": "official",
+            "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+            "finding": "Official Steam store identity for Withering Realms Early Access.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-jerma-part1",
+            "sourceType": "live",
+            "sourceRef": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "finding": "Jerma Streams - Withering Realms: ghost-hands door, Climb Up, foyer rear stairs, Upper banner timestamps ~03:00:30 and 03:47:20–03:47:54.",
+            "grade": "CONFIRMED_LIVE"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-07",
+            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          }
+        ],
+        "media": [
+          {
+            "id": "media-ghost-hands-door",
+            "slot": "ghost-hands-door",
+            "status": "READY",
+            "caption": "Ghost-hands door with Open (A) in the first-floor corridor (CONFIRMED_LIVE @ 03:47:20).",
+            "alt": "Corridor door covered in glowing ghostly hands with an Open prompt.",
+            "src": "/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-door.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "03:47:20",
+            "timestampSeconds": 13640
+          },
+          {
+            "id": "media-climb-up-exit",
+            "slot": "climb-up-exit",
+            "status": "READY",
+            "caption": "Climb Up (A) at the foyer rear vertical exit (CONFIRMED_LIVE @ 03:47:34).",
+            "alt": "Climb Up prompt near Bellflower Occult Institute foyer transition.",
+            "src": "/assets/images/evidence/bellflower-institute-stuck-first-floor/climb-up-exit.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "03:47:34",
+            "timestampSeconds": 13654
+          },
+          {
+            "id": "media-foyer-rear-stairs",
+            "slot": "foyer-rear-stairs",
+            "status": "READY",
+            "caption": "Wooden rear stairs; mini-map shows no stair icon (CONFIRMED_LIVE @ 03:47:54).",
+            "alt": "Wooden staircase at the rear of the Bellflower Occult Institute foyer.",
+            "src": "/assets/images/evidence/bellflower-institute-stuck-first-floor/foyer-rear-stairs.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "03:47:54",
+            "timestampSeconds": 13674
+          },
+          {
+            "id": "media-upper-progression",
+            "slot": "upper-progression",
+            "status": "READY",
+            "caption": "Location banner Bellflower Occult Institute - Upper after climb (CONFIRMED_LIVE @ 03:47:38).",
+            "alt": "Location banner reading Bellflower Occult Institute - Upper.",
+            "src": "/assets/images/evidence/bellflower-institute-stuck-first-floor/upper-progression.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "03:47:38",
+            "timestampSeconds": 13658
+          },
+          {
+            "id": "media-ghost-hands-early",
+            "slot": "ghost-hands-early",
+            "status": "READY",
+            "caption": "Earlier ghost-hands door sighting (supporting, @ 03:00:30).",
+            "alt": "Earlier corridor door with glowing ghostly hands.",
+            "src": "/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-early.webp",
+            "width": 1600,
+            "height": 900,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "03:00:30",
+            "timestampSeconds": 10830
+          }
+        ],
+        "assets": [],
+        "primitiveData": [
+          {
+            "instanceId": "answer-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Withering Realms Bellflower Institute Stuck on First Floor",
+              "task": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "verified-facts",
+            "primitiveId": "E01",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles)."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "P02",
+            "status": "include",
+            "reason": "Procedure answers are ordered actions."
+          },
+          {
+            "primitiveId": "P04",
+            "status": "conditional",
+            "reason": "Recovery needs real failure states."
+          },
+          {
+            "primitiveId": "N01",
+            "status": "include",
+            "reason": "A next task continues the procedure."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-07",
+          "patchObserved": "0.34",
+          "eaRelease": "2026-09-04",
+          "metaDescription": "If the first-floor corridor ends in a gap or ghost-hands door, return to the foyer and use the unmarked rear stairs.",
+          "evidenceSummary": [
+            "CONFIRMED_LIVE",
+            "CONFIRMED_OFFICIAL"
+          ],
+          "verificationLabel": "CONFIRMED_LIVE foyer rear stairs route · patch page 0.34 · checked 2026-09-07",
+          "articleSource": "content-jobs/bellflower-institute-stuck-first-floor/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "STUCK",
+          "homepageCard": {
+            "helper": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+            "tag": "Stuck",
+            "tone": "brass",
+            "symbol": "⌂"
+          },
+          "subtitle": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+          "related": [
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
+            },
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            },
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            }
+          ]
+        }
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "answer-header",
+            "payload": {
+              "title": "Withering Realms Bellflower Institute Stuck on First Floor",
+              "task": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "E01",
+            "label": "Fact Card",
+            "interactive": false,
+            "instanceId": "verified-facts",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles)."
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": [],
+            "behavior": "entity-facts",
+            "data": [
+              {
+                "label": "Quick answer",
+                "value": "If you hit a gap or a corridor door with glowing “ghost-hands” (Open (A) prompt) and can’t go forward, turn around and go back to the foyer. At the rear of the foyer, next to the corridor/foyer transition, there is an unmarked vertical exit — a wooden rear stair / climb spot that shows Climb Up (A) / Climb Down (A). Use that climb/stairs to leave the blocked corridor. The climb/stair is not shown as a labeled icon on the in‑game mini‑map. This page covers only this stuck first‑floor situation (not the separate Institute Code Words / basement puzzles)."
+              }
+            ]
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "how-to-cross-gaps",
+                "href": "/how-to-cross-gaps/",
+                "title": "Grappling Hook / How to Cross Gaps"
               }
             },
             "evidenceRefs": [],
@@ -1913,7 +2381,7 @@
             {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
-              "title": "How to Cross Gaps in Withering Realms"
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             },
             {
               "id": "doll-arms-limb-leveling",
@@ -2250,7 +2718,7 @@
             {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
-              "title": "How to Cross Gaps in Withering Realms"
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             },
             {
               "id": "birdcage-b2-puzzle",
@@ -3276,7 +3744,7 @@
             {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
-              "title": "How to Cross Gaps in Withering Realms"
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             }
           ]
         }

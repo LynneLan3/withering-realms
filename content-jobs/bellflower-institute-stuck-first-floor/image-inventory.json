@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "image-inventory-v1",
+  "images": [
+    {
+      "id": "ghost-hands-door",
+      "source_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-door.webp",
+      "output_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-door.webp",
+      "subject": "Ghost-hands door Open prompt",
+      "place_or_context": "Bellflower Institute first-floor corridor",
+      "operational_or_decorative": "operational",
+      "page_fit": "bellflower-institute-stuck-first-floor stuck-state",
+      "confidence": "high",
+      "provenance": "Jerma Streams - Withering Realms https://www.youtube.com/watch?v=z9pL-sUiZkA @ 03:47:20",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Glowing hands on door; Open (A)"
+    },
+    {
+      "id": "climb-up-exit",
+      "source_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/climb-up-exit.webp",
+      "output_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/climb-up-exit.webp",
+      "subject": "Climb Up exit near foyer",
+      "place_or_context": "Bellflower Occult Institute corridor/foyer transition",
+      "operational_or_decorative": "operational",
+      "page_fit": "bellflower-institute-stuck-first-floor rear-exit",
+      "confidence": "high",
+      "provenance": "Part 1 @ 03:47:34",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Climb Up (A); location banner visible"
+    },
+    {
+      "id": "foyer-rear-stairs",
+      "source_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/foyer-rear-stairs.webp",
+      "output_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/foyer-rear-stairs.webp",
+      "subject": "Foyer rear wooden stairs",
+      "place_or_context": "Bellflower Occult Institute foyer",
+      "operational_or_decorative": "operational",
+      "page_fit": "bellflower-institute-stuck-first-floor foyer-stairs",
+      "confidence": "high",
+      "provenance": "Part 1 @ 03:47:54",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Stairs visible; mini-map lacks stair icon"
+    },
+    {
+      "id": "upper-progression",
+      "source_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/upper-progression.webp",
+      "output_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/upper-progression.webp",
+      "subject": "Upper floor after climb",
+      "place_or_context": "Bellflower Occult Institute - Upper",
+      "operational_or_decorative": "operational",
+      "page_fit": "bellflower-institute-stuck-first-floor progression",
+      "confidence": "high",
+      "provenance": "Part 1 @ 03:47:38",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Location banner Upper"
+    },
+    {
+      "id": "ghost-hands-early",
+      "source_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-early.webp",
+      "output_file": "public/assets/images/evidence/bellflower-institute-stuck-first-floor/ghost-hands-early.webp",
+      "subject": "Earlier ghost-hands doorway",
+      "place_or_context": "Bellflower Institute interior",
+      "operational_or_decorative": "operational",
+      "page_fit": "bellflower-institute-stuck-first-floor supporting",
+      "confidence": "medium",
+      "provenance": "Part 1 @ 03:00:30",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Supporting visual of ghost-hands door motif"
+    }
+  ]
+}

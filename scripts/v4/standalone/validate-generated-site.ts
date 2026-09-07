@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(process.argv[2] ?? '.');
@@ -19,11 +19,12 @@ const forbidden = [
   'src/layouts',
   'src/content',
   'src/lib',
-  'src/config',
   'tests',
   'scripts/lib',
   'scripts/validate-generated-site.ts',
 ];
+/** IndexNow key metadata is allowed; any other src/config residue still fails. */
+const allowedConfigFiles = new Set(['indexnow-key.json']);
 
 for (const entry of required) {
   if (!existsSync(path.isAbsolute(entry) ? entry : path.join(root, entry))) {
@@ -33,6 +34,13 @@ for (const entry of required) {
 for (const entry of forbidden) {
   if (existsSync(path.join(root, entry))) {
     throw new Error(`V4 standalone validation failed: non-runtime source present: ${entry}`);
+  }
+}
+const configDir = path.join(root, 'src/config');
+if (existsSync(configDir)) {
+  const unexpected = readdirSync(configDir).filter((name) => !allowedConfigFiles.has(name));
+  if (unexpected.length > 0) {
+    throw new Error(`V4 standalone validation failed: non-runtime source present: src/config (${unexpected.join(', ')})`);
   }
 }
 

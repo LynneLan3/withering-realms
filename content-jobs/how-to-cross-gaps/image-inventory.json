@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "image-inventory-v1",
+  "images": [
+    {
+      "id": "cemetery-creature",
+      "source_file": "public/assets/images/evidence/how-to-cross-gaps/cemetery-creature.webp",
+      "output_file": "public/assets/images/evidence/how-to-cross-gaps/cemetery-creature.webp",
+      "subject": "Chain Giant cemetery boss fight",
+      "place_or_context": "Penwyll Cemetery / outdoor graveyard courtyard",
+      "operational_or_decorative": "operational",
+      "page_fit": "how-to-cross-gaps cemetery-creature",
+      "confidence": "high",
+      "provenance": "Jerma Streams - Withering Realms (Part 2) https://www.youtube.com/watch?v=k3croypZQXA @ 00:31:05",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "HUD labels enemy Chain Giant"
+    },
+    {
+      "id": "reward-tooltip",
+      "source_file": "public/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp",
+      "output_file": "public/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp",
+      "subject": "Ichorised Chain reward popup",
+      "place_or_context": "Post-fight reward UI",
+      "operational_or_decorative": "operational",
+      "page_fit": "how-to-cross-gaps reward-tooltip",
+      "confidence": "high",
+      "provenance": "Part 2 @ 00:33:14",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Exact spelling Ichorised Chain"
+    },
+    {
+      "id": "doll-craftsman",
+      "source_file": "public/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp",
+      "output_file": "public/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp",
+      "subject": "Rakesh doll craftsman dialogue",
+      "place_or_context": "Rakesh workshop with doll on table",
+      "operational_or_decorative": "operational",
+      "page_fit": "how-to-cross-gaps doll-craftsman",
+      "confidence": "high",
+      "provenance": "Part 2 @ 00:34:33",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "NPC name Rakesh on dialogue box"
+    },
+    {
+      "id": "finished-traversal-tool",
+      "source_file": "public/assets/images/evidence/how-to-cross-gaps/finished-traversal-tool.webp",
+      "output_file": "public/assets/images/evidence/how-to-cross-gaps/finished-traversal-tool.webp",
+      "subject": "Chain Hook purchase UI",
+      "place_or_context": "Rakesh shop / tool menu",
+      "operational_or_decorative": "operational",
+      "page_fit": "how-to-cross-gaps finished-traversal-tool",
+      "confidence": "high",
+      "provenance": "Part 2 @ 00:35:24",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Chain Hook description mentions crossing pits; grappling-hook intent target"
+    }
+  ]
+}
