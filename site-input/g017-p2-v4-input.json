@@ -1,0 +1,618 @@
+{
+  "game": {
+    "name": "Withering Realms",
+    "slug": "withering-realms",
+    "accent": "#79b99a",
+    "accentForeground": "#101510",
+    "identity": {
+      "palette": {
+        "forestInk": "#0d110f",
+        "elevated": "#171d18",
+        "bone": "#e5e0d3",
+        "sage": "#79b99a",
+        "brass": "#b7a356"
+      },
+      "typography": "libre-baskerville-dm-sans"
+    }
+  },
+  "navigation": {
+    "primary": [
+      {
+        "id": "guides",
+        "label": "Guides",
+        "href": "/category/",
+        "groups": [
+          {
+            "id": "stuck",
+            "label": "Stuck right now",
+            "items": [
+              {
+                "id": "birdcage-b2-puzzle",
+                "label": "Birdcage / B2 Puzzle",
+                "href": "/birdcage-b2-puzzle/",
+                "pageId": "birdcage-b2-puzzle"
+              },
+              {
+                "id": "how-to-cross-gaps",
+                "label": "How to Cross Gaps",
+                "href": "/how-to-cross-gaps/",
+                "pageId": "how-to-cross-gaps"
+              },
+              {
+                "id": "cae-gwyn-bells",
+                "label": "Cae Gwyn Bells",
+                "href": "/cae-gwyn-bells/",
+                "pageId": "cae-gwyn-bells"
+              },
+              {
+                "id": "early-bosses",
+                "label": "Early Bosses",
+                "href": "/early-bosses/",
+                "pageId": "early-bosses"
+              }
+            ]
+          },
+          {
+            "id": "systems",
+            "label": "Systems",
+            "items": [
+              {
+                "id": "doll-arms-limb-leveling",
+                "label": "Doll Arms / Limb Leveling",
+                "href": "/doll-arms-limb-leveling/",
+                "pageId": "doll-arms-limb-leveling"
+              },
+              {
+                "id": "talismans",
+                "label": "Talismans",
+                "href": "/talismans/",
+                "pageId": "talismans"
+              },
+              {
+                "id": "night-routes",
+                "label": "Night Routes",
+                "href": "/night-routes/",
+                "pageId": "night-routes"
+              },
+              {
+                "id": "perimeter-guardians",
+                "label": "Perimeter Guardians",
+                "href": "/perimeter-guardians/",
+                "pageId": "perimeter-guardians"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "utilities": [
+      {
+        "id": "search",
+        "label": "Search",
+        "href": "/search/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "page": {
+        "id": "birdcage-b2-puzzle",
+        "title": "Birdcage / B2 Puzzle",
+        "href": "/birdcage-b2-puzzle/"
+      },
+      "facts": [
+        {
+          "id": "fact-birdcage-b2-puzzle-answer",
+          "label": "Current answer state",
+          "value": "UNVERIFIED — exact bell/order solution not confirmed from official sources in this research pass.",
+          "verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "UNVERIFIED — exact bell/order solution not confirmed from official sources in this research pass."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Birdcage / B2 Puzzle solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "birdcage-b2-puzzle",
+      "title": "Birdcage / B2 Puzzle",
+      "href": "/birdcage-b2-puzzle/",
+      "query": "How do I solve the Birdcage or B2 puzzle in Withering Realms?",
+      "playerProblem": "Puzzle walkthrough for the Birdcage / B2 encounter.",
+      "primaryTask": "procedure",
+      "priority": 1
+    },
+    {
+      "page": {
+        "id": "how-to-cross-gaps",
+        "title": "How to Cross Gaps",
+        "href": "/how-to-cross-gaps/"
+      },
+      "facts": [
+        {
+          "id": "fact-how-to-cross-gaps-answer",
+          "label": "Current answer state",
+          "value": "UNVERIFIED — specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system.",
+          "verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Traversal framing for gaps and doll upgrades.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "UNVERIFIED — specific arm upgrade mapping not confirmed; doll arm crafting is verified as a core system."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the How to Cross Gaps solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "how-to-cross-gaps",
+      "title": "How to Cross Gaps",
+      "href": "/how-to-cross-gaps/",
+      "query": "How do I cross gaps in Withering Realms?",
+      "playerProblem": "Traversal framing for gaps and doll upgrades.",
+      "primaryTask": "mechanics",
+      "priority": 2
+    },
+    {
+      "page": {
+        "id": "cae-gwyn-bells",
+        "title": "Cae Gwyn Bells",
+        "href": "/cae-gwyn-bells/"
+      },
+      "facts": [
+        {
+          "id": "fact-cae-gwyn-bells-answer",
+          "label": "Current answer state",
+          "value": "UNVERIFIED — location-specific bell behavior not confirmed in official blurbs.",
+          "verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "What is known vs unverified about Cae Gwyn bells.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "UNVERIFIED — location-specific bell behavior not confirmed in official blurbs."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Cae Gwyn Bells solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "cae-gwyn-bells",
+      "title": "Cae Gwyn Bells",
+      "href": "/cae-gwyn-bells/",
+      "query": "What do the Cae Gwyn bells do in Withering Realms?",
+      "playerProblem": "What is known vs unverified about Cae Gwyn bells.",
+      "primaryTask": "procedure",
+      "priority": 3
+    },
+    {
+      "page": {
+        "id": "early-bosses",
+        "title": "Early Bosses",
+        "href": "/early-bosses/"
+      },
+      "facts": [
+        {
+          "id": "fact-early-bosses-answer",
+          "label": "Current answer state",
+          "value": "UNVERIFIED — named early boss routes not confirmed; combat is action RPG.",
+          "verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Calm early-combat framing for the Early Access build.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "UNVERIFIED — named early boss routes not confirmed; combat is action RPG."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Early Bosses solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "early-bosses",
+      "title": "Early Bosses",
+      "href": "/early-bosses/",
+      "query": "How should I approach early bosses in Withering Realms?",
+      "playerProblem": "Calm early-combat framing for the Early Access build.",
+      "primaryTask": "strategy",
+      "priority": 4
+    },
+    {
+      "page": {
+        "id": "doll-arms-limb-leveling",
+        "title": "Doll Arms / Limb Leveling",
+        "href": "/doll-arms-limb-leveling/"
+      },
+      "facts": [
+        {
+          "id": "fact-doll-arms-limb-leveling-answer",
+          "label": "Current answer state",
+          "value": "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Confirmed doll-arm weapon examples and leveling caveats.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "VERIFIED examples: Enchanted Candelabrum, Chain Rock, Machinegun, Flamethrower. Limb leveling details remain UNVERIFIED."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Doll Arms / Limb Leveling solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "doll-arms-limb-leveling",
+      "title": "Doll Arms / Limb Leveling",
+      "href": "/doll-arms-limb-leveling/",
+      "query": "What can I put on the doll's right arm and how does limb leveling work?",
+      "playerProblem": "Confirmed doll-arm weapon examples and leveling caveats.",
+      "primaryTask": "mechanics",
+      "priority": 5
+    },
+    {
+      "page": {
+        "id": "talismans",
+        "title": "Talismans",
+        "href": "/talismans/"
+      },
+      "facts": [
+        {
+          "id": "fact-talismans-answer",
+          "label": "Current answer state",
+          "value": "UNVERIFIED — talisman system specifics not in official store copy; magical artifacts are mentioned.",
+          "verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Build customization framing for talismans.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "UNVERIFIED — talisman system specifics not in official store copy; magical artifacts are mentioned."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Talismans solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "talismans",
+      "title": "Talismans",
+      "href": "/talismans/",
+      "query": "How do talismans work in Withering Realms?",
+      "playerProblem": "Build customization framing for talismans.",
+      "primaryTask": "mechanics",
+      "priority": 6
+    },
+    {
+      "page": {
+        "id": "night-routes",
+        "title": "Night Routes",
+        "href": "/night-routes/"
+      },
+      "facts": [
+        {
+          "id": "fact-night-routes-answer",
+          "label": "Current answer state",
+          "value": "VERIFIED — return to any area at night for new creatures and secrets.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Confirmed night revisit loop.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "VERIFIED — return to any area at night for new creatures and secrets."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Night Routes solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "night-routes",
+      "title": "Night Routes",
+      "href": "/night-routes/",
+      "query": "What changes on night routes in Withering Realms?",
+      "playerProblem": "Confirmed night revisit loop.",
+      "primaryTask": "mechanics",
+      "priority": 7
+    },
+    {
+      "page": {
+        "id": "perimeter-guardians",
+        "title": "Perimeter Guardians",
+        "href": "/perimeter-guardians/"
+      },
+      "facts": [
+        {
+          "id": "fact-perimeter-guardians-answer",
+          "label": "Current answer state",
+          "value": "VERIFIED — expand the world map by defeating massive perimeter guardians.",
+          "verified": true
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "ev-steam",
+          "sourceType": "official",
+          "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+          "finding": "Official Steam store identity and systems for Withering Realms."
+        }
+      ],
+      "body": {
+        "intro": "Map expansion via perimeter guardians.",
+        "sections": [
+          {
+            "id": "quick-context",
+            "title": "What we can say now",
+            "paragraphs": [
+              "VERIFIED — expand the world map by defeating massive perimeter guardians."
+            ]
+          },
+          {
+            "id": "how-to-use",
+            "title": "How to use this page",
+            "paragraphs": [
+              "This guide page exists to capture the player problem and verification state for the Early Access window.",
+              "Steps that lack owned screenshots or primary-source confirmation remain labeled as placeholders."
+            ]
+          },
+          {
+            "id": "if-this-didnt-work",
+            "title": "If this didn’t work",
+            "paragraphs": [
+              "Early Access systems and balance can change. If your build behaves differently, treat route-specific steps as provisional until re-verified on the current patch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-verified",
+            "question": "Is the Perimeter Guardians solution fully verified?",
+            "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be placeholders."
+          }
+        ]
+      },
+      "assets": [],
+      "id": "perimeter-guardians",
+      "title": "Perimeter Guardians",
+      "href": "/perimeter-guardians/",
+      "query": "What are perimeter guardians for in Withering Realms?",
+      "playerProblem": "Map expansion via perimeter guardians.",
+      "primaryTask": "strategy",
+      "priority": 8
+    }
+  ]
+}

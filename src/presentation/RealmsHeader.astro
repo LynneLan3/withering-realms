@@ -1,0 +1,53 @@
+---
+import { icon } from './icons';
+
+interface Props {
+	variant?: 'home' | 'solid';
+	currentPath?: string;
+}
+
+const { variant = 'home', currentPath = '/' } = Astro.props;
+const navItems = [
+	{ label: 'Guides', href: '/category/' },
+	{ label: 'Walkthrough', href: '/category/' },
+	{ label: 'Map', href: '/category/' },
+	{ label: 'Bosses', href: '/early-bosses/' },
+	{ label: 'Weapons', href: '/doll-arms-limb-leveling/' },
+	{ label: 'Builds', href: '/talismans/' },
+	{ label: 'Secrets', href: '/perimeter-guardians/' },
+];
+---
+<header class:list={['site-header', variant === 'solid' && 'header-solid']} data-realms-header>
+	<a class="brand-mark" href="/" aria-label="Back to home">
+		<img src="/assets/images/WitheringRealmsLogo_Outlined.png" alt="Withering Realms" />
+	</a>
+	<nav class="main-nav" data-realms-nav aria-label="Primary">
+		{navItems.map((item) => (
+			<a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+		))}
+		<span class="nav-divider"></span>
+		<a class="updates-link" href="/night-routes/"><span class="live-dot"></span> Updates</a>
+	</nav>
+	<button class="mobile-menu" type="button" data-realms-menu aria-label="Toggle navigation" aria-expanded="false">
+		<span data-menu-open set:html={icon.menu}></span>
+		<span data-menu-close hidden set:html={icon.x}></span>
+	</button>
+	<a class="header-search" href="/search/" aria-label="Search guides" set:html={icon.search}></a>
+</header>
+<script is:inline>
+(() => {
+	const header = document.querySelector('[data-realms-header]');
+	const button = header?.querySelector('[data-realms-menu]');
+	const nav = header?.querySelector('[data-realms-nav]');
+	const openIcon = button?.querySelector('[data-menu-open]');
+	const closeIcon = button?.querySelector('[data-menu-close]');
+	if (!button || !nav) return;
+	button.addEventListener('click', () => {
+		const open = !nav.classList.contains('nav-open');
+		nav.classList.toggle('nav-open', open);
+		button.setAttribute('aria-expanded', String(open));
+		if (openIcon) openIcon.hidden = open;
+		if (closeIcon) closeIcon.hidden = !open;
+	});
+})();
+</script>

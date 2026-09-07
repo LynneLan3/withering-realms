@@ -1,0 +1,76 @@
+---
+import generated from '../v4/generated/example-site.json';
+import RealmsShell from '../presentation/RealmsShell.astro';
+import RealmsHeader from '../presentation/RealmsHeader.astro';
+import RealmsFooter from '../presentation/RealmsFooter.astro';
+import { icon } from '../presentation/icons';
+
+type NavigationItem = { pageId: string; label?: string; href?: string };
+type NavigationGroup = { label: string; items: NavigationItem[] };
+type NavigationCategory = { groups?: NavigationGroup[] };
+const primaryNavigation = generated.navigation.primary as unknown as NavigationCategory[];
+const groups = primaryNavigation
+	.flatMap((category) => category.groups ?? [])
+	.map((group) => ({
+		...group,
+		items: group.items.map((item) => generated.pages.find((page) => page.id === item.pageId)).filter(Boolean),
+	}))
+	.filter((group) => group.items.length > 0);
+
+const thumbCycle = [
+	'screenshots/screenshot_city.jpg',
+	'characters/character_cutouts.jpg',
+	'screenshots/screenshot_world_map.jpg',
+] as const;
+---
+<RealmsShell
+	title={`Guides · ${generated.game.name}`}
+	description="Browse Withering Realms guides by problem area."
+	canonicalPath="/category/"
+	robots="noindex,follow"
+>
+	<RealmsHeader variant="solid" currentPath="/category/" />
+	<main class="article-page page-width">
+		<div class="article-breadcrumb">
+			<a href="/"><span set:html={icon.arrowLeft}></span> Home</a>
+			<span>/</span>
+			<span>Guides</span>
+		</div>
+		<div class="section-heading" style="margin-bottom: 48px;">
+			<div>
+				<span class="section-kicker">Browse the casebook</span>
+				<h1 style="font-family: 'Libre Baskerville', serif; font-size: clamp(34px, 5vw, 56px); letter-spacing: -.05em; margin: 10px 0 0;">What are you <em>stuck on?</em></h1>
+			</div>
+			<a class="text-link heading-link" href="/search/">Search guides <span set:html={icon.arrowRightSm}></span></a>
+		</div>
+		{groups.map((group) => (
+			<section class="latest-section" style="padding-top: 0; margin-bottom: 70px;">
+				<div class="section-heading">
+					<div>
+						<span class="section-kicker">Category</span>
+						<h2>{group.label.toUpperCase()}</h2>
+					</div>
+				</div>
+				<div class="guide-grid">
+					{group.items.map((item, index) => item && (
+						<a class="guide-card" href={item.href}>
+							<div class="guide-thumb">
+								<img src={`/assets/images/${thumbCycle[index % thumbCycle.length]}`} alt="" />
+							</div>
+							<div class="guide-details">
+								<span class="guide-category">{group.label}</span>
+								<h3>{item.title}</h3>
+								<div class="guide-meta">
+									<span><span set:html={icon.clock}></span> Field note</span>
+									<span class="fresh">{item.pageData.facts?.[0]?.verified ? 'Verified' : 'Needs verification'}</span>
+								</div>
+							</div>
+							<span set:html={icon.chevronRightGuide}></span>
+						</a>
+					))}
+				</div>
+			</section>
+		))}
+	</main>
+	<RealmsFooter />
+</RealmsShell>

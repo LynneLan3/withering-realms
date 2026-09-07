@@ -1,30 +1,220 @@
 ---
 import generated from '../v4/generated/example-site.json';
-import plan from '../../research/zad-archery/2026-09-02/page-plan.json';
-import questions from '../../research/zad-archery/2026-09-02/player-questions.json';
-import categories from '../../research/zad-archery/2026-09-02/guide-content/categories/progression.json';
-import V4GlobalHeader from '../components/v4/V4GlobalHeader.astro';
-import ZadGuideCard from '../components/zad/ZadGuideCard.astro';
-import ZadFooter from '../components/zad/ZadFooter.astro';
-import ZadSeoHead from '../components/zad/ZadSeoHead.astro';
-import '../v4/visual-system.css';
-import '../v4/product-overrides.css';
-const identity = generated.game.identity ?? {};
-const style = `--v4-identity-background:url(${identity.background});--v4-display-font:Inter,ui-sans-serif,sans-serif;--v4-bg:#f6f0e6;--v4-panel:#fffaf1;--v4-ink:#2c251e;`;
-const pages = generated.pages.filter((page: any) => page.id !== 'home');
-const byHref = new Map(pages.map((page: any) => [page.href, page]));
-const card = (href: string) => byHref.get(href);
-const popular = plan.homepage.popular_right_now.map(card).filter(Boolean);
-const recent = plan.homepage.recently_updated.map(card).filter(Boolean);
-const asking = questions.filter((item: any) => item.status.startsWith('READY'));
-const readyAsking = asking.map((item: any) => ({ ...item, page: card(item.route) })).filter((item: any) => item.page);
-const identityStyle = style;
+import RealmsShell from '../presentation/RealmsShell.astro';
+import RealmsHeader from '../presentation/RealmsHeader.astro';
+import RealmsFooter from '../presentation/RealmsFooter.astro';
+import { icon } from '../presentation/icons';
+
+const pagesById = Object.fromEntries(generated.pages.map((page) => [page.id, page]));
+const stuckIds = ['birdcage-b2-puzzle', 'how-to-cross-gaps', 'cae-gwyn-bells', 'early-bosses'] as const;
+const stuckMeta = [
+	{ helper: 'The order for the four bells.', tag: 'Puzzle', tone: 'brass', symbol: '⌁' },
+	{ helper: 'Find the Doll arm upgrade that reaches them.', tag: 'Traversal', tone: 'green', symbol: '↗' },
+	{ helper: 'What changes after the first chime.', tag: 'Cae Gwyn', tone: 'bone', symbol: '◌' },
+	{ helper: 'A calm route through the first encounters.', tag: 'Combat', tone: 'rust', symbol: '†' },
+] as const;
+const stuckGuides = stuckIds.map((id, index) => {
+	const page = pagesById[id];
+	return {
+		...stuckMeta[index],
+		title: page?.title ?? id,
+		href: page?.href ?? `/${id}/`,
+		index,
+	};
+});
+
+const guideImages = [
+	'screenshots/screenshot_city.jpg',
+	'characters/character_cutouts.jpg',
+	'screenshots/screenshot_world_map.jpg',
+] as const;
+const guideCategories = ['Puzzles', 'Weapons', 'Night routes'] as const;
+const latestIds = ['birdcage-b2-puzzle', 'doll-arms-limb-leveling', 'night-routes'] as const;
+const latestGuides = latestIds.map((id, index) => {
+	const page = pagesById[id];
+	return {
+		title: page?.title ?? id,
+		href: page?.href ?? `/${id}/`,
+		category: guideCategories[index],
+		image: guideImages[index],
+		status: page?.pageData?.facts?.[0]?.verified ? 'Verified on current build' : 'Needs verification',
+		time: 'Field note',
+	};
+});
+
+const locations = [
+	{ label: 'Penwyll', href: '/category/' },
+	{ label: 'Beynon House', href: '/category/' },
+	{ label: 'Saintswood', href: '/how-to-cross-gaps/' },
+	{ label: 'Graveyards', href: '/category/' },
+	{ label: 'Tombs', href: '/category/' },
+	{ label: 'Rotting Estates', href: '/perimeter-guardians/' },
+	{ label: 'Night Routes', href: '/night-routes/' },
+];
+
+const dollLinks = [
+	{ label: 'Weapons', href: '/doll-arms-limb-leveling/' },
+	{ label: 'Talismans', href: '/talismans/' },
+	{ label: 'Spells', href: '/category/' },
+	{ label: 'Upgrades', href: '/doll-arms-limb-leveling/' },
+	{ label: 'Builds', href: '/talismans/' },
+];
+
+const primaryGuide = pagesById['birdcage-b2-puzzle']?.href ?? '/category/';
+const tagline = 'A practical field guide for the places Penwyll would rather keep hidden.';
 ---
-<html lang="en"><head><meta charset="utf-8" /><title>Zad Archery Guide - Every arrow, answered.</title><meta name="description" content="Verified Zad Archery guides for progression, platforms, achievements, updates and the systems behind every run." /><link rel="canonical" href="https://zadarchery.help/" /><link rel="preload" as="image" href="/zad-archery/10_steam_library_hero.jpg" /><ZadSeoHead title="Zad Archery Guide - Every arrow, answered." description="Verified Zad Archery guides for progression, achievements, platform support and launch updates." canonical="https://zadarchery.help/" /></head><body class="v4-shell zad-shell" style={identityStyle}><main class="zad-site"><V4GlobalHeader game={{...generated.game, identityAsset:'/zad-archery/12_kotaku_cover.jpg', identityLabel:'Guide site'}} navigation={generated.navigation} currentPageId="home" />
-  <section class="zad-hero"><div class="zad-hero-image"></div><div class="zad-hero-content"><p class="zad-eyebrow">Zad Archery Help <span>·</span> Launch guide</p><h1>Every arrow,<br /><em>answered.</em></h1><p class="zad-hero-copy">Find clear help for progression, achievements, platform support, updates, and the beginner systems that shape every run.</p><form class="zad-hero-search" action="/search/" role="search"><label class="sr-only" for="hero-search">Search Zad Archery guides</label><input id="hero-search" name="q" type="search" placeholder="Search Zad Archery guides…" /><button type="submit">Search <span aria-hidden="true">↗</span></button></form><div class="zad-popular-searches"><strong>Popular searches</strong>{plan.homepage.popular_searches.map((item: any) => <a href={item.route}>{item.label}</a>)}</div></div><span class="zad-patch-badge">Patch 1.0.2 <span>·</span> Sep 1, 2026</span></section>
-  <section class="zad-section zad-asking"><div class="zad-section-heading"><div><p class="zad-eyebrow">Player questions</p><h2>Players are asking</h2></div><p>Fast answers to the questions showing up at launch.</p></div><div class="zad-question-grid">{readyAsking.map((item: any) => <a class="zad-question" href={item.route}><span>Q</span><strong>{item.question}</strong><b>→</b></a>)}</div></section>
-  <section class="zad-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Start with the useful stuff</p><h2>Popular right now</h2></div><a class="zad-section-link" href="/guides/">View all guides →</a></div><div class="zad-card-grid">{popular.map((page: any) => <ZadGuideCard page={page} label={page.id.includes('achievement') ? 'Achievements' : 'Getting started'} />)}</div></section>
-  <section class="zad-section zad-category-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Find your next answer</p><h2>Browse by category</h2></div><p>{categories.description_draft}</p></div><div class="zad-category-grid"><a href="/guides/progression/"><span class="zad-category-icon">↗</span><strong>Progression</strong><p>Playtime, demo changes and the systems that shape a run.</p><b>3 guides</b></a><a href="/guides/platforms/"><span class="zad-category-icon">⌘</span><strong>Platforms</strong><p>Steam Deck, mobile availability and practical platform notes.</p><b>2 guides</b></a><a href="/achievements/"><span class="zad-category-icon">✦</span><strong>Achievements</strong><p>The current live Steam list, with the count discrepancy called out.</p><b>1 guide</b></a><a href="/updates/"><span class="zad-category-icon">↻</span><strong>Updates</strong><p>Patch notes that change how you read the current game.</p><b>1 guide</b></a></div></section>
-  <section class="zad-section"><div class="zad-section-heading"><div><p class="zad-eyebrow">Fresh from the guide desk</p><h2>Recently updated</h2></div></div><div class="zad-card-grid">{recent.map((page: any) => <ZadGuideCard page={page} label="Updated" />)}</div></section>
-  <section class="zad-editorial"><div><p class="zad-eyebrow">A better kind of game guide</p><h2>Answers first. Built for the next run.</h2></div><p>Zad Archery is compact, but its systems stack up quickly. Find the useful answer near the top, then follow the guide that gets you back into the action.</p><a href="/guides/getting-started/">Start with the beginner guide →</a></section>
-  <ZadFooter /></main></body></html>
+<RealmsShell title={`${generated.game.name} Guide`} description={tagline} canonicalPath="/">
+	<RealmsHeader variant="home" currentPath="/" />
+	<main>
+		<section class="hero">
+			<div class="hero-image"></div>
+			<div class="hero-content page-width">
+				<div class="eyebrow"><span class="eyebrow-line"></span> Moonless Formless field guide</div>
+				<h1>WITHERING<br /><em>REALMS</em> <span>GUIDE</span></h1>
+				<p class="hero-lede">{tagline}</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href={primaryGuide}>Find a guide <span set:html={icon.arrowRight}></span></a>
+					<a class="button button-quiet" href="/category/"><span set:html={icon.map}></span> Explore Penwyll</a>
+				</div>
+				<div class="status-row">
+					<span class="status-chip"><span class="live-dot"></span> Early Access</span>
+					<span class="verified"><span set:html={icon.shield}></span> Verified on current build</span>
+				</div>
+			</div>
+			<div class="hero-caption">PENWYLL / SOUTHERN APPROACH <span>01</span></div>
+		</section>
+
+		<section class="search-band page-width" id="guide-search">
+			<div>
+				<span class="section-kicker">Lost in Penwyll?</span>
+				<h2>What are you <em>stuck on?</em></h2>
+			</div>
+			<form class="search-box" action="/search/" method="get" role="search">
+				<span set:html={icon.searchLg}></span>
+				<input id="guide-search-input" name="q" type="search" placeholder="Try “Birdcage”, “gaps”, or “bells”" />
+				<kbd>⌘ K</kbd>
+			</form>
+		</section>
+
+		<section class="section page-width">
+			<div class="section-heading">
+				<div>
+					<span class="section-kicker">Field notes / high priority</span>
+					<h2>STUCK RIGHT NOW?</h2>
+				</div>
+				<a class="text-link heading-link" href="/category/">View all guides <span set:html={icon.arrowRightSm}></span></a>
+			</div>
+			<div class="stuck-grid">
+				{stuckGuides.map((guide) => (
+					<a class={`problem-card tone-${guide.tone}`} href={guide.href}>
+						<div class={`problem-art art-${guide.index}`}>
+							<span class="card-number">0{guide.index + 1}</span>
+							<span class="art-symbol">{guide.symbol}</span>
+						</div>
+						<div class="problem-copy">
+							<span>{guide.tag}</span>
+							<h3>{guide.title}</h3>
+							<p>{guide.helper}</p>
+							<span class="card-arrow" set:html={icon.arrowRight}></span>
+						</div>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="map-section page-width">
+			<div class="section-heading">
+				<div>
+					<span class="section-kicker">A living map of the county</span>
+					<h2>EXPLORE PENWYLL</h2>
+				</div>
+				<a class="text-link heading-link" href="/category/">Open full map <span set:html={icon.arrowRightSm}></span></a>
+			</div>
+			<a class="map-feature" href="/perimeter-guardians/">
+				<img src="/assets/images/screenshots/screenshot_world_map.jpg" alt="Map of Penwyll" />
+				<div class="map-overlay">
+					<span class="map-pin pin-one">01</span>
+					<span class="map-pin pin-two">02</span>
+					<span class="map-pin pin-three">03</span>
+				</div>
+				<div class="map-copy">
+					<span class="section-kicker">The county map</span>
+					<h3>Every road leads<br /><em>somewhere.</em></h3>
+					<p>Locations, shortcuts, night changes and the things no signpost mentions.</p>
+					<span class="text-link">Browse locations <span set:html={icon.arrowRightSm}></span></span>
+				</div>
+			</a>
+			<div class="location-rail">
+				{locations.map((location, index) => (
+					<a href={location.href}>
+						<span>0{index + 1}</span>
+						{location.label}
+						<span set:html={icon.chevronRight}></span>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="doll-section page-width">
+			<div class="doll-copy">
+				<span class="section-kicker">A mechanic, not a menu</span>
+				<h2>BUILD<br /><em>THE DOLL</em></h2>
+				<p>The Doll is assembled for the problem in front of you. Find the right arm, bind a talisman, let Clover see what Althea cannot.</p>
+				<div class="doll-links">
+					{dollLinks.map((item, index) => (
+						<a href={item.href}>
+							<span>0{index + 1}</span>
+							{item.label}
+							<span set:html={icon.arrowUpRight}></span>
+						</a>
+					))}
+				</div>
+			</div>
+			<div class="doll-art">
+				<img src="/assets/images/characters/character_cutouts.jpg" alt="Clover, the Doll and Althea" />
+				<div class="doll-label label-clover"><span set:html={icon.sparkles}></span> Clover</div>
+				<div class="doll-label label-body"><span set:html={icon.crosshair}></span> Body</div>
+			</div>
+		</section>
+
+		<section class="section page-width latest-section">
+			<div class="section-heading">
+				<div>
+					<span class="section-kicker">Fresh from the casebook</span>
+					<h2>LATEST VERIFIED GUIDES</h2>
+				</div>
+				<a class="text-link heading-link" href="/category/">See all updates <span set:html={icon.arrowRightSm}></span></a>
+			</div>
+			<div class="guide-grid">
+				{latestGuides.map((guide) => (
+					<a class="guide-card" href={guide.href}>
+						<div class="guide-thumb">
+							<img src={`/assets/images/${guide.image}`} alt="" />
+						</div>
+						<div class="guide-details">
+							<span class="guide-category">{guide.category}</span>
+							<h3>{guide.title}</h3>
+							<div class="guide-meta">
+								<span><span set:html={icon.clock}></span> {guide.time}</span>
+								<span class="fresh">{guide.status}</span>
+							</div>
+						</div>
+						<span set:html={icon.chevronRightGuide}></span>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<a class="night-section page-width" href="/night-routes/">
+			<div class="night-image"></div>
+			<div class="night-copy">
+				<span class="section-kicker">The same place. A different truth.</span>
+				<h2>NIGHT CHANGES<br /><em>EVERYTHING.</em></h2>
+				<p>Routes close. Enemies move. The dead become conversational.</p>
+				<span class="button button-primary">Explore night guides <span set:html={icon.arrowRight}></span></span>
+			</div>
+			<span class="night-coordinate">51° 54' N / 3° 23' W</span>
+		</a>
+	</main>
+	<RealmsFooter />
+</RealmsShell>

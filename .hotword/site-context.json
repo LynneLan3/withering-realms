@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "hotword-site-context-v1",
+  "siteId": "withering-realms",
+  "repository": "LynneLan3/withering-realms",
+  "steamAppId": "3441990",
+  "opportunityId": "opp-withering-realms-steam-candidate-001",
+  "templateSource": "game-wiki-starter@codex/v4.1",
+  "presentation": {
+    "authority": "Bolt",
+    "sourcePath": "/Users/lanling/Code/hot_words_websites/Withering_Realms",
+    "commit": "1de9682a2a201c390f1dc7b8feca5429b033c68a",
+    "immutableIdentifier": "sha256:3b106c8a12fcb02d54e49a16972e0ea07cf5594589a073d60aa7aec174648abc"
+  },
+  "siteUrl": "https://withering-realms.vercel.app/",
+  "lifecyclePhase": "LOCAL_CREATED"
+}

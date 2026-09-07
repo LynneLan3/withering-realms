@@ -1,72 +1,65 @@
 schemaVersion: 1
-templateVersion: 2.0.0
+templateVersion: "2.0.0"
 mode: generated-site
-presentationVersion: 3
 
 site:
-  id: zad-archery
+  id: "withering-realms"
   mode: standalone
   locale: en
-  siteUrl: https://zadarchery.help
+  siteUrl: "https://withering-realms.vercel.app/"
   hubPath: /
-  title: Zad Archery Help
-  shortName: Zad Archery
-  description: Verified guides for Zad Archery progression, platforms, achievements and launch updates.
-  disclaimer: Independent fan guide for Zad Archery.
+  title: "Withering Realms Guide"
+  shortName: "Withering Realms"
+  description: "Unofficial Early Access field guide for Withering Realms — Penwyll puzzles, doll arms, night routes, and perimeter guardians."
+  disclaimer: "Unofficial player guide. Puzzle-order steps may be provisional until re-verified on the current Early Access build."
 
 deployment:
   provider: vercel
   orgId: "team_yAOizMTSVuT0RJATgFdAlQuG"
-  projectId: "prj_XKf0sXaOapId9g0A2pZVBD6dr5Na"
-  projectName: "zadarchery-help"
-  productionUrl: "https://zadarchery.help"
-  productionBranch: "main"
+  projectId: ""
+  projectName: "withering-realms"
+  productionUrl: "https://withering-realms.vercel.app/"
+  productionBranch: ""
 
 game:
-  name: Zad Archery
-  hubTitle: Zad Archery Help
-  tagline: Every arrow, answered.
-  releaseStatus: released
-  releaseDate: 2026-09-01
-  developer: Samharia Studios
-  publisher: Samharia Studios
-  platforms: [Windows, macOS, Linux, Steam Deck, iOS, Android]
+  name: "Withering Realms"
+  hubTitle: "Withering Realms Guide"
+  tagline: "A practical field guide for the places Penwyll would rather keep hidden."
+  releaseStatus: early-access
+  developer: Moonless Formless
+  publisher: Moonless Formless
+  platforms:
+    - "PC (Steam)"
 
 theme:
-  accentColor: "#d49a22"
-  accentForeground: "#23170d"
-  heroAssetId: null
-  heroPosition: center
+  accentColor: "#79b99a"
+  accentForeground: "#101510"
 
 categories:
-  - id: guides
-    label: Guides
-    description: Verified Zad Archery answers.
-    icon: information
+  - id: starter
+    label: Getting Started
+    description: "Starter navigation; source-backed content is pending."
+    icon: rocket
     order: 1
+    imageAssetId: null
+
 pages:
-  - id: zad-archery-guide-index
-    title: Zad Archery Help
-    description: Verified Zad Archery answers for launch players.
-    category: guides
-    slug: zad-archery-guide-index
-    source: site-input/pages/zad-archery-guide-index.md
-    pageType: how-to
-    status: confirmed
-    featured: false
+  - id: getting-started
+    title: "Withering Realms Getting Started"
+    description: "Starter page awaiting reviewed game evidence."
+    category: starter
+    slug: getting-started
+    source: site-input/pages/getting-started.md
+    status: needs-verification
+    featured: true
     sidebarOrder: 1
     role: core
-    intents: [getting-started]
-    quickAnswer: Start with the published answers for progression, platforms, achievements, and updates.
-    sections: [{ id: scope, title: Guide scope }]
-    facts: [{ label: Scope, value: Launch-ready answers only }]
-routes: []
-assets:
-  - id: zad-hero
-    source: public/zad-archery/10_steam_library_hero.jpg
-    target: zad-archery/hero.jpg
-    alt: Zad Archery archer facing target monsters in a green valley
-    kind: cover
-    sourceType: official
-    usageStatus: approved
-    aspectRatio: auto
+    intents:
+      - getting-started
+    quickAnswer: "Source-backed answer pending upstream evidence."
+    changeSummary: "Initial generated starter shell from Phase 7F handoff."
+
+homepage:
+  primaryCta:
+    label: Getting Started
+    pageId: getting-started

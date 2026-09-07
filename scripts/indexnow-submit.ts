@@ -19,7 +19,7 @@ import {
 	validateUrls,
 	deduplicateUrls,
 	submitToIndexNow,
-} from '../src/lib/indexnow';
+} from './indexnow/indexnow';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');

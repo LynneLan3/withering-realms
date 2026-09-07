@@ -1,0 +1,152 @@
+---
+import generated from '../v4/generated/example-site.json';
+import RealmsShell from '../presentation/RealmsShell.astro';
+import RealmsHeader from '../presentation/RealmsHeader.astro';
+import RealmsFooter from '../presentation/RealmsFooter.astro';
+import { icon } from '../presentation/icons';
+
+export function getStaticPaths() {
+	return generated.pages.map((page) => ({ params: { page: page.id }, props: { page } }));
+}
+
+type PageProp = (typeof generated.pages)[number];
+const page = Astro.props.page as PageProp;
+const body = page.pageData.body;
+const facts = page.pageData.facts ?? [];
+const primaryFact = facts[0];
+const answerLead = primaryFact?.value ?? body.intro ?? page.pageData.intent.playerProblem;
+const quickSection = body.sections.find((section) => /quick|what we can say/i.test(section.title)) ?? body.sections[0];
+const failSection = body.sections.find((section) => /didn.?t work|if this/i.test(section.title) || section.id.includes('didnt'));
+const stepSections = body.sections.filter((section) => section !== quickSection && section !== failSection);
+const nextPage = generated.pages.find((item) => item.id !== page.id && item.href);
+const related = generated.pages.find((item) => item.id !== page.id && item.id !== nextPage?.id) ?? nextPage;
+const categoryLabel = page.pageData.intent.primaryTask?.toUpperCase?.() ?? 'GUIDE';
+const verified = Boolean(primaryFact?.verified);
+const toc = [
+	{ label: 'Quick answer', href: '#quick-answer' },
+	...stepSections.slice(0, 2).map((section, index) => ({ label: section.title, href: `#step-${index}` })),
+	...(failSection ? [{ label: failSection.title, href: '#didnt-work' }] : []),
+].slice(0, 4);
+---
+<RealmsShell
+	title={`${page.title} / ${generated.game.name}`}
+	description={page.pageData.intent.playerProblem}
+	canonicalPath={page.href}
+>
+	<RealmsHeader variant="solid" currentPath={page.href} />
+	<main class="article-page page-width" data-v4-page={page.id}>
+		<div class="article-breadcrumb">
+			<a href="/category/"><span set:html={icon.arrowLeft}></span> All guides</a>
+			<span>/</span>
+			<span>{categoryLabel}</span>
+		</div>
+		<div class="article-layout">
+			<article>
+				<div class="article-category">{categoryLabel} <span>·</span> {generated.game.name.toUpperCase()}</div>
+				<h1>{page.title.includes(':') ? (
+					<>
+						{page.title.split(':')[0]}:<br /><em>{page.title.split(':').slice(1).join(':').trim() || page.pageData.intent.playerProblem}</em>
+					</>
+				) : (
+					<>
+						{page.title}<br /><em>{page.pageData.intent.playerProblem}</em>
+					</>
+				)}</h1>
+				<p class="article-answer">{answerLead}</p>
+				<div class="article-hero">
+					<img src="/assets/images/screenshots/screenshot_city.jpg" alt="" />
+					<span>PENWYLL / FIELD NOTE</span>
+				</div>
+				<div class="quick-answer" id="quick-answer">
+					<div class="quick-icon"><span set:html={icon.sparklesLg}></span></div>
+					<div>
+						<span class="section-kicker">Quick answer</span>
+						<p>{quickSection?.paragraphs?.[0] ?? answerLead}</p>
+						<span class="answer-status">
+							<span set:html={icon.shieldSm}></span>
+							{verified ? 'Confirmed mechanic · Verified on current build' : 'Provisional · Needs verification on current Early Access build'}
+						</span>
+					</div>
+				</div>
+				{stepSections.length > 0 && (
+					<div class="steps">
+						{stepSections.map((section, index) => (
+							<div class="step" id={`step-${index}`}>
+								<span class="step-number">{String(index + 1).padStart(2, '0')}</span>
+								<div>
+									<h3>{section.title}</h3>
+									{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+								</div>
+								<div class="step-photo">
+									<div class="photo-haze"></div>
+									<span>FIELD NOTE {String(index + 1).padStart(2, '0')}</span>
+								</div>
+							</div>
+						))}
+					</div>
+				)}
+				{failSection && (
+					<div class="didnt-work" id="didnt-work">
+						<div class="warning-mark">!</div>
+						<div>
+							<span class="section-kicker">If this didn’t work</span>
+							<h3>{failSection.title}</h3>
+							{failSection.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+							<div class="state-tags">
+								<span>{verified ? 'Confirmed mechanic' : 'Needs verification'}</span>
+								<span>Patch-sensitive</span>
+								<span class="muted">Early Access</span>
+							</div>
+						</div>
+					</div>
+				)}
+				{(body.faq?.length ?? 0) > 0 && (
+					<div class="steps" style="margin-top: 48px;">
+						{body.faq.map((item, index) => (
+							<div class="step" id={`faq-${index}`}>
+								<span class="step-number">Q{index + 1}</span>
+								<div>
+									<h3>{item.question}</h3>
+									<p>{item.answer}</p>
+								</div>
+								<div class="step-photo">
+									<div class="photo-haze"></div>
+									<span>FAQ</span>
+								</div>
+							</div>
+						))}
+					</div>
+				)}
+				{nextPage && (
+					<div class="article-next">
+						<span class="section-kicker">Next problem</span>
+						<a href={nextPage.href}>
+							<span>{nextPage.title}</span>
+							<span set:html={icon.arrowRight}></span>
+						</a>
+					</div>
+				)}
+			</article>
+			<aside class="article-rail">
+				<div class="rail-block">
+					<span class="section-kicker">On this page</span>
+					{toc.map((item, index) => (
+						<a href={item.href} class={index === 0 ? 'active' : undefined}>{item.label}</a>
+					))}
+				</div>
+				<div class="rail-block patch-block">
+					<span class="section-kicker">Current patch</span>
+					<strong>Early Access</strong>
+					<span class="verified"><span set:html={icon.shieldSm}></span> Check against live build</span>
+				</div>
+				{related && (
+					<div class="rail-block related-block">
+						<span class="section-kicker">Related guide</span>
+						<a href={related.href}>{related.title} <span set:html={icon.external}></span></a>
+					</div>
+				)}
+			</aside>
+		</div>
+	</main>
+	<RealmsFooter />
+</RealmsShell>
