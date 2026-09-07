@@ -16,10 +16,10 @@ site:
 deployment:
   provider: vercel
   orgId: "team_yAOizMTSVuT0RJATgFdAlQuG"
-  projectId: ""
+  projectId: "prj_L0zhphdxHwnDx7nJW3IqzJcM4oH0"
   projectName: "withering-realms"
   productionUrl: "https://withering-realms.vercel.app/"
-  productionBranch: ""
+  productionBranch: "main"
 
 game:
   name: "Withering Realms"
