@@ -12,7 +12,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runDeployCli } from './lib/deployment-identity.mjs';
+import { runDeployCli } from './deployment-identity.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_ROOT = path.resolve(SCRIPT_DIR, '..');

@@ -16,7 +16,7 @@ import {
 	readSiteSpecDocument,
 	runDeployCli,
 	spawnVercelDeploy,
-} from './lib/deployment-identity.mjs';
+} from './deployment-identity.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const RECEIPT_SCHEMA_VERSION = 'hotword-publish-receipt-v1';
