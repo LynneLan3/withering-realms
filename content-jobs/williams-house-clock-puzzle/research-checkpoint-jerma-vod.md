@@ -2,12 +2,9 @@
 
 - Slug: `williams-house-clock-puzzle`
 - Research window: 2026-09-08
-- Sources only (operator-specified EA VODs; no web guide research):
-  - Jerma Streams - Withering Realms Part 1 — `z9pL-sUiZkA` (06:46:01)
-  - Jerma Streams - Withering Realms (Part 2) — `k3croypZQXA` (06:11:34)
-- Evidence Gate: **FAIL** (core clock solution not confirmable from specified VODs)
-- Media Gate: **MISSING** (no Williams House clock UI / clue / solution frames)
-- Publish state: **RESEARCH_REQUIRED**
+- Publish state: **RESEARCH_REQUIRED / SOURCE_EXHAUSTED**
+- Evidence Gate: **FAIL**
+- Media Gate: **MISSING**
 - Writer / page body: **NOT ENTERED** (do not guess solution)
 
 ## Routing Receipt (content)
@@ -18,87 +15,81 @@ Site lifecycle: PUBLISHED / PRODUCTION (existing)
 Content stage: LAUNCH
 Intent: PUZZLE_STUCK / QUEST_PROGRESSION
 Article class: PREMIUM_PROBLEM_SOLVING
-Evidence gate: FAIL — Williams House clock puzzle exact solution not confirmed in specified VODs
+Evidence gate: FAIL
 Media gate: MISSING
 Writer: BLOCKED
 Publish state: RESEARCH_REQUIRED
-Reason: Subtitle + targeted frame review of Part 1 post-Institute window and Part 2 after Chain Hook found no Williams House clock interaction, clues, player input, or success state
+Source status: SOURCE_EXHAUSTED (operator-specified EA VODs)
+Reason: Neither Jerma Parts 1–2 nor Ecdycis 2026-09-06 long EA VOD visually confirms Williams House clock puzzle (location + clue + interaction + solution). No Writer.
 ```
 
-## Scope scanned (CONFIRMED_LIVE process)
+## Operator-specified sources (exhausted)
 
-### Part 1 — post-Institute window `05:50:00–06:46:01`
-- After Institute code-words open (~05:44), stream continues chapel/quest wrap, Nightingale lore, then **Penhaligan Manor** quest assignment (~06:00–06:02).
-- No spoken / ASR hit for `Williams House`.
-- No clock-face / hour-hand / minute-hand / “set the time” puzzle interaction in this window.
-- Stream ends with assessment / wrap (~06:29+).
+### A) Jerma Streams (excluded from further scanning after prior pass)
+- Part 1 `z9pL-sUiZkA` (06:46:01) — post-Institute `05:50–end` no Williams House clock
+- Part 2 `k3croypZQXA` (06:11:34) — after Chain Hook no Williams House clock
+- False lead: Institute underground **Mostyn House** note (~`04:05:59`), not Williams Clock
 
-### Part 2 — from `00:35:00` onward (Chain Hook known ~`00:35:24`)
-- Full English auto-sub scan: **0** hits for `Williams` / `Williams House`.
-- Clock-token scan excluding clock tower / o’clock noise: **0** puzzle-relevant hits in Part 2.
-- `00:42:00` “Did I go in this house?” is ambient exploration chatter — no clock puzzle / Williams label confirmed in stills.
+### B) Twitch — Ecdycis (this pass; Jerma not re-scanned)
+- Channel: `Ecdycis`
+- Exact title match: **Withering Realms is an Indie Horror Game That Somehow Combines Clock Tower and Souls Games !vods !Merch**
+- VOD URL: `https://www.twitch.tv/videos/2866664686`
+- Twitch duration shown: **11:41:00** (operator note ~11h35m)
+- Date marker on channel Videos: **前天** relative to 2026-09-08 research day → aligns with **2026-09-06**
+- Method: Twitch Videos → select by date/title → in-player seek only (no download; no web guides)
 
-### False lead checked (do not publish as Williams Clock)
-ASR “Mustin House” @ Part 1 `04:05:59` / enter line `04:07:56` is **Mostyn House** lore inside Institute underground — **not** Williams House Clock.
+## Ecdycis seek process (CONFIRMED_LIVE process)
 
-On-screen **Researcher's Notes** (CONFIRMED_LIVE @ ~`04:05:59`):
+1. Coarse latter-half seek ~25 min (`05:00` → `11:35`)
+2. Dense manor window ~2 min (`08:55` → `09:58`) after ornate interior spotted ~`09:00–09:20`
+3. Additional full-stream coarse ~30 min samples (early/mid/late)
+4. Chat GQL keyword scan across VOD (positioning only; not treated as fact)
+5. Visual confirmation required for any candidate; ASR/chat alone not accepted
 
-> Mostyn House, once situated atop the hill at the epicenter of the Occult Event, appears to have been “eaten” and is now being “vomited up” beneath Penwyll. Fragments… mines… layout… bears no resemblance to the recorded floor plan.
+## What was found (not Williams Clock)
 
-- Grade: **CONFIRMED_LIVE** as Mostyn House note / model desk scene.
-- Grade: **CONFIRMED_LIVE** that this is **not** a Williams House clock solve.
-- No clock interaction observed in that Mostyn fragment scene (combat / exploration only @ `04:07:56`).
-
-### Other “Williams” / “clock” ASR (not the puzzle)
-| Timestamp | Note | Grade |
+| Timestamp (VOD) | Observation | Grade |
 | --- | --- | --- |
-| Part 1 `01:44:31` | “Nightingale Williams” (witch lore) | CONFIRMED_LIVE (character name; not house clock) |
-| Part 1 `01:30:13` | “Winding the clock…” doll lore | CONFIRMED_LIVE (lore; not puzzle UI) |
-| Part 1 `01:26–01:55` | Clock **tower** quest routing | CONFIRMED_LIVE (different location) |
+| ~`09:00–09:20` | Ornate manor combat (Living Armor / checkered floors) | CONFIRMED_LIVE as manor combat |
+| ~`09:12` | Bestiary: **Entrance Hall Armour** / **Jasper Penhaligon** manor text | CONFIRMED_LIVE → **Penhaligon Manor**, not Williams |
+| ~`09:28` | Map title **Hedge Maze** (Penhaligon approach) | CONFIRMED_LIVE |
+| ~`10:00` | Back in **Penwyll** town (Reliable Repairs) | CONFIRMED_LIVE |
+| ~`11:15` | Quest banner **Beynon House** kitchen (“Sweetmeat’s Ingredients”) | CONFIRMED_LIVE |
+| Chat whole-VOD | No `Williams House` / grandfather-clock / All-Seeing Eye / clock-puzzle talk (only Clock Tower genre + “ash williams” joke) | CONFIRMED_LIVE (negative chat evidence) |
+
+## Williams House Clock — required claims
+
+All remain **unconfirmed** on exhausted sources:
+
+- Clock puzzle location inside Williams House
+- How the clock is operated
+- Where the clue is / what it shows
+- Randomization yes/no
+- Correct hand/time input
+- Clue → answer derivation
+- Success / reward / progression
 
 ## Exact solution
 
-**NOT FOUND in specified VODs.**
+**NOT FOUND.**  
+**SOURCE_EXHAUSTED** for operator-specified Jerma + Ecdycis EA VODs.
 
-Missing for Evidence Gate PASS:
+## Evidence frames retained (supporting / negative)
 
-- Williams House enter / location confirmation on HUD/map
-- Clock puzzle body / interactable
-- Clue / note / number / symbol set for the clock
-- How hands / time are operated
-- Player’s actual input
-- Correct hour/minute (or other) solution
-- Clue → solution derivation
-- Wrong attempts (if any)
-- Success state / door / reward / progression
+Under `ecdycis-evidence/`:
 
-## Evidence grades summary
+- `00-vod-title.png` — exact title VOD open
+- `09h12-penhaligon-bestiary.png` — Penhaligon manor false-lead identity
+- `09h28-hedge-maze-map.png` / or nearby manor still — hedge maze / manor progression
+- `11h15-beynon-house-quest.png` — late Beynon House (not Williams)
 
-| Claim | Grade |
-| --- | --- |
-| Specified VODs were scanned via EN auto-subs + targeted clips | CONFIRMED_LIVE |
-| Part 1 `05:50–end` does not contain Williams House clock solve | CONFIRMED_LIVE (negative) |
-| Part 2 after `00:35` contains no ASR/subtitle evidence of Williams House clock solve | CONFIRMED_LIVE (negative) |
-| Institute underground “Mustin” ASR = Mostyn House note | CONFIRMED_LIVE |
-| Williams House Clock exact solution | **NEEDS_VERIFICATION** / unavailable from these VODs |
-| Any guessed password / hand positions | **FORBIDDEN** until new EA footage confirms |
-
-## Functional frames captured this pass (supporting / negative evidence)
-
-1. `vod-frame-mostyn-house-note-040605.jpg` — Mostyn House Researcher's Notes @ Part 1 ~`04:05:59` (proves false-lead identity)
-2. `vod-frame-mostyn-enter-040756.jpg` — Mostyn fragment interior / combat @ Part 1 ~`04:07:56`
-3. `vod-frame-p1-041020-map.jpg` — Institute map glance @ Part 1 ~`04:10:20` (no Williams Clock solve)
-4. `vod-frame-p2-004200-house-check.jpg` — Part 2 ~`00:42` house-check window (no clock puzzle confirmed)
-
-## Unresolved / next research needs
-
-- Need a different EA VOD / segment where Williams House is entered and the clock is solved on camera.
-- Do **not** use web guides or invent hand positions.
-- Keep page unpublished until exact solution is CONFIRMED_LIVE or PLAYER_CONFIRMED with usable proof.
+Jerma Mostyn false-lead frames remain in this folder from prior pass.
 
 ## Decision
 
 - Evidence Gate = **FAIL**
 - Publish state = **RESEARCH_REQUIRED**
+- Source status = **SOURCE_EXHAUSTED**
 - Shared Article Writer = **do not run**
-- No public page / no production deploy for this slug
+- Do not invent clock times / hand positions
+- Next research requires a **new operator-specified** EA source that actually reaches Williams House clock on camera
