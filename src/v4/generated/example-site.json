@@ -590,12 +590,12 @@
           "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
           "href": "/institute-code-words-puzzle/",
           "query": "How do I solve the Bellflower Occult Institute code words / basement puzzle in Withering Realms?",
-          "playerProblem": "Randomized basement code uses book-word order — not a fixed online password."
+          "playerProblem": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password)."
         },
         "state": {},
         "intent": {
-          "query": "Randomized basement code uses book-word order — not a fixed online password.",
-          "playerProblem": "Randomized basement code uses book-word order — not a fixed online password.",
+          "query": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
+          "playerProblem": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
           "primaryTask": "procedure",
           "prototype": "P4",
           "priority": 1,
@@ -637,62 +637,93 @@
           }
         },
         "body": {
-          "intro": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is written in blood on the floor; count the dots and use those numbers for Book 1’s word numbers when the clue points there (PLAYER_REPORTED).",
+          "intro": "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password.",
           "sections": [
             {
               "id": "quick-answer",
               "title": "Quick Answer",
               "paragraphs": [
-                "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is written in blood on the floor; count the dots and use those numbers for Book 1’s word numbers when the clue points there (PLAYER_REPORTED)."
+                "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password."
               ],
               "mediaSlots": []
             },
             {
-              "id": "how-book-word-order-works",
-              "title": "How Book-Word Order Works",
+              "id": "read-your-spell-book-codes-note",
+              "title": "Read Your Spell Book Codes Note",
               "paragraphs": [
-                "The code on the basement door is read as book number → word number. Each pair points to a specific word in a specific book. Example method (for clarity only):  \n  - 1-6 = Book 1, word 6  \n  - 2-3 = Book 2, word 3  \n- Do not treat any concrete word sequences you find online as a guaranteed solution for your game; players report the code is randomized (PLAYER_REPORTED).  \n- Players in the discussion reported one observed book-order labeling as Book 1 = Raum, Book 2 = Glasya, Book 3 = Astaroth — present here only as player-reported examples of names seen on the board, not as canonical lore or a universal order (PLAYER_REPORTED)."
+                "The clue note is printed with two labeled sets of (book)-(word) pairs: one labeled Basement and one labeled Upper floor. The note text in the observed run also says “The code is in book-word order.” Treat the pairs as ordered steps you must reproduce at the door that matches that label.",
+                "(Observed: in the recorded Early Access run the first two books referenced by the note were found in the ground-floor bathroom and the third book on the upper floor — CONFIRMED_LIVE.)"
+              ],
+              "mediaSlots": [
+                "spellbook-codes-note"
+              ]
+            },
+            {
+              "id": "collect-the-three-spell-books",
+              "title": "Collect the Three Spell Books",
+              "paragraphs": [
+                "You need all three books the note references. The three observed books are:",
+                "- Book of RAUM  \n- Book of GLASYA-LABOLAS  \n- Book of ASTAROTH",
+                "Each book contains a numbered list of words; the book tooltip reads: “A book of words that can be spoken aloud to dispel certain door hexes.” Locate the three books in your run and open each to read its numbered words before attempting the door.",
+                "(These three books and their word lists were documented in the observed run — CONFIRMED_LIVE.)"
+              ],
+              "mediaSlots": [
+                "book-glasya-labolas",
+                "book-astaroth"
+              ]
+            },
+            {
+              "id": "how-the-hex-door-ui-works",
+              "title": "How the Hex Door UI Works",
+              "paragraphs": [
+                "When you interact with a hex door you get a two-step spoken-word UI:",
+                "- “Speak words from which book?” — pick one of the three books.  \n- “Speak which word?” — pick the numbered word from that book.",
+                "If you select the wrong sequence the game responds with Clover saying “Nothin”; the correct sequence clears the door’s three glowing white sigils and opens the door (observed in the upper-floor door in the recorded run)."
+              ],
+              "mediaSlots": [
+                "speak-which-book",
+                "speak-which-word"
+              ]
+            },
+            {
+              "id": "map-pairs-to-words-and-speak-them",
+              "title": "Map Pairs to Words and Speak Them",
+              "paragraphs": [
+                "Follow these steps in order for the door you are opening:",
+                "1. Open your Spell Book Codes note and find the pair list labeled for the door (Basement or Upper floor). Treat the list as ordered—first pair = first spoken book/word, etc.  \n2. For the first pair: note the book index and the word index (format: book–word). Open that book, select it at the door when prompted (“Speak words from which book?”).  \n3. When the door asks “Speak which word?”, choose the numbered word from that book (the list inside the book; 1 = first word, 2 = second, etc.). Speak it.  \n4. Repeat for the second and third pairs in the note’s order. The correct three book-word selections in order will clear the sigils; a wrong selection yields “Nothin.”  \n5. Use the pair set that matches the specific door (Basement vs Upper floor). Trying the other door’s pair list will not open this door in the observed run.",
+                "Important: use the Spell Book Codes note you found in your own playthrough — do not assume another player’s words will match your game."
               ],
               "mediaSlots": []
             },
             {
-              "id": "where-to-find-the-book-order",
-              "title": "Where to Find the Book Order",
+              "id": "worked-example-from-one-early-access-run",
+              "title": "Worked Example From One Early Access Run",
               "paragraphs": [
-                "1. Go to the institute’s upper floor.  \n2. Look for the board/blackboard that lists the books or shows the current order — players report the upper-floor board displays the book order you must use (PLAYER_REPORTED).  \n3. Note the exact order and any names shown there before you return to the basement puzzle. Do not assume the order from someone else’s screenshot or forum post; confirm it in your own game."
+                "Below are worked mappings from one Early Access run (recorded stream). These are examples only — map pairs the same way using your own Spell Book Codes note.",
+                "Observed printed pairs in that run:\n- Basement: 1-4  2-5  1-6  \n- Upper floor: 1-6  2-4  3-2  (CONFIRMED_LIVE)",
+                "Mapped words from that same run:",
+                "- Upper floor mapping (example):  \n  Sequence: 1-6 → 2-4 → 3-2  \n  Mapped words: Book of RAUM / Azacgessenio → Book of GLASYA-LABOLAS / Manichel → Book of ASTAROTH / Hazalat  \n  This sequence is shown opening the upper-floor hex door in the observed run.",
+                "- Basement mapping (example from the same run):  \n  Sequence: 1-4 → 2-5 → 1-6  \n  Mapped words: Book of RAUM / Sabanche → Book of GLASYA-LABOLAS / Saluyel → Book of RAUM / Azacgessenio  \n  (Basement success frame for this run was not captured in the available clip; this mapping is the derived example from the note + books in that run — CONFIRMED_LIVE as the run’s mapping.)",
+                "Reminder: these word strings (Sabanche, Saluyel, Azacgessenio, Manichel, Hazalat, etc.) are worked examples from one run’s Spell Book Codes note. If your note lists different pairs, map them the same way to your three books."
               ],
-              "mediaSlots": []
-            },
-            {
-              "id": "how-to-solve-the-bathroom-code",
-              "title": "How to Solve the Bathroom Code",
-              "paragraphs": [
-                "The bathroom stall clue is written in blood on the floor (PLAYER_REPORTED). The intended method reported by players is to count the dots.  \n- Use the dot counts as numbers that correspond to Book 1’s word numbers. Example (method only): if you count 3 dots, then one of the Book 1 positions to use is word 3.  \n- Steps:  \n  1. Enter the bathroom stall with the blood-marked floor.  \n  2. Count the distinct dots carefully (don’t include accidental stains).  \n  3. Record those numbers in order — those numbers map to word positions within whatever book is currently Book 1 (as shown on the upper-floor board)."
-              ],
-              "mediaSlots": []
-            },
-            {
-              "id": "how-to-solve-the-basement-code",
-              "title": "How to Solve the Basement Code",
-              "paragraphs": [
-                "Follow these steps in player order:",
-                "1. Confirm book order upstairs: read the board/blackboard on the upper floor and write down which book is Book 1, Book 2, Book 3 (PLAYER_REPORTED evidence says the board shows the order).  \n2. Use the bathroom clue (if present): count the dots on the bathroom stall floor and note those numbers as Book 1 word positions (PLAYER_REPORTED).  \n3. Locate the physical books indicated by the board order and open each book to the word index or simply count words in the book text to find the number-th word for each pair. Example interpretation: a code pair 2-3 means “from the book currently labeled Book 2, take word number 3.” (This is the reading method; actual pairs will vary per game.)  \n4. Enter the words into the basement door/panel in the exact sequence the puzzle requires (follow the UI prompt in your game).  \n5. If the door rejects your input, re-check: the upper-floor board for book order, your dot counts in the bathroom, and make sure you counted words in the correct book and in the correct order. Repeat the steps above — the puzzle is randomized per game instance (PLAYER_REPORTED)."
-              ],
-              "mediaSlots": []
-            },
-            {
-              "id": "why-online-codes-may-not-match-your-game",
-              "title": "Why Online Codes May Not Match Your Game",
-              "paragraphs": [
-                "Players report the basement code is randomized, so a code posted online will often not match your playthrough (PLAYER_REPORTED). Never assume an online string is universal.  \n- Some forum posts show concrete examples (for example: “RAUM 3 2 1” or “RAUM 1 GLASYA 5 4”) — those are examples players have seen or posted, not guaranteed answers for everyone. Do not use them as a universal solution."
-              ],
-              "mediaSlots": []
+              "mediaSlots": [
+                "upper-door-open"
+              ]
             },
             {
               "id": "common-mistakes",
               "title": "Common Mistakes",
               "paragraphs": [
-                "Using another player’s full code without checking your own upper-floor book order.  \n- Misreading pair format (treating the pair as word→book instead of book→word). The correct reading is book number → word number.  \n- Failing to confirm the board upstairs before extracting words from books.  \n- Miscounting the bathroom dots or including unrelated floor stains as dots.  \n- Assuming book names or order are fixed across all games — player reports show order is something you must confirm in your own run (PLAYER_REPORTED)."
+                "- Using another player’s example words as if they’re universal — the correct words come from your own Spell Book Codes note.  \n- Treating the UI as a digits-only keypad or expecting a single four-digit code — the game asks for a book then a word, not a numeric password.  \n- Trying the Upper-floor pairs on the Basement door (or vice versa) — doors use their matching pair set in the observed run.  \n- Picking the book but reading the wrong numbered word (remember 1 = first word in that book, etc.).  \n- Skipping the third pair: all three pairs must be spoken in order to clear the door.",
+                "Also note: wrong sequences return Clover saying “Nothin”; correct sequences visibly clear the door’s sigils (CONFIRMED_LIVE)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "related-guides",
+              "title": "Related Guides",
+              "paragraphs": [
+                "- /bellflower-institute-stuck-first-floor/ — a different stuck/route issue (separate problem).  \n- /birdcage-b2-puzzle/ — related location puzzle."
               ],
               "mediaSlots": []
             },
@@ -700,11 +731,10 @@
               "id": "faq",
               "title": "FAQ",
               "paragraphs": [
-                "Q: Is there one code that opens everyone’s basement door?  \nA: No. Players report the basement code is randomized, so there is no single universal password (PLAYER_REPORTED).",
-                "Q: How do I read a pair like “1-6”?  \nA: Read it as Book 1 → word 6: go to whichever book the upper-floor board labels Book 1 and take the sixth word (example method only).",
-                "Q: Where do I find the book order?  \nA: On the upper floor — a board/blackboard shows the current book order (PLAYER_REPORTED). Check it in your game before attempting the basement puzzle.",
-                "Q: What is the bathroom clue and how does it help?  \nA: Players report a bathroom-stall clue written in blood on the floor; you count the dots and use those numbers as Book 1 word positions (PLAYER_REPORTED).",
-                "Q: Someone posted a working code online — why didn’t it work for me?  \nA: Because the basement code appears to be randomized per playthrough. That online code was valid for that player’s game state only (PLAYER_REPORTED)."
+                "Q: Is there one password that works for everyone?  \nA: No. There is not a universal password — doors use Spell Book Codes pairs from the note you find in your run.",
+                "Q: How do I read a pair like “1-6”?  \nA: Read it as (book index)-(word index). Open the referenced book, then speak that numbered word (1 = first word, 6 = sixth word).",
+                "Q: What does the hex door ask me to do?  \nA: The door asks “Speak words from which book?” then “Speak which word?” — choose the book, then choose the numbered word.",
+                "Q: Someone else’s words opened their door but not mine — why?  \nA: Because each run’s Spell Book Codes note provides the pairs you must map to your three books. Using another player’s pairs may not match your note."
               ],
               "mediaSlots": []
             },
@@ -712,7 +742,7 @@
               "id": "sources",
               "title": "Sources",
               "paragraphs": [
-                "Steam discussion thread (PLAYER_REPORTED): https://steamcommunity.com/app/3441990/discussions/0/591814398006493805/ — accepted answer and follow-up posts reporting: “The code is in book-word order,” book-order is shown upstairs, the basement code is randomized, and bathroom dots method.  \n- Withering Realms (CONFIRMED_OFFICIAL): Early Access Steam release 2026-09-04. Research checked 2026-09-07; latest official patch page observed: 0.34."
+                "- Jerma Streams - Withering Realms (YouTube) — vid id z9pL-sUiZkA; Spell Book Codes note and book word lists observed in Part 1; mapped pairs and upper-floor opening verified in the stream (CONFIRMED_LIVE).  \n- Early Access release: 2026-09-04 (CONFIRMED_OFFICIAL).  \n- Research checked: 2026-09-08; latest observed official patch: 0.34."
               ],
               "mediaSlots": []
             }
@@ -720,48 +750,43 @@
           "faq": [
             {
               "id": "faq-1",
-              "question": "Is there one code that opens everyone’s basement door?",
-              "answer": "No. Players report the basement code is randomized, so there is no single universal password (PLAYER_REPORTED)."
+              "question": "Is there one password that works for everyone?",
+              "answer": "No. There is not a universal password — doors use Spell Book Codes pairs from the note you find in your run."
             },
             {
               "id": "faq-2",
               "question": "How do I read a pair like “1-6”?",
-              "answer": "Read it as Book 1 → word 6: go to whichever book the upper-floor board labels Book 1 and take the sixth word (example method only)."
+              "answer": "Read it as (book index)-(word index). Open the referenced book, then speak that numbered word (1 = first word, 6 = sixth word)."
             },
             {
               "id": "faq-3",
-              "question": "Where do I find the book order?",
-              "answer": "On the upper floor — a board/blackboard shows the current book order (PLAYER_REPORTED). Check it in your game before attempting the basement puzzle."
+              "question": "What does the hex door ask me to do?",
+              "answer": "The door asks “Speak words from which book?” then “Speak which word?” — choose the book, then choose the numbered word."
             },
             {
               "id": "faq-4",
-              "question": "What is the bathroom clue and how does it help?",
-              "answer": "Players report a bathroom-stall clue written in blood on the floor; you count the dots and use those numbers as Book 1 word positions (PLAYER_REPORTED)."
-            },
-            {
-              "id": "faq-5",
-              "question": "Someone posted a working code online — why didn’t it work for me?",
-              "answer": "Because the basement code appears to be randomized per playthrough. That online code was valid for that player’s game state only (PLAYER_REPORTED)."
+              "question": "Someone else’s words opened their door but not mine — why?",
+              "answer": "Because each run’s Spell Book Codes note provides the pairs you must map to your three books. Using another player’s pairs may not match your note."
             }
           ],
-          "metaDescription": "The Bellflower Occult Institute basement code is randomized; learn book-word order, confirm books on the upper floor, and use bathroom dots for Book 1 — not a fixed online password."
+          "metaDescription": "Institute hex doors use Spell Book Codes book-word pairs and spoken words from three spell books — not a fixed numeric password. Use your own note."
         },
         "facts": [
           {
             "id": "fact-institute-code-words-puzzle-quick",
             "label": "Quick answer",
-            "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w",
+            "value": "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password.",
             "verified": true,
-            "grade": "PLAYER_REPORTED"
+            "grade": "CONFIRMED_LIVE"
           }
         ],
         "evidence": [
           {
-            "evidenceId": "ev-steam-discussion",
-            "sourceType": "player",
-            "sourceRef": "https://steamcommunity.com/app/3441990/discussions/0/591814398006493805/",
-            "finding": "Steam discussion: accepted book-word-order answer; players report randomized basement code, upper-floor book board, and bathroom dots method.",
-            "grade": "PLAYER_REPORTED"
+            "evidenceId": "ev-jerma-part1",
+            "sourceType": "live",
+            "sourceRef": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "finding": "Jerma Streams - Withering Realms Part 1: Spell Book Codes note, three spell books, hex door speak UI, upper-floor open (~04:02–05:45).",
+            "grade": "CONFIRMED_LIVE"
           },
           {
             "evidenceId": "ev-steam",
@@ -771,21 +796,99 @@
             "grade": "CONFIRMED_OFFICIAL"
           },
           {
-            "evidenceId": "ev-official-site",
-            "sourceType": "official",
-            "sourceRef": "https://witheringrealms.com/",
-            "finding": "Official Withering Realms site.",
-            "grade": "CONFIRMED_OFFICIAL"
-          },
-          {
             "evidenceId": "ev-research-window",
             "sourceType": "editorial",
-            "sourceRef": "research-checked:2026-09-07",
-            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "sourceRef": "research-checked:2026-09-08",
+            "finding": "Content research checked 2026-09-08; latest official patch page observed: 0.34; EA release 2026-09-04.",
             "grade": "CONFIRMED_OFFICIAL"
           }
         ],
-        "media": [],
+        "media": [
+          {
+            "id": "media-spellbook-codes-note",
+            "slot": "spellbook-codes-note",
+            "status": "READY",
+            "caption": "Spell Book Codes clue with Basement / Upper floor pairs (CONFIRMED_LIVE @ 04:02:16).",
+            "alt": "Spell Book Codes clue note showing Basement and Upper floor book-word pairs.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/spellbook-codes-note.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "04:02:16",
+            "timestampSeconds": 14536
+          },
+          {
+            "id": "media-book-glasya-labolas",
+            "slot": "book-glasya-labolas",
+            "status": "READY",
+            "caption": "Book of GLASYA-LABOLAS numbered word list (CONFIRMED_LIVE @ 05:09:31).",
+            "alt": "You found Book of GLASYA-LABOLAS with six numbered occult words.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/book-glasya-labolas.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "05:09:31",
+            "timestampSeconds": 18571
+          },
+          {
+            "id": "media-book-astaroth",
+            "slot": "book-astaroth",
+            "status": "READY",
+            "caption": "Book of ASTAROTH numbered word list (CONFIRMED_LIVE @ 05:26:28).",
+            "alt": "You found Book of ASTAROTH with six numbered occult words including Hazalat.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/book-astaroth.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "05:26:28",
+            "timestampSeconds": 19588
+          },
+          {
+            "id": "media-speak-which-book",
+            "slot": "speak-which-book",
+            "status": "READY",
+            "caption": "Hex door prompt Speak words from which book? (CONFIRMED_LIVE ~05:43:50).",
+            "alt": "Hex door menu listing Book of RAUM, Book of GLASYA-LABOLAS, and Book of ASTAROTH.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/speak-which-book.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "05:43:50",
+            "timestampSeconds": 20630
+          },
+          {
+            "id": "media-speak-which-word",
+            "slot": "speak-which-word",
+            "status": "READY",
+            "caption": "Hex door prompt Speak which word? (CONFIRMED_LIVE ~05:43:57).",
+            "alt": "Hex door word menu with Book of ASTAROTH words and Hazalat highlighted.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/speak-which-word.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "05:43:57",
+            "timestampSeconds": 20637
+          },
+          {
+            "id": "media-upper-door-open",
+            "slot": "upper-door-open",
+            "status": "READY",
+            "caption": "Upper-floor hex door open after the correct book-word sequence — verifies the book-word decode method, not a basement success screenshot (CONFIRMED_LIVE ~05:44:20).",
+            "alt": "Open corridor door after hex sigils cleared on the upper floor.",
+            "src": "/assets/images/evidence/institute-code-words-puzzle/upper-door-open.webp",
+            "width": 640,
+            "height": 360,
+            "grade": "CONFIRMED_LIVE",
+            "sourceUrl": "https://www.youtube.com/watch?v=z9pL-sUiZkA",
+            "timestamp": "05:44:20",
+            "timestampSeconds": 20660
+          }
+        ],
         "assets": [],
         "primitiveData": [
           {
@@ -793,11 +896,11 @@
             "primitiveId": "A01",
             "payload": {
               "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
-              "task": "Randomized basement code uses book-word order — not a fixed online password.",
+              "task": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
-              "ev-steam-discussion"
+              "ev-jerma-part1"
             ],
             "mediaRefs": []
           },
@@ -808,12 +911,12 @@
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+                  "value": "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password."
                 }
               ]
             },
             "evidenceRefs": [
-              "ev-steam-discussion"
+              "ev-jerma-part1"
             ],
             "mediaRefs": []
           }
@@ -855,29 +958,34 @@
           "draft": false,
           "index": true,
           "needsVerification": false,
-          "researchChecked": "2026-09-07",
+          "researchChecked": "2026-09-08",
           "patchObserved": "0.34",
           "eaRelease": "2026-09-04",
           "evidenceSummary": [
-            "PLAYER_REPORTED",
+            "CONFIRMED_LIVE",
             "CONFIRMED_OFFICIAL"
           ],
-          "verificationLabel": "PLAYER_REPORTED book-word rule · randomized code · checked 2026-09-07",
+          "verificationLabel": "CONFIRMED_LIVE book-word method · checked 2026-09-08",
           "articleSource": "content-jobs/institute-code-words-puzzle/article.md",
           "writer": "APIMart/shared-article-writer",
-          "metaDescription": "The Bellflower Occult Institute basement code is randomized; learn book-word order, confirm books on the upper floor, and use bathroom dots for Book 1 — not a fixed online password."
+          "metaDescription": "Institute hex doors use Spell Book Codes book-word pairs and spoken words from three spell books — not a fixed numeric password. Use your own note."
         },
         "presentation": {
           "categoryLabel": "PUZZLES",
           "homepageCard": {
-            "helper": "Randomized basement code uses book-word order — not a fixed online password.",
+            "helper": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
             "tag": "Puzzle",
             "tone": "brass",
             "symbol": "⌁",
             "shortTitle": "Institute Code Words Puzzle"
           },
-          "subtitle": "Randomized basement code uses book-word order — not a fixed online password.",
+          "subtitle": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
           "related": [
+            {
+              "id": "bellflower-institute-stuck-first-floor",
+              "href": "/bellflower-institute-stuck-first-floor/",
+              "title": "Withering Realms Bellflower Institute Stuck on First Floor"
+            },
             {
               "id": "birdcage-b2-puzzle",
               "href": "/birdcage-b2-puzzle/",
@@ -898,11 +1006,11 @@
             "instanceId": "answer-header",
             "payload": {
               "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle",
-              "task": "Randomized basement code uses book-word order — not a fixed online password.",
+              "task": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
-              "ev-steam-discussion"
+              "ev-jerma-part1"
             ],
             "mediaRefs": [],
             "behavior": "answer-header",
@@ -917,19 +1025,19 @@
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+                  "value": "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password."
                 }
               ]
             },
             "evidenceRefs": [
-              "ev-steam-discussion"
+              "ev-jerma-part1"
             ],
             "mediaRefs": [],
             "behavior": "entity-facts",
             "data": [
               {
                 "label": "Quick answer",
-                "value": "There is no single universal basement password — the Bellflower Occult Institute basement code is randomized (PLAYER_REPORTED).  \n- Solve it by reading the code as book-number → word-number pairs (each pair tells you which word to pull from which book). Example format: 1-6 = Book 1, word 6 (example only; not a universal password).  \n- Confirm the current book order on the institute’s upper floor (the blackboard/board shows the book order) before extracting words.  \n- The bathroom stall clue is w"
+                "value": "Not a fixed numeric password — Bellflower Occult Institute hex doors use Spell Book Codes (book)-(word) pairs. Read the Spell Book Codes note for the door you want to open, collect the three books (Book of RAUM, Book of GLASYA-LABOLAS, Book of ASTAROTH), then at the hex door choose the book (prompt: “Speak words from which book?”) and speak the numbered word (prompt: “Speak which word?”) in the note’s pair order. Always use your own Spell Book Codes note — example words shown elsewhere are worked examples, not a universal password."
               }
             ]
           },
@@ -940,9 +1048,9 @@
             "instanceId": "next-step",
             "payload": {
               "next": {
-                "id": "birdcage-b2-puzzle",
-                "href": "/birdcage-b2-puzzle/",
-                "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+                "id": "bellflower-institute-stuck-first-floor",
+                "href": "/bellflower-institute-stuck-first-floor/",
+                "title": "Withering Realms Bellflower Institute Stuck on First Floor"
               }
             },
             "evidenceRefs": [],
@@ -1680,6 +1788,11 @@
           },
           "subtitle": "Corridor gap / ghost-hands door → return to foyer unmarked rear stairs.",
           "related": [
+            {
+              "id": "institute-code-words-puzzle",
+              "href": "/institute-code-words-puzzle/",
+              "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle"
+            },
             {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",

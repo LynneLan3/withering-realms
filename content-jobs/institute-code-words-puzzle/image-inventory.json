@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "image-inventory-v1",
+  "images": [
+    {
+      "id": "spellbook-codes-note",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/spellbook-codes-note.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/spellbook-codes-note.webp",
+      "subject": "Spell Book Codes clue note",
+      "place_or_context": "Bellflower Occult Institute",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle note",
+      "confidence": "high",
+      "provenance": "Jerma Streams - Withering Realms https://www.youtube.com/watch?v=z9pL-sUiZkA @ 04:02:16",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Basement and Upper floor book-word pairs visible"
+    },
+    {
+      "id": "book-glasya-labolas",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/book-glasya-labolas.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/book-glasya-labolas.webp",
+      "subject": "Book of GLASYA-LABOLAS word list",
+      "place_or_context": "Institute bathroom / clue pickup",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle books",
+      "confidence": "high",
+      "provenance": "Part 1 @ 05:09:31",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Six numbered words including Manichel and Saluyel"
+    },
+    {
+      "id": "book-astaroth",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/book-astaroth.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/book-astaroth.webp",
+      "subject": "Book of ASTAROTH word list",
+      "place_or_context": "Institute upper floor",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle books",
+      "confidence": "high",
+      "provenance": "Part 1 @ 05:26:28",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Six numbered words including Hazalat"
+    },
+    {
+      "id": "speak-which-book",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/speak-which-book.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/speak-which-book.webp",
+      "subject": "Speak words from which book UI",
+      "place_or_context": "Institute hex door",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle door-ui",
+      "confidence": "high",
+      "provenance": "Part 1 ~05:43:50",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Book of RAUM / GLASYA-LABOLAS / ASTAROTH / Stop"
+    },
+    {
+      "id": "speak-which-word",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/speak-which-word.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/speak-which-word.webp",
+      "subject": "Speak which word UI",
+      "place_or_context": "Institute hex door",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle door-ui",
+      "confidence": "high",
+      "provenance": "Part 1 ~05:43:57",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "ASTAROTH list with Hazalat highlighted"
+    },
+    {
+      "id": "upper-door-open",
+      "source_file": "public/assets/images/evidence/institute-code-words-puzzle/upper-door-open.webp",
+      "output_file": "public/assets/images/evidence/institute-code-words-puzzle/upper-door-open.webp",
+      "subject": "Upper hex door open after correct speak sequence",
+      "place_or_context": "Institute upper floor corridor",
+      "operational_or_decorative": "operational",
+      "page_fit": "institute-code-words-puzzle method-proof",
+      "confidence": "high",
+      "provenance": "Part 1 ~05:44:20+",
+      "use": "use",
+      "annotation_allowed": false,
+      "writer_note": "Caption MUST say this verifies upper-floor book-word method, NOT basement success"
+    }
+  ]
+}
