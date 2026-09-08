@@ -31,8 +31,8 @@
         "href": "/category/",
         "groups": [
           {
-            "id": "stuck",
-            "label": "Stuck right now",
+            "id": "stuck-right-now",
+            "label": "Stuck Right Now",
             "items": [
               {
                 "id": "birdcage-b2-puzzle",
@@ -42,63 +42,57 @@
               },
               {
                 "id": "institute-code-words-puzzle",
-                "label": "Institute Code Words Puzzle",
+                "label": "Institute Code Words",
                 "href": "/institute-code-words-puzzle/",
                 "pageId": "institute-code-words-puzzle"
               },
               {
                 "id": "how-to-cross-gaps",
-                "label": "Grappling Hook / Cross Gaps",
+                "label": "How to Cross Gaps",
                 "href": "/how-to-cross-gaps/",
                 "pageId": "how-to-cross-gaps"
-              },
-              {
-                "id": "bellflower-institute-stuck-first-floor",
-                "label": "Institute Stuck First Floor",
-                "href": "/bellflower-institute-stuck-first-floor/",
-                "pageId": "bellflower-institute-stuck-first-floor"
-              },
-              {
-                "id": "cae-gwyn-bells",
-                "label": "Cae Gwyn Bells (Draft)",
-                "href": "/cae-gwyn-bells/",
-                "pageId": "cae-gwyn-bells"
-              },
-              {
-                "id": "early-bosses",
-                "label": "Early Bosses",
-                "href": "/early-bosses/",
-                "pageId": "early-bosses"
               }
             ]
           },
           {
-            "id": "systems",
-            "label": "Systems",
+            "id": "progression-world",
+            "label": "Progression & World",
             "items": [
               {
-                "id": "doll-arms-limb-leveling",
-                "label": "Doll Arms & Limb Leveling",
-                "href": "/doll-arms-limb-leveling/",
-                "pageId": "doll-arms-limb-leveling"
-              },
-              {
-                "id": "talismans",
-                "label": "Talismans Guide",
-                "href": "/talismans/",
-                "pageId": "talismans"
+                "id": "perimeter-guardians",
+                "label": "Perimeter Guardians",
+                "href": "/perimeter-guardians/",
+                "pageId": "perimeter-guardians"
               },
               {
                 "id": "night-routes",
                 "label": "What Changes at Night",
                 "href": "/night-routes/",
                 "pageId": "night-routes"
+              }
+            ]
+          },
+          {
+            "id": "combat-the-doll",
+            "label": "Combat & The Doll",
+            "items": [
+              {
+                "id": "early-bosses",
+                "label": "Early Bosses",
+                "href": "/early-bosses/",
+                "pageId": "early-bosses"
               },
               {
-                "id": "perimeter-guardians",
-                "label": "Perimeter Guardians",
-                "href": "/perimeter-guardians/",
-                "pageId": "perimeter-guardians"
+                "id": "doll-arms-limb-leveling",
+                "label": "Doll Arms / Limb Leveling",
+                "href": "/doll-arms-limb-leveling/",
+                "pageId": "doll-arms-limb-leveling"
+              },
+              {
+                "id": "talismans",
+                "label": "Talismans",
+                "href": "/talismans/",
+                "pageId": "talismans"
               }
             ]
           }
@@ -250,7 +244,7 @@
                 "Q: What does the number after A/B do?\nA: The number is how many times you must hit that target (e.g., B2 = hit left target twice). (CONFIRMED_LIVE)",
                 "Q: Which attack type should I use to register hits reliably?\nA: Fast / light attacks were the safest observed input for registering hits cleanly in the current EA build. (CONFIRMED_LIVE)",
                 "Q: Is Four Arms an official bug for this puzzle?\nA: The Four Arms interaction is PLAYER_REPORTED only. It is not listed as an official bug in the verification data; players have reported extra counted hits and one player reported success after unequipping Four Arms. (PLAYER_REPORTED)",
-                "Related guides\n- /how-to-cross-gaps/\n- /talismans/\n- /doll-arms-limb-leveling/"
+                "Related guides\n- /institute-code-words-puzzle/\n- /how-to-cross-gaps/\n- /doll-arms-limb-leveling/"
               ],
               "mediaSlots": [
                 "birdcage",
@@ -487,22 +481,24 @@
         "presentation": {
           "categoryLabel": "PUZZLES",
           "homepageCard": {
-            "helper": "Decode A1/B2 hanging-target codes.",
+            "helper": "Decode the A/B hanging-target codes to open the birdcage.",
             "tag": "Puzzle",
             "tone": "brass",
-            "symbol": "⌁"
+            "symbol": "⌁",
+            "shortTitle": "Birdcage / B2 Puzzle",
+            "hubThumb": "/assets/images/evidence/birdcage/birdcage-gold-card.webp"
           },
           "subtitle": "Decode A1/B2 hanging-target codes.",
           "related": [
             {
+              "id": "institute-code-words-puzzle",
+              "href": "/institute-code-words-puzzle/",
+              "title": "Withering Realms — Bellflower Occult Institute Code Words Puzzle"
+            },
+            {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
               "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
-            },
-            {
-              "id": "talismans",
-              "href": "/talismans/",
-              "title": "Withering Realms Talismans Guide"
             },
             {
               "id": "doll-arms-limb-leveling",
@@ -721,7 +717,7 @@
             },
             {
               "id": "related-guides",
-              "title": "Related Guides",
+              "title": "Related Guides\n- /birdcage-b2-puzzle/\n- /how-to-cross-gaps/\n- /bellflower-institute-stuck-first-floor/",
               "paragraphs": [
                 "- /bellflower-institute-stuck-first-floor/ — a different stuck/route issue (separate problem).  \n- /birdcage-b2-puzzle/ — related location puzzle."
               ],
@@ -973,23 +969,29 @@
         "presentation": {
           "categoryLabel": "PUZZLES",
           "homepageCard": {
-            "helper": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
+            "helper": "Match Spell Book Codes pairs, then speak book + word at hex doors.",
             "tag": "Puzzle",
             "tone": "brass",
             "symbol": "⌁",
-            "shortTitle": "Institute Code Words Puzzle"
+            "shortTitle": "Institute Code Words",
+            "hubThumb": "/assets/images/evidence/institute-code-words-puzzle/spellbook-codes-note.webp"
           },
           "subtitle": "Spell Book Codes book-word pairs → speak book then word at hex doors (not a fixed password).",
           "related": [
             {
-              "id": "bellflower-institute-stuck-first-floor",
-              "href": "/bellflower-institute-stuck-first-floor/",
-              "title": "Withering Realms Bellflower Institute Stuck on First Floor"
-            },
-            {
               "id": "birdcage-b2-puzzle",
               "href": "/birdcage-b2-puzzle/",
               "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            },
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
+            },
+            {
+              "id": "bellflower-institute-stuck-first-floor",
+              "href": "/bellflower-institute-stuck-first-floor/",
+              "title": "Withering Realms Bellflower Institute Stuck on First Floor"
             }
           ]
         }
@@ -1374,17 +1376,19 @@
         "presentation": {
           "categoryLabel": "TRAVERSAL",
           "homepageCard": {
-            "helper": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
+            "helper": "Unlock the Chain Hook route so you can cross pits and gaps.",
             "tag": "Traversal",
             "tone": "green",
-            "symbol": "↗"
+            "symbol": "↗",
+            "shortTitle": "How to Cross Gaps",
+            "hubThumb": "/assets/images/evidence/how-to-cross-gaps/finished-traversal-tool.webp"
           },
           "subtitle": "Chain Giant → Ichorised Chain → Rakesh Chain Hook (grappling hook) for pits.",
           "related": [
             {
-              "id": "bellflower-institute-stuck-first-floor",
-              "href": "/bellflower-institute-stuck-first-floor/",
-              "title": "Withering Realms Bellflower Institute Stuck on First Floor"
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
             },
             {
               "id": "doll-arms-limb-leveling",
@@ -1392,14 +1396,9 @@
               "title": "Withering Realms Doll Arms & Limb Leveling"
             },
             {
-              "id": "birdcage-b2-puzzle",
-              "href": "/birdcage-b2-puzzle/",
-              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
-            },
-            {
-              "id": "early-bosses",
-              "href": "/early-bosses/",
-              "title": "Withering Realms Early Bosses — Opening Encounters"
+              "id": "perimeter-guardians",
+              "href": "/perimeter-guardians/",
+              "title": "Withering Realms Perimeter Guardians"
             }
           ]
         }
@@ -2336,7 +2335,7 @@
             },
             {
               "id": "related-guides",
-              "title": "Related Guides",
+              "title": "Related Guides\n- /doll-arms-limb-leveling/\n- /talismans/\n- /perimeter-guardians/",
               "paragraphs": [
                 "/how-to-cross-gaps/\n- /doll-arms-limb-leveling/\n- /perimeter-guardians/"
               ],
@@ -2484,22 +2483,24 @@
         "presentation": {
           "categoryLabel": "COMBAT",
           "homepageCard": {
-            "helper": "Opening Beynon and Saintswood / Scarecrow only.",
+            "helper": "Opening Beynon and Saintswood / Scarecrow encounters only.",
             "tag": "Combat",
             "tone": "rust",
-            "symbol": "†"
+            "symbol": "†",
+            "shortTitle": "Early Bosses",
+            "hubThumb": "/assets/images/characters/character_cutouts.jpg"
           },
           "subtitle": "Opening Beynon and Saintswood / Scarecrow only.",
           "related": [
             {
-              "id": "how-to-cross-gaps",
-              "href": "/how-to-cross-gaps/",
-              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
-            },
-            {
               "id": "doll-arms-limb-leveling",
               "href": "/doll-arms-limb-leveling/",
               "title": "Withering Realms Doll Arms & Limb Leveling"
+            },
+            {
+              "id": "talismans",
+              "href": "/talismans/",
+              "title": "Withering Realms Talismans Guide"
             },
             {
               "id": "perimeter-guardians",
@@ -2650,7 +2651,7 @@
                 "Q: Can the Doll use an off-hand tool separate from the right-arm tool?\nA: Exact off-hand upgrade rules or separate off-hand tool progression are not confirmed and remain NEEDS_VERIFICATION.",
                 "Q: Does Clover still cast while the Doll is attacking?\nA: Yes — official sources confirm Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)",
                 "Q: Are there more Doll arms than the four store examples?\nA: The store lists Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower as official examples, but the public catalog is incomplete; additional arms may be present or added in Early Access. (CONFIRMED_OFFICIAL)",
-                "Related guides\n- /talismans/\n- /how-to-cross-gaps/\n- /birdcage-b2-puzzle/"
+                "Related guides\n- /talismans/\n- /early-bosses/\n- /how-to-cross-gaps/"
               ],
               "mediaSlots": [
                 "doll-arm-equipment-ui",
@@ -2816,10 +2817,12 @@
         "presentation": {
           "categoryLabel": "SYSTEMS",
           "homepageCard": {
-            "helper": "Right-arm tools, dual attacks, limb-oriented builds.",
+            "helper": "Right-arm tools, dual attacks, and limb-oriented builds.",
             "tag": "Systems",
             "tone": "green",
-            "symbol": "⌁"
+            "symbol": "⌁",
+            "shortTitle": "Doll Arms / Limb Leveling",
+            "hubThumb": "/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp"
           },
           "subtitle": "Right-arm tools, dual attacks, limb-oriented builds.",
           "related": [
@@ -2829,14 +2832,14 @@
               "title": "Withering Realms Talismans Guide"
             },
             {
+              "id": "early-bosses",
+              "href": "/early-bosses/",
+              "title": "Withering Realms Early Bosses — Opening Encounters"
+            },
+            {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
               "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
-            },
-            {
-              "id": "birdcage-b2-puzzle",
-              "href": "/birdcage-b2-puzzle/",
-              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
             }
           ]
         }
@@ -3033,7 +3036,7 @@
             },
             {
               "id": "related-guides",
-              "title": "Related guides",
+              "title": "Related guides\n- /doll-arms-limb-leveling/\n- /early-bosses/\n- /how-to-cross-gaps/",
               "paragraphs": [
                 "/birdcage-b2-puzzle/\n- /doll-arms-limb-leveling/"
               ],
@@ -3210,19 +3213,26 @@
             "helper": "Arm vs body talismans — system guide, not a tier list.",
             "tag": "Systems",
             "tone": "brass",
-            "symbol": "⌁"
+            "symbol": "⌁",
+            "shortTitle": "Talismans",
+            "hubThumb": "/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp"
           },
           "subtitle": "Arm vs body talismans — system guide, not a tier list.",
           "related": [
             {
-              "id": "birdcage-b2-puzzle",
-              "href": "/birdcage-b2-puzzle/",
-              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
-            },
-            {
               "id": "doll-arms-limb-leveling",
               "href": "/doll-arms-limb-leveling/",
               "title": "Withering Realms Doll Arms & Limb Leveling"
+            },
+            {
+              "id": "early-bosses",
+              "href": "/early-bosses/",
+              "title": "Withering Realms Early Bosses — Opening Encounters"
+            },
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             }
           ]
         }
@@ -3365,7 +3375,7 @@
                 "Q: Will you publish night-route tables or night-only spawn lists?\nA: Not until those tables and lists are verified against official sources. This page intentionally does not publish exact night-route tables.",
                 "Q: Are there guaranteed rewards only available at night?\nA: Official framing confirms new secrets appear at night, but this page does not list or name those secrets until they are verified.",
                 "Q: How should I report a suspected night-only creature or secret?\nA: See the verification steps above: capture video/screenshots, note patch version and timestamps, reproduce your finding, and submit through official channels so it can be confirmed.",
-                "Related guides\n- /perimeter-guardians/\n- /cae-gwyn-bells/\n- /early-bosses/"
+                "Related guides\n- /perimeter-guardians/\n- /early-bosses/\n- /how-to-cross-gaps/"
               ],
               "mediaSlots": [
                 "world-map-day-night-control",
@@ -3538,10 +3548,12 @@
         "presentation": {
           "categoryLabel": "EXPLORATION",
           "homepageCard": {
-            "helper": "What changes when you return at night.",
+            "helper": "See what changes when you return to Penwyll at night.",
             "tag": "Night",
             "tone": "bone",
-            "symbol": "◌"
+            "symbol": "◌",
+            "shortTitle": "What Changes at Night",
+            "hubThumb": "/assets/images/evidence/how-to-cross-gaps/cemetery-creature.webp"
           },
           "subtitle": "What changes when you return at night.",
           "related": [
@@ -3551,14 +3563,14 @@
               "title": "Withering Realms Perimeter Guardians"
             },
             {
-              "id": "cae-gwyn-bells",
-              "href": "/cae-gwyn-bells/",
-              "title": "Cae Gwyn Bells (Needs Verification)"
-            },
-            {
               "id": "early-bosses",
               "href": "/early-bosses/",
               "title": "Withering Realms Early Bosses — Opening Encounters"
+            },
+            {
+              "id": "how-to-cross-gaps",
+              "href": "/how-to-cross-gaps/",
+              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             }
           ]
         }
@@ -3840,7 +3852,9 @@
             "helper": "Defeat guardians to expand the world map.",
             "tag": "Progression",
             "tone": "rust",
-            "symbol": "†"
+            "symbol": "†",
+            "shortTitle": "Perimeter Guardians",
+            "hubThumb": "/assets/images/screenshots/screenshot_world_map.jpg"
           },
           "subtitle": "Defeat guardians to expand the world map.",
           "related": [

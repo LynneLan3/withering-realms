@@ -5,27 +5,89 @@ import RealmsHeader from '../presentation/RealmsHeader.astro';
 import RealmsFooter from '../presentation/RealmsFooter.astro';
 import { icon } from '../presentation/icons';
 
-type NavigationItem = { pageId: string; label?: string; href?: string };
-type NavigationGroup = { label: string; items: NavigationItem[] };
-type NavigationCategory = { groups?: NavigationGroup[] };
-const primaryNavigation = generated.navigation.primary as unknown as NavigationCategory[];
-const groups = primaryNavigation
-	.flatMap((category) => category.groups ?? [])
-	.map((group) => ({
-		...group,
-		items: group.items.map((item) => generated.pages.find((page) => page.id === item.pageId)).filter(Boolean),
-	}))
-	.filter((group) => group.items.length > 0);
+type PageRecord = (typeof generated.pages)[number];
 
-const thumbCycle = [
-	'screenshots/screenshot_city.jpg',
-	'characters/character_cutouts.jpg',
-	'screenshots/screenshot_world_map.jpg',
+const pagesById = Object.fromEntries(generated.pages.map((page) => [page.id, page])) as Record<string, PageRecord>;
+
+/** Launch-intent hub order — demand priority, not alphabetical. */
+const hubSections = [
+	{
+		id: 'stuck-right-now',
+		kicker: 'Launch problems',
+		label: 'Stuck Right Now',
+		pageIds: ['birdcage-b2-puzzle', 'institute-code-words-puzzle', 'how-to-cross-gaps'],
+	},
+	{
+		id: 'progression-world',
+		kicker: 'Map & revisit',
+		label: 'Progression & World',
+		pageIds: ['perimeter-guardians', 'night-routes'],
+	},
+	{
+		id: 'combat-the-doll',
+		kicker: 'Survive & build',
+		label: 'Combat & The Doll',
+		pageIds: ['early-bosses', 'doll-arms-limb-leveling', 'talismans'],
+	},
 ] as const;
+
+const fallbackThumbs: Record<string, string> = {
+	'birdcage-b2-puzzle': '/assets/images/evidence/birdcage/birdcage-gold-card.webp',
+	'institute-code-words-puzzle': '/assets/images/evidence/institute-code-words-puzzle/spellbook-codes-note.webp',
+	'how-to-cross-gaps': '/assets/images/evidence/how-to-cross-gaps/finished-traversal-tool.webp',
+	'perimeter-guardians': '/assets/images/screenshots/screenshot_world_map.jpg',
+	'night-routes': '/assets/images/evidence/how-to-cross-gaps/cemetery-creature.webp',
+	'early-bosses': '/assets/images/characters/character_cutouts.jpg',
+	'doll-arms-limb-leveling': '/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp',
+	talismans: '/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp',
+};
+
+function hubCard(pageId: string) {
+	const page = pagesById[pageId];
+	if (!page) return null;
+	const publishing = (page.pageData as any)?.publishing ?? {};
+	if (publishing.draft || publishing.publishStatus === 'draft') return null;
+
+	const presentation = (page.pageData as any)?.presentation ?? {};
+	const card = presentation.homepageCard ?? {};
+	const firstMedia = ((page.pageData as any)?.media ?? []).find((item: { src?: string }) => item?.src)?.src as string | undefined;
+	const fullTitle = page.title ?? pageId;
+	const cardTitle =
+		card.shortTitle ??
+		(fullTitle.startsWith('Withering Realms — ')
+			? fullTitle.slice('Withering Realms — '.length).trim()
+			: fullTitle.replace(/^Withering Realms\s+/i, '').split('—')[0].trim());
+
+	const researchChecked = publishing.researchChecked as string | undefined;
+	const verificationLabel = (publishing.verificationLabel as string | undefined) ?? '';
+	const isVerified =
+		Boolean((page.pageData as any)?.facts?.[0]?.verified) ||
+		/CONFIRMED_|verified/i.test(verificationLabel) ||
+		publishing.publishStatus === 'published';
+
+	return {
+		id: pageId,
+		href: page.href,
+		title: cardTitle,
+		helper: (card.helper as string | undefined) ?? page.pageData?.intent?.playerProblem ?? '',
+		category: (presentation.categoryLabel as string | undefined) ?? card.tag ?? 'Guide',
+		thumb: (card.hubThumb as string | undefined) ?? firstMedia ?? fallbackThumbs[pageId] ?? '/assets/images/screenshots/screenshot_city.jpg',
+		checkedLabel: researchChecked ? `Checked ${researchChecked}` : 'Field note',
+		freshLabel: isVerified ? (verificationLabel.includes('CONFIRMED') ? 'Verified' : verificationLabel || 'Verified') : 'Needs verification',
+		freshShort: isVerified ? 'Verified' : 'Needs verification',
+	};
+}
+
+const sections = hubSections
+	.map((section) => ({
+		...section,
+		items: section.pageIds.map(hubCard).filter(Boolean),
+	}))
+	.filter((section) => section.items.length > 0);
 ---
 <RealmsShell
 	title={`Guides · ${generated.game.name}`}
-	description="Browse Withering Realms guides by problem area."
+	description="Launch-intent hub for verified Withering Realms stuck points, progression, and Doll combat guides."
 	canonicalPath="/category/"
 	robots="noindex,follow"
 >
@@ -43,26 +105,27 @@ const thumbCycle = [
 			</div>
 			<a class="text-link heading-link" href="/search/">Search guides <span set:html={icon.arrowRightSm}></span></a>
 		</div>
-		{groups.map((group) => (
-			<section class="latest-section" style="padding-top: 0; margin-bottom: 70px;">
+		{sections.map((section) => (
+			<section class="latest-section" style="padding-top: 0; margin-bottom: 70px;" id={section.id}>
 				<div class="section-heading">
 					<div>
-						<span class="section-kicker">Category</span>
-						<h2>{group.label.toUpperCase()}</h2>
+						<span class="section-kicker">{section.kicker}</span>
+						<h2>{section.label.toUpperCase()}</h2>
 					</div>
 				</div>
 				<div class="guide-grid">
-					{group.items.map((item, index) => item && (
+					{section.items.map((item) => item && (
 						<a class="guide-card" href={item.href}>
 							<div class="guide-thumb">
-								<img src={`/assets/images/${thumbCycle[index % thumbCycle.length]}`} alt="" />
+								<img src={item.thumb} alt="" />
 							</div>
 							<div class="guide-details">
-								<span class="guide-category">{group.label}</span>
+								<span class="guide-category">{item.category}</span>
 								<h3>{item.title}</h3>
+								<p class="guide-helper">{item.helper}</p>
 								<div class="guide-meta">
-									<span><span set:html={icon.clock}></span> Field note</span>
-									<span class="fresh">{item.pageData.facts?.[0]?.verified ? 'Verified' : 'Needs verification'}</span>
+									<span><span set:html={icon.clock}></span> {item.checkedLabel}</span>
+									<span class="fresh">{item.freshShort}</span>
 								</div>
 							</div>
 							<span set:html={icon.chevronRightGuide}></span>
