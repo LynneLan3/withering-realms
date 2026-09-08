@@ -8,6 +8,7 @@
 - Current official patch page latest: 0.34
 - Publish status: OVERRIDE_APPROVED / publishable
 - Media gate: OVERRIDE_APPROVED (upper-door speak UI + open READY; basement success frame deferred to backlog)
+- Enhancement backlog: `basement successful-open gameplay frame`
 
 ## Intent Brief
 

@@ -7,7 +7,7 @@
 - Media Gate: **OVERRIDE_APPROVED** (user approved publish without basement success frame; upper-door speak UI + open READY)
 - Evidence Gate: **PARTIAL PASS** on method; instance-specific word lists NOT universal password
 - Publish state: **OVERRIDE_APPROVED**
-- Backlog: basement success frame as later enhancement
+- Enhancement backlog: `basement successful-open gameplay frame`
 
 ## Routing Receipt (content)
 
