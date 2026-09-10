@@ -1,0 +1,44 @@
+---
+interface Props {
+	name: string;
+	minHeight?: string;
+}
+
+const { name, minHeight = '250px' } = Astro.props;
+---
+
+<div
+	class="ad-slot"
+	data-ad-slot={name}
+	style={`--ad-slot-min-height: ${minHeight}`}
+	aria-label="Advertisement"
+>
+	<slot />
+</div>
+
+<style>
+	.ad-slot {
+		box-sizing: border-box;
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		min-height: var(--ad-slot-min-height, 250px);
+		margin: 2.5rem 0;
+		overflow: hidden;
+		contain: layout paint;
+	}
+
+	.ad-slot :global(iframe),
+	.ad-slot :global(img),
+	.ad-slot :global(video),
+	.ad-slot :global(table) {
+		max-width: 100%;
+	}
+
+	@media (max-width: 640px) {
+		.ad-slot {
+			min-height: 220px;
+			margin: 2rem 0;
+		}
+	}
+</style>

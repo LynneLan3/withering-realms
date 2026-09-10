@@ -4,6 +4,7 @@ import RealmsShell from '../presentation/RealmsShell.astro';
 import RealmsHeader from '../presentation/RealmsHeader.astro';
 import RealmsFooter from '../presentation/RealmsFooter.astro';
 import MediaSlots from '../presentation/MediaSlots.astro';
+import NativeAd from '../components/ads/NativeAd.astro';
 import { icon } from '../presentation/icons';
 
 export function getStaticPaths() {
@@ -91,17 +92,21 @@ const toc = [
 				<MediaSlots slots={(quickSection as any)?.mediaSlots || []} mediaBySlot={mediaBySlot} />
 
 				{contentSections.map((section, index) => (
-					<div class="steps" id={`section-${index}`}>
-						<div class="step" style="grid-template-columns: 50px minmax(0, 1fr);">
-							<span class="step-number">{String(index + 1).padStart(2, '0')}</span>
-							<div>
-								<h3>{section.title}</h3>
-								{section.paragraphs.map((paragraph) => <p set:html={paragraph.replace(/\n/g, '<br />')}></p>)}
-								<MediaSlots slots={(section as any).mediaSlots || []} mediaBySlot={mediaBySlot} />
+					<>
+						<div class="steps" id={`section-${index}`}>
+							<div class="step" style="grid-template-columns: 50px minmax(0, 1fr);">
+								<span class="step-number">{String(index + 1).padStart(2, '0')}</span>
+								<div>
+									<h3>{section.title}</h3>
+									{section.paragraphs.map((paragraph) => <p set:html={paragraph.replace(/\n/g, '<br />')}></p>)}
+									<MediaSlots slots={(section as any).mediaSlots || []} mediaBySlot={mediaBySlot} />
+								</div>
 							</div>
 						</div>
-					</div>
+						{index === 0 && <NativeAd />}
+					</>
 				))}
+				{contentSections.length === 0 && <NativeAd />}
 
 				{failSection && (
 					<div class="didnt-work" id="didnt-work">

@@ -1,0 +1,26 @@
+---
+/**
+ * Adsterra Native Banner mid-article slot.
+ * Soft-offline when ADSTERRA_ENABLED=false: renders nothing (no empty box).
+ */
+import AdSlot from './AdSlot.astro';
+import {
+	ADSTERRA_CONTAINER_ID,
+	ADSTERRA_INVOKE_SRC,
+	ADSTERRA_SLOT_NAME,
+	isAdsterraRuntimeEnabled,
+} from '../../lib/adsterra';
+
+const enabled = isAdsterraRuntimeEnabled();
+const adScript = ADSTERRA_INVOKE_SRC;
+const containerId = ADSTERRA_CONTAINER_ID;
+---
+
+{
+	enabled && (
+		<AdSlot name={ADSTERRA_SLOT_NAME} minHeight="250px">
+			<script async="async" data-cfasync="false" src={adScript}></script>
+			<div id={containerId} data-adsterra-container></div>
+		</AdSlot>
+	)
+}
