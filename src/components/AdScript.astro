@@ -7,7 +7,7 @@ import {
 	ADSTERRA_SITE_URL,
 	ADSTERRA_SOCIAL_BAR_SRC,
 	isAdsterraSocialBarRuntimeEnabled,
-} from '../lib/adsterra';
+} from './ads/adsterra';
 
 const enabled = isAdsterraSocialBarRuntimeEnabled();
 const siteHost = enabled ? new URL(ADSTERRA_SITE_URL).hostname : '';
