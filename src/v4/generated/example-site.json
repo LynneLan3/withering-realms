@@ -55,6 +55,18 @@
             ]
           },
           {
+            "id": "controls-deck",
+            "label": "Controls & Deck",
+            "items": [
+              {
+                "id": "steam-deck-key-bindings",
+                "label": "Steam Deck Key Bindings",
+                "href": "/steam-deck-key-bindings/",
+                "pageId": "steam-deck-key-bindings"
+              }
+            ]
+          },
+          {
             "id": "progression-world",
             "label": "Progression & World",
             "items": [
@@ -112,6 +124,7 @@
       "birdcage-b2-puzzle",
       "institute-code-words-puzzle",
       "how-to-cross-gaps",
+      "steam-deck-key-bindings",
       "bellflower-institute-stuck-first-floor",
       "cae-gwyn-bells",
       "early-bosses",
@@ -140,7 +153,8 @@
           "how-to-cross-gaps",
           "bellflower-institute-stuck-first-floor",
           "cae-gwyn-bells",
-          "early-bosses"
+          "early-bosses",
+          "steam-deck-key-bindings"
         ]
       },
       {
@@ -2588,12 +2602,12 @@
           "title": "Withering Realms Doll Arms & Limb Leveling",
           "href": "/doll-arms-limb-leveling/",
           "query": "What can I put on the doll's right arm and how does limb leveling work?",
-          "playerProblem": "Right-arm tools, dual attacks, limb-oriented builds."
+          "playerProblem": "Right-arm tools now; left-arm scaling unknown; 0.37 Left Hand Tool upgrading announced, not live."
         },
         "state": {},
         "intent": {
-          "query": "Right-arm tools, dual attacks, limb-oriented builds.",
-          "playerProblem": "Right-arm tools, dual attacks, limb-oriented builds.",
+          "query": "Right-arm tools now; left-arm scaling unknown; 0.37 Left Hand Tool upgrading announced, not live.",
+          "playerProblem": "Right-arm tools now; left-arm scaling unknown; 0.37 Left Hand Tool upgrading announced, not live.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 5,
@@ -2630,58 +2644,142 @@
           }
         },
         "body": {
-          "intro": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)",
+          "intro": "- The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)  \n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)  \n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)  \n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)  \n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)  \n- Live patch baseline: 0.36 is the current live patch (released 2026-09-09). Steam/patch checks were performed 2026-09-10. (CONFIRMED_OFFICIAL)  \n- 0.36 included a specific fix: Fixed Tommy Gun sometimes refusing to fire. Treat this as the current live fix for that issue. (CONFIRMED_OFFICIAL)  \n- Many players are asking about “Left arm weapons and scaling.” At present the left-arm / off-hand upgrade and scaling details remain unverified on the live build — see the NEEDS_VERIFICATION section below.  \n- The developers have announced (in 0.36 notes) that v0.37 is being prepared and will include the ability to upgrade Left Hand Tools. This Left Hand Tool upgrading is announced for 0.37 and is not current live behavior; do not assume 0.37 mechanics or costs until 0.37 ships. (CONFIRMED_OFFICIAL)",
           "sections": [
             {
               "id": "quick-answer",
               "title": "Quick Answer",
               "paragraphs": [
-                "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)",
-                "Baseline: Early Access Steam release 2026-09-04. Research checked 2026-09-07; latest official patch page observed: 0.34. (CONFIRMED_OFFICIAL for release date)",
-                "How the Doll arm system works — confirmed facts only\n1. The Doll is presented with a missing right hand and a right-arm tool slot; equipped right-arm tools replace that limb’s functionality. (CONFIRMED_OFFICIAL)\n2. When you craft and equip a right-arm tool, that tool supplies both a primary attack and a secondary attack for the Doll. These dual actions are part of the crafted-tool design rather than being generic weapon swaps. (CONFIRMED_OFFICIAL)\n3. Doll progression and equipment are structured to support limb-oriented buildcrafting — players can center builds around which Doll arm/tool they run. (CONFIRMED_OFFICIAL)\n4. Clover (the companion character) is able to cast while the Doll performs its attacks; casting and Doll-attacking are not mutually exclusive. (CONFIRMED_OFFICIAL)",
-                "— *captures: proof of primary vs secondary attack descriptions in the tool UI*",
-                "Confirmed arm examples (official store-backed)\n- Enchanted Candelabrum — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Chain Rock — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Machinegun — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)\n- Flamethrower — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)",
-                "Note: the official store shows these examples but does not present a complete public catalog; additional arms may exist or be added in Early Access. (CONFIRMED_OFFICIAL)",
-                "What players are asking (open questions in the community)\n- How does off-hand upgrading work for Doll limbs / can you upgrade the off-hand independently? (player interest)\n- Are respecs available for Doll limb choices or build points, and if so what are the costs / limits? (player interest)",
-                "These community questions are reported as active player interest; the answers below remain unverified where noted.",
-                "What is still unverified (explicit NEEDS_VERIFICATION)\n- Respec availability and cost — whether the game supports respecs, how they are purchased or accessed, and any limits. (NEEDS_VERIFICATION)\n- Level cap (character or Doll progression caps). (NEEDS_VERIFICATION)\n- Exact stat formulas used for Doll attacks, damage scaling, or tool scaling. (NEEDS_VERIFICATION)\n- Exact off-hand upgrade rules (how off-hand / secondary limb upgrades work, if they exist). (NEEDS_VERIFICATION)\n- Breakpoints (damage/equipment breakpoints and their values). (NEEDS_VERIFICATION)",
-                "If this didn't match what you see / Verification steps\n1. Check the official Steam store and the developer patch notes (latest observed official patch page: 0.34) for any changes to Doll arm systems or added details. The game’s Steam Early Access release date is 2026-09-04. (CONFIRMED_OFFICIAL)\n2. In-game: open the Doll equipment / limb interface and inspect right-arm tool descriptions to confirm primary/secondary actions and any level or upgrade text present. Capture UI text or screenshots if you need to report discrepancies.\n3. If you find claims about respecs, level caps, or off-hand upgrade mechanics in community posts, treat those as player reports until confirmed by official patch notes or developer communication. Mark those items as NEEDS_VERIFICATION.\n4. Report contradictions or new confirmations to official channels (patch notes, developer posts) so the details can be verified and the guidance updated.",
-                "FAQ\nQ: Can I respec Doll limbs or build points in Early Access?\nA: Respec availability, cost, and limits have not been confirmed by official sources and remain NEEDS_VERIFICATION.",
-                "Q: Is there a level cap or soft cap on Doll progression?\nA: The level cap is not confirmed. This is currently listed as NEEDS_VERIFICATION.",
-                "Q: Can the Doll use an off-hand tool separate from the right-arm tool?\nA: Exact off-hand upgrade rules or separate off-hand tool progression are not confirmed and remain NEEDS_VERIFICATION.",
-                "Q: Does Clover still cast while the Doll is attacking?\nA: Yes — official sources confirm Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)",
-                "Q: Are there more Doll arms than the four store examples?\nA: The store lists Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower as official examples, but the public catalog is incomplete; additional arms may be present or added in Early Access. (CONFIRMED_OFFICIAL)",
-                "Related guides\n- /talismans/\n- /early-bosses/\n- /how-to-cross-gaps/"
+                "- The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)  \n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)  \n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)  \n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)  \n- The game’s progression and equipment explicitly support limb-oriented buildcrafting (i.e., building your character around specific Doll arms and limb choices). (CONFIRMED_OFFICIAL)  \n- Live patch baseline: 0.36 is the current live patch (released 2026-09-09). Steam/patch checks were performed 2026-09-10. (CONFIRMED_OFFICIAL)  \n- 0.36 included a specific fix: Fixed Tommy Gun sometimes refusing to fire. Treat this as the current live fix for that issue. (CONFIRMED_OFFICIAL)  \n- Many players are asking about “Left arm weapons and scaling.” At present the left-arm / off-hand upgrade and scaling details remain unverified on the live build — see the NEEDS_VERIFICATION section below.  \n- The developers have announced (in 0.36 notes) that v0.37 is being prepared and will include the ability to upgrade Left Hand Tools. This Left Hand Tool upgrading is announced for 0.37 and is not current live behavior; do not assume 0.37 mechanics or costs until 0.37 ships. (CONFIRMED_OFFICIAL)"
               ],
               "mediaSlots": [
-                "doll-arm-equipment-ui",
-                "primary-secondary-attacks",
-                "clover-cast-during-doll-attack",
-                "limb-upgrade-ui"
+                "doll-arm-equipment-ui"
               ]
             },
             {
-              "id": "if-this-didnt-work",
-              "title": "If This Didn't Work",
+              "id": "how-the-doll-arm-system-works-confirmed-facts-only",
+              "title": "How the Doll arm system works — confirmed facts only",
               "paragraphs": [
-                "Early Access systems can change. Re-check behavior on the current live build (research checked 2026-09-07; latest official patch page observed: 0.34) before treating older clips as authoritative."
+                "1. The Doll is presented with a missing right hand and a right-arm tool slot; equipping a right-arm tool replaces that limb’s functionality. (CONFIRMED_OFFICIAL)  \n2. Crafted right-arm tools supply both a primary attack and a secondary attack — each crafted tool defines those two actions in its design. (CONFIRMED_OFFICIAL)  \n3. Doll progression and equipment are structured to support limb-oriented buildcrafting: players can center builds around which Doll arm/tool they run. (CONFIRMED_OFFICIAL)  \n4. Clover (the companion) can cast while the Doll performs its attacks; casting and Doll-attacking are not mutually exclusive. (CONFIRMED_OFFICIAL)"
+              ],
+              "mediaSlots": [
+                "primary-secondary-attacks"
+              ]
+            },
+            {
+              "id": "confirmed-arm-examples-official-store-backed",
+              "title": "Confirmed arm examples (official store-backed)",
+              "paragraphs": [
+                "- Enchanted Candelabrum — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)  \n- Chain Rock — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)  \n- Machinegun — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)  \n- Flamethrower — confirmed example of a crafted right-arm tool. (CONFIRMED_OFFICIAL)",
+                "Note: the official store shows these examples but does not present a complete public catalog; additional arms may exist or be added in Early Access. (CONFIRMED_OFFICIAL)"
+              ],
+              "mediaSlots": [
+                "clover-cast-during-doll-attack"
+              ]
+            },
+            {
+              "id": "patch-0-36-live-changes-affecting-arms",
+              "title": "Patch 0.36 — live changes affecting arms",
+              "paragraphs": [
+                "- The latest official live patch is 0.36 (released 2026-09-09). Research and patch-note checks were performed on 2026-09-10. (CONFIRMED_OFFICIAL)  \n- 0.36 fixed a specific issue: the Tommy Gun sometimes refusing to fire has been fixed. This is the only arm-related fix noted in the 0.36 patch source used for this update. (CONFIRMED_OFFICIAL)"
               ],
               "mediaSlots": []
+            },
+            {
+              "id": "left-arm-weapons-and-scaling-what-players-are-asking",
+              "title": "Left arm weapons and scaling — what players are asking",
+              "paragraphs": [
+                "- Player query: “Left arm weapons and scaling” is actively being asked on Steam and community channels. Acknowledge that interest.  \n- Current answer (live build / 0.36): the verified, confirmed facts are the right-arm system behavior and the 0.36 Tommy Gun fix (see above). Details about left-arm / off-hand weapon upgrades, scaling, or leveling on the live build are not confirmed here and should be treated as unknown until officially documented. (CONFIRMED_OFFICIAL / NEEDS_VERIFICATION)"
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "patch-0-37-announced-not-released",
+              "title": "Patch 0.37 announced (not released)",
+              "paragraphs": [
+                "- Official 0.36 notes state v0.37 is being prepared and list a planned change: the ability to upgrade Left Hand Tools is planned for 0.37. This announcement is CONFIRMED_OFFICIAL.  \n- Important: 0.37 is not released in this research window. Left Hand Tool upgrading is announced for 0.37 and is not current live behavior. Do not assume or describe upgrade costs, menus, formulas, caps, or step-by-step procedures for Left Hand Tools until 0.37 ships. (CONFIRMED_OFFICIAL)"
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-is-still-unverified",
+              "title": "What is still unverified",
+              "paragraphs": [
+                "- Exact left-arm / off-hand weapon upgrade rules on the current live build. (NEEDS_VERIFICATION)  \n- Left-arm / off-hand damage scaling formulas. (NEEDS_VERIFICATION)  \n- Respec availability and cost (whether respecs exist, how they are accessed, costs, or limits). (NEEDS_VERIFICATION)  \n- Level cap (character or Doll progression caps). (NEEDS_VERIFICATION)  \n- Exact stat formulas for Doll attacks or tool scaling. (NEEDS_VERIFICATION)  \n- Breakpoints for damage/equipment scaling. (NEEDS_VERIFICATION)  \n- Any competitor or community claims about left-arm leveling, respec, or scaling that are not documented in official notes. (NEEDS_VERIFICATION)"
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "if-this-didnt-work",
+              "title": "If this didn't match what you see — verification steps",
+              "paragraphs": [
+                "1. Check the official patch notes (0.36) and the SteamDB / Steam store patch entries for any updates. The live 0.36 patch (2026-09-09) is the baseline used here. (CONFIRMED_OFFICIAL)  \n2. In-game: open the Doll equipment / limb UI and inspect right-arm tool descriptions for primary/secondary attack text and any upgrade or level information. Record screenshots or UI text if you need to report differences.  \n3. Monitor official developer channels and future patch notes for 0.37 to confirm the announced Left Hand Tools upgrading and to learn its mechanics once 0.37 is released. Until 0.37 ships, treat Left Hand Tool upgrading as announced but not live. (CONFIRMED_OFFICIAL)  \n4. Treat community posts about left-arm leveling, respecs, or scaling as player reports until confirmed by patch notes or developer communication; mark those items NEEDS_VERIFICATION when collecting evidence."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "faq",
+              "title": "FAQ",
+              "paragraphs": [
+                "Q: Can I respec Doll limbs or build points in Early Access?\nA: Respec availability, cost, and limits are not confirmed by official sources and remain NEEDS_VERIFICATION.",
+                "Q: Is there a level cap or soft cap on Doll progression?\nA: The level cap is not confirmed and is currently listed as NEEDS_VERIFICATION.",
+                "Q: Can the Doll use an off-hand tool separate from the right-arm tool?\nA: Exact off-hand upgrade rules or separate off-hand tool progression are not confirmed on the live build and remain NEEDS_VERIFICATION.",
+                "Q: Does Clover still cast while the Doll is attacking?\nA: Yes. Official sources confirm Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)",
+                "Q: Are there more Doll arms than the four store examples?\nA: The store lists Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower as official examples, but the public catalog is incomplete; additional arms may be present or added in Early Access. (CONFIRMED_OFFICIAL)",
+                "Q: Was the Tommy Gun firing bug fixed?\nA: Yes — 0.36 includes a fix for the Tommy Gun sometimes refusing to fire. (CONFIRMED_OFFICIAL)"
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "related-guides",
+              "title": "Related Guides",
+              "paragraphs": [
+                "- /talismans/  \n- /how-to-cross-gaps/  \n- /birdcage-b2-puzzle/"
+              ],
+              "mediaSlots": [
+                "limb-upgrade-ui"
+              ]
             }
           ],
           "faq": [
             {
-              "id": "faq-verified",
-              "question": "Is the Doll Arms / Limb Leveling solution fully verified?",
-              "answer": "Only claims marked VERIFIED from official sources are treated as confirmed. Puzzle-order and route-specific steps may still be provisional slots."
+              "id": "faq-1",
+              "question": "Can I respec Doll limbs or build points in Early Access?",
+              "answer": "Respec availability, cost, and limits are not confirmed by official sources and remain NEEDS_VERIFICATION."
+            },
+            {
+              "id": "faq-2",
+              "question": "Is there a level cap or soft cap on Doll progression?",
+              "answer": "The level cap is not confirmed and is currently listed as NEEDS_VERIFICATION."
+            },
+            {
+              "id": "faq-3",
+              "question": "Can the Doll use an off-hand tool separate from the right-arm tool?",
+              "answer": "Exact off-hand upgrade rules or separate off-hand tool progression are not confirmed on the live build and remain NEEDS_VERIFICATION."
+            },
+            {
+              "id": "faq-4",
+              "question": "Does Clover still cast while the Doll is attacking?",
+              "answer": "Yes. Official sources confirm Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)"
+            },
+            {
+              "id": "faq-5",
+              "question": "Are there more Doll arms than the four store examples?",
+              "answer": "The store lists Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower as official examples, but the public catalog is incomplete; additional arms may be present or added in Early Access. (CONFIRMED_OFFICIAL)"
+            },
+            {
+              "id": "faq-6",
+              "question": "Was the Tommy Gun firing bug fixed?",
+              "answer": "Yes — 0.36 includes a fix for the Tommy Gun sometimes refusing to fire. (CONFIRMED_OFFICIAL)"
             }
-          ]
+          ],
+          "metaDescription": "Current Early Access Doll right-arm tools, the 0.36 Tommy Gun fix, what is still unknown about left-arm weapons and scaling, and the announced-not-live 0.37 Left Hand Tool upgrade change."
         },
         "facts": [
           {
             "id": "fact-doll-arms-limb-leveling-quick",
             "label": "Quick answer",
-            "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr",
+            "value": "- The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)  \n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)  \n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)  \n- Clover can cast while the Doll attacks. (CONFIRM...",
             "verified": true,
             "grade": "CONFIRMED_OFFICIAL"
           }
@@ -2695,6 +2793,13 @@
             "grade": "CONFIRMED_OFFICIAL"
           },
           {
+            "evidenceId": "ev-patch-036",
+            "sourceType": "official",
+            "sourceRef": "https://steamdb.info/patchnotes/25191720/",
+            "finding": "Official patch 0.36 notes (released 2026-09-09): Steam Deck Key Bindings editor restoration; Tommy Gun fire fix; The Freak attack reclassifications; Four Eyes magic-toll miscount fix; 0.37 Left Hand Tool upgrading announced as being prepared.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
             "evidenceId": "ev-official-site",
             "sourceType": "official",
             "sourceRef": "https://witheringrealms.com/",
@@ -2704,8 +2809,8 @@
           {
             "evidenceId": "ev-research-window",
             "sourceType": "editorial",
-            "sourceRef": "research-checked:2026-09-07",
-            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "sourceRef": "research-checked:2026-09-10",
+            "finding": "Content research checked 2026-09-10; latest released official patch 0.36 (2026-09-09); EA release 2026-09-04; 0.37 announced not released.",
             "grade": "CONFIRMED_OFFICIAL"
           }
         ],
@@ -2715,13 +2820,6 @@
             "slot": "doll-arm-equipment-ui",
             "status": "MISSING",
             "caption": "Media slot pending capture: doll-arm-equipment-ui",
-            "src": null
-          },
-          {
-            "id": "media-limb-upgrade-ui",
-            "slot": "limb-upgrade-ui",
-            "status": "MISSING",
-            "caption": "Media slot pending capture: limb-upgrade-ui",
             "src": null
           },
           {
@@ -2737,6 +2835,13 @@
             "status": "MISSING",
             "caption": "Media slot pending capture: clover-cast-during-doll-attack",
             "src": null
+          },
+          {
+            "id": "media-limb-upgrade-ui",
+            "slot": "limb-upgrade-ui",
+            "status": "MISSING",
+            "caption": "Media slot pending capture: limb-upgrade-ui",
+            "src": null
           }
         ],
         "assets": [],
@@ -2746,7 +2851,7 @@
             "primitiveId": "A01",
             "payload": {
               "title": "Withering Realms Doll Arms & Limb Leveling",
-              "task": "Right-arm tools, dual attacks, limb-oriented builds.",
+              "task": "Right-arm tools now; left-arm scaling unknown; 0.37 Left Hand Tool upgrading announced, not live.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -2761,7 +2866,7 @@
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
+                  "value": "- The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)  \n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)  \n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)  \n- Clover can cast while the Doll attacks. (CONFIRM..."
                 }
               ]
             },
@@ -2803,28 +2908,29 @@
           "draft": false,
           "index": true,
           "needsVerification": false,
-          "researchChecked": "2026-09-07",
-          "patchObserved": "0.34",
+          "researchChecked": "2026-09-10",
+          "patchObserved": "0.36",
           "eaRelease": "2026-09-04",
           "evidenceSummary": [
             "CONFIRMED_OFFICIAL",
             "NEEDS_VERIFICATION"
           ],
-          "verificationLabel": "CONFIRMED_OFFICIAL system framing · respec/caps NEEDS_VERIFICATION · checked 2026-09-07",
+          "verificationLabel": "CONFIRMED_OFFICIAL 0.36 baseline · left-arm scaling NEEDS_VERIFICATION · 0.37 announced not live · checked 2026-09-10",
           "articleSource": "content-jobs/doll-arms-limb-leveling/article.md",
-          "writer": "APIMart/shared-article-writer"
+          "writer": "APIMart/shared-article-writer",
+          "metaDescription": "Current Early Access Doll right-arm tools, the 0.36 Tommy Gun fix, what is still unknown about left-arm weapons and scaling, and the announced-not-live 0.37 Left Hand Tool upgrade change."
         },
         "presentation": {
           "categoryLabel": "SYSTEMS",
           "homepageCard": {
-            "helper": "Right-arm tools, dual attacks, and limb-oriented builds.",
+            "helper": "Right-arm tools and 0.36 fixes — left-arm scaling still unverified; 0.37 Left Hand Tool upgrading announced only.",
             "tag": "Systems",
             "tone": "green",
             "symbol": "⌁",
             "shortTitle": "Doll Arms / Limb Leveling",
             "hubThumb": "/assets/images/evidence/how-to-cross-gaps/doll-craftsman.webp"
           },
-          "subtitle": "Right-arm tools, dual attacks, limb-oriented builds.",
+          "subtitle": "Right-arm tools, 0.36 Tommy Gun fix, left-arm unknowns, announced 0.37 Left Hand Tools.",
           "related": [
             {
               "id": "talismans",
@@ -2832,14 +2938,14 @@
               "title": "Withering Realms Talismans Guide"
             },
             {
-              "id": "early-bosses",
-              "href": "/early-bosses/",
-              "title": "Withering Realms Early Bosses — Opening Encounters"
-            },
-            {
               "id": "how-to-cross-gaps",
               "href": "/how-to-cross-gaps/",
               "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
+            },
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
             }
           ]
         }
@@ -2856,7 +2962,7 @@
             "instanceId": "answer-header",
             "payload": {
               "title": "Withering Realms Doll Arms & Limb Leveling",
-              "task": "Right-arm tools, dual attacks, limb-oriented builds.",
+              "task": "Right-arm tools now; left-arm scaling unknown; 0.37 Left Hand Tool upgrading announced, not live.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -2868,14 +2974,14 @@
           },
           {
             "id": "E01",
-            "label": "Fact Card",
+            "label": "Verified Facts",
             "interactive": false,
             "instanceId": "verified-facts",
             "payload": {
               "facts": [
                 {
                   "label": "Quick answer",
-                  "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
+                  "value": "- The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)  \n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)  \n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)  \n- Clover can cast while the Doll attacks. (CONFIRM..."
                 }
               ]
             },
@@ -2883,13 +2989,8 @@
               "ev-steam"
             ],
             "mediaRefs": [],
-            "behavior": "entity-facts",
-            "data": [
-              {
-                "label": "Quick answer",
-                "value": "The Doll uses a missing right-hand / right-arm tool system: you equip crafted right-arm tools that change the Doll’s attacks. (CONFIRMED_OFFICIAL)\n- Crafted arm tools provide both a primary and a secondary attack action. (CONFIRMED_OFFICIAL)\n- Official store examples of crafted arm tools include Enchanted Candelabrum, Chain Rock, Machinegun, and Flamethrower. The official catalog is incomplete. (CONFIRMED_OFFICIAL)\n- Clover can cast while the Doll attacks. (CONFIRMED_OFFICIAL)\n- The game’s progr"
-              }
-            ]
+            "behavior": "verified-facts",
+            "data": []
           },
           {
             "id": "N01",
@@ -2922,12 +3023,12 @@
           "title": "Withering Realms Talismans Guide",
           "href": "/talismans/",
           "query": "How do talismans work in Withering Realms?",
-          "playerProblem": "Arm vs body talismans — system guide, not a tier list."
+          "playerProblem": "Arm vs body talismans, 0.36 The Freak classifications and Four Eyes fix — not a tier list."
         },
         "state": {},
         "intent": {
-          "query": "Arm vs body talismans — system guide, not a tier list.",
-          "playerProblem": "Arm vs body talismans — system guide, not a tier list.",
+          "query": "Arm vs body talismans, 0.36 The Freak classifications and Four Eyes fix — not a tier list.",
+          "playerProblem": "Arm vs body talismans, 0.36 The Freak classifications and Four Eyes fix — not a tier list.",
           "primaryTask": "mechanics",
           "prototype": "P7",
           "priority": 6,
@@ -2964,13 +3065,21 @@
           }
         },
         "body": {
-          "intro": "Arm vs body talismans — system guide, not a tier list.",
+          "intro": "Arm talismans modify your limb attacks (they can boost damage or reduce resource use) and body talismans occupy four separate slots that provide protective effects or can retrigger arm talisman effects (CONFIRMED_OFFICIAL). The Early Access build contains 70+ talismans and this page is a system overview, not a tier list (CONFIRMED_OFFICIAL). Patch 0.36 (released 2026-09-09) contains named reclassifications for several The Freak talismans and a fix for magic-toll talismans such as Four Eyes occasionally miscounting (CONFIRMED_OFFICIAL). Research checked 2026-09-10; Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL).\n\n# Withering Realms Talismans Guide",
           "sections": [
             {
-              "id": "arm-talismans-what-they-do",
-              "title": "Arm talismans — what they do",
+              "id": "quick-answer",
+              "title": "Quick Answer",
               "paragraphs": [
-                "Role (confirmed): Arm talismans modify the behaviour of your limb attacks. In Early Access they are reported to either increase damage or reduce resource consumption for those attacks (CONFIRMED_OFFICIAL)."
+                "Arm talismans modify your limb attacks (they can boost damage or reduce resource use) and body talismans occupy four separate slots that provide protective effects or can retrigger arm talisman effects (CONFIRMED_OFFICIAL). The Early Access build contains 70+ talismans and this page is a system overview, not a tier list (CONFIRMED_OFFICIAL). Patch 0.36 (released 2026-09-09) contains named reclassifications for several The Freak talismans and a fix for magic-toll talismans such as Four Eyes occasionally miscounting (CONFIRMED_OFFICIAL). Research checked 2026-09-10; Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL).\n\n# Withering Realms Talismans Guide"
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "arm-talismans-confirmed-role-only",
+              "title": "Arm talismans — confirmed role only",
+              "paragraphs": [
+                "- Role (CONFIRMED_OFFICIAL): Arm talismans attach to limb attacks and modify those attacks' behaviour. In Early Access they are confirmed to either increase damage or reduce resource consumption for affected attacks (CONFIRMED_OFFICIAL)."
               ],
               "mediaSlots": [
                 "arm-talisman-ui"
@@ -2980,7 +3089,7 @@
               "id": "body-talismans-the-four-special-slots",
               "title": "Body talismans — the four special slots",
               "paragraphs": [
-                "Role (confirmed): There are four body talisman slots that provide defensive or support-style effects and, in some cases, can retrigger arm talisman effects when conditions are met (CONFIRMED_OFFICIAL)."
+                "- Role (CONFIRMED_OFFICIAL): Body talismans use one of four dedicated body slots. They provide defensive or support-style effects and, in some cases, can retrigger arm talisman effects when their conditions are met (CONFIRMED_OFFICIAL)."
               ],
               "mediaSlots": [
                 "body-talisman-ui",
@@ -2988,20 +3097,30 @@
               ]
             },
             {
-              "id": "early-access-scope-and-catalog-status",
-              "title": "Early Access scope and catalog status",
+              "id": "patch-0-36-named-the-freak-classifications-and-four-eyes-fix",
+              "title": "Patch 0.36 — named The Freak classifications and Four Eyes fix",
               "paragraphs": [
-                "Scope (confirmed): The Early Access release contains 70+ talismans (CONFIRMED_OFFICIAL).\n- Release / baseline: Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL). Research checked 2026-09-07; latest official patch page observed: 0.34.\n- Coverage note: This page is a system reference and a living catalog. The talisman catalog here is incomplete; verified talisman entries will be added incrementally rather than published as a wholesale list."
+                "CONFIRMED_OFFICIAL — 0.36 (released 2026-09-09) included the following named changes for The Freak talismans:\n- Enchanted Candelabrum secondary = Spell (CONFIRMED_OFFICIAL)  \n- Spectral Blade attacks = Spell (CONFIRMED_OFFICIAL)  \n- Spectral Claws primary = Melee (CONFIRMED_OFFICIAL)  \n- Initiate's Candlestick = Spell (CONFIRMED_OFFICIAL)",
+                "Also in 0.36: Fixed magic-toll talismans such as Four Eyes occasionally miscounting (CONFIRMED_OFFICIAL).",
+                "Do not assume additional The Freak entries or other attack-class assignments beyond the four lines above; this section lists only the confirmed 0.36 named classifications and the Four Eyes miscount fix (CONFIRMED_OFFICIAL)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "early-access-scope-catalog-status",
+              "title": "Early Access scope — catalog status",
+              "paragraphs": [
+                "- Scope (CONFIRMED_OFFICIAL): The Early Access release contains 70+ talismans (CONFIRMED_OFFICIAL).  \n- Release / baseline: Early Access Steam release: 2026-09-04 (CONFIRMED_OFFICIAL). Latest released official patch observed: 0.36 (2026-09-09). Research checked 2026-09-10; primary patch source: SteamDB / Steam patch 0.36 notes (CONFIRMED_OFFICIAL).  \n- Catalog note: This page is a system overview, not a tier list, and does not attempt a wholesale catalog. Verified talisman entries will be added incrementally."
               ],
               "mediaSlots": [
                 "talisman-menu-overview"
               ]
             },
             {
-              "id": "four-arms-birdcage-player-reports-not-an-official-bug",
-              "title": "Four Arms + Birdcage — player reports (not an official bug)",
+              "id": "four-arms-birdcage-player-reports-player-reported",
+              "title": "Four Arms + Birdcage — player reports (PLAYER_REPORTED)",
               "paragraphs": [
-                "Player reports indicate that equipping the Four Arms body talisman may cause the Birdcage / B2 hanging-target puzzle to count an extra hit in its sequence. These reports are community-observed and remain PLAYER_REPORTED only. (PLAYER_REPORTED)\n- One player reported that the puzzle’s incorrect responses stopped after unequipping Four Arms (PLAYER_REPORTED). Do not treat this as an official bug report or confirmed fix. For the Birdcage puzzle rules and expected input sequence, see the Birdcage puzzle guide: /birdcage-b2-puzzle/ (PLAYER_REPORTED)."
+                "- PLAYER_REPORTED: Community reports indicate equipping the Four Arms body talisman may generate an extra counted hit in the Birdcage / B2 hanging-target puzzle. One player reported that incorrect responses stopped after unequipping Four Arms (PLAYER_REPORTED).  \n- Do not treat these reports as an official bug confirmation or an official fix. For the puzzle’s expected inputs and rules, consult the Birdcage guide: /birdcage-b2-puzzle/ (PLAYER_REPORTED)."
               ],
               "mediaSlots": []
             },
@@ -3009,16 +3128,16 @@
               "id": "how-this-page-will-grow",
               "title": "How this page will grow",
               "paragraphs": [
-                "Incremental additions: new, verified talisman entries will be added one at a time with source notes (official or reliable secondary).\n- Evidence tags: each added talisman entry will include its evidence grade (CONFIRMED_OFFICIAL, CONFIRMED_LIVE, PLAYER_REPORTED, NEEDS_VERIFICATION) so readers can see how certain each entry is.\n- No tier lists: this page will not publish S/A/B-style rankings. Verified descriptions and use-cases will be prioritized so entries can be compared fairly later."
+                "- Incremental additions: individual, verified talisman entries will be added one at a time with source notes and an evidence grade.  \n- Evidence tags: entries will show evidence grades (CONFIRMED_OFFICIAL, CONFIRMED_LIVE, PLAYER_REPORTED, NEEDS_VERIFICATION) so readers can see certainty levels.  \n- No tier lists: this page will not publish S/A/B-style rankings. It will present verified descriptions and use-cases so entries remain comparable without speculative ranking."
               ],
               "mediaSlots": []
             },
             {
               "id": "if-this-didnt-work",
-              "title": "If This Didn't Work",
+              "title": "If this didn't work / verification steps",
               "paragraphs": [
-                "If you see a Birdcage puzzle discrepancy and want to verify whether a body talisman is involved:\n1. Note your current talisman setup and take a screenshot or record your inventory (so you can restore it).\n2. Unequip any suspect body talismans (for example, Four Arms as reported by players) and retry the Birdcage / B2 sequence.\n3. If the puzzle behaves differently after unequipping, document the steps and any reproducible pattern; that information is useful to the community and official support channels. (PLAYER_REPORTED)\n4. For the puzzle’s expected inputs and sequence rules, consult /birdcage-b2-puzzle/ before testing.",
-                "Note: these steps are practical verification suggestions based on player reports. They do not substitute for an official developer statement."
+                "If you experience a Birdcage / B2 discrepancy and want to test whether a body talisman is involved (PLAYER_REPORTED):\n1. Record your current talisman setup (screenshot or video) so you can restore it.  \n2. Unequip suspect body talismans (for example, Four Arms as reported) and retry the Birdcage / B2 sequence.  \n3. If the puzzle behaves differently after unequipping, document the exact steps and any reproducible pattern; community reports like this are useful to other players and to official support. (PLAYER_REPORTED)  \n4. Consult /birdcage-b2-puzzle/ for the expected input sequence before testing to avoid conflating input errors with talisman effects.",
+                "Note: these are practical verification suggestions based on PLAYER_REPORTED accounts and do not replace official developer confirmation."
               ],
               "mediaSlots": []
             },
@@ -3026,19 +3145,19 @@
               "id": "faq",
               "title": "FAQ",
               "paragraphs": [
-                "Q: Are arm talismans the same as body talismans?\nA: No. Arm talismans modify attacks (damage or resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL).",
+                "Q: Are arm talismans the same as body talismans?\nA: No. Arm talismans modify attacks (they can boost damage or reduce resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL).",
                 "Q: How many talismans are in Early Access?\nA: The Early Access build contains 70+ talismans (CONFIRMED_OFFICIAL). The catalog on this page is incomplete and will expand as entries are verified.",
-                "Q: Is this page a tier list or “best talismans” guide?\nA: No. This page explains roles and system behaviour and will add verified talisman entries. It will not publish tier rankings.",
+                "Q: Is this page a tier list or “best talismans” guide?\nA: No. This page explains system roles and behaviour and will add verified talisman entries incrementally. It will not publish tier rankings.",
                 "Q: Does Four Arms break the Birdcage puzzle?\nA: There are PLAYER_REPORTED accounts that Four Arms can cause an extra counted hit or incorrect responses in the Birdcage / B2 hanging-target puzzle; one player reported the issue stopped after unequipping Four Arms. These are community reports and not an official bug confirmation. See /birdcage-b2-puzzle/ for the puzzle rule set. (PLAYER_REPORTED)",
-                "Q: Where can I find official patch or talisman updates?\nA: Check the official patch pages and news; as of research checked 2026-09-07 the latest observed patch page is 0.34 (CONFIRMED_OFFICIAL)."
+                "Q: Where can I find official patch or talisman updates?\nA: Check official patch pages and the game's Steam patch notes. As of research checked 2026-09-10 the latest released official patch is 0.36 (released 2026-09-09); primary patch source observed: SteamDB / Steam patch 0.36 notes (CONFIRMED_OFFICIAL)."
               ],
               "mediaSlots": []
             },
             {
               "id": "related-guides",
-              "title": "Related guides\n- /doll-arms-limb-leveling/\n- /early-bosses/\n- /how-to-cross-gaps/",
+              "title": "Related Guides",
               "paragraphs": [
-                "/birdcage-b2-puzzle/\n- /doll-arms-limb-leveling/"
+                "- /birdcage-b2-puzzle/  \n- /doll-arms-limb-leveling/"
               ],
               "mediaSlots": []
             }
@@ -3046,38 +3165,54 @@
           "faq": [
             {
               "id": "faq-1",
-              "question": "Q: Are arm talismans the same as body talismans?",
-              "answer": "A: No. Arm talismans modify attacks (damage or resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL)."
+              "question": "Are arm talismans the same as body talismans?",
+              "answer": "No. Arm talismans modify attacks (they can boost damage or reduce resource use) while body talismans occupy one of four special slots that provide protection or can retrigger arm talisman effects (CONFIRMED_OFFICIAL)."
             },
             {
               "id": "faq-2",
-              "question": "Q: How many talismans are in Early Access?",
-              "answer": "A: The Early Access build contains 70+ talismans (CONFIRMED_OFFICIAL). The catalog on this page is incomplete and will expand as entries are verified."
+              "question": "How many talismans are in Early Access?",
+              "answer": "The Early Access build contains 70+ talismans (CONFIRMED_OFFICIAL). The catalog on this page is incomplete and will expand as entries are verified."
             },
             {
               "id": "faq-3",
-              "question": "Q: Is this page a tier list or “best talismans” guide?",
-              "answer": "A: No. This page explains roles and system behaviour and will add verified talisman entries. It will not publish tier rankings."
+              "question": "Is this page a tier list or “best talismans” guide?",
+              "answer": "No. This page explains system roles and behaviour and will add verified talisman entries incrementally. It will not publish tier rankings."
             },
             {
               "id": "faq-4",
-              "question": "Q: Does Four Arms break the Birdcage puzzle?",
-              "answer": "A: There are PLAYER_REPORTED accounts that Four Arms can cause an extra counted hit or incorrect responses in the Birdcage / B2 hanging-target puzzle; one player reported the issue stopped after unequipping Four Arms. These are community reports and not an official bug confirmation. See /birdcage-b2-puzzle/ for the puzzle rule set. (PLAYER_REPORTED)"
+              "question": "Does Four Arms break the Birdcage puzzle?",
+              "answer": "There are PLAYER_REPORTED accounts that Four Arms can cause an extra counted hit or incorrect responses in the Birdcage / B2 hanging-target puzzle; one player reported the issue stopped after unequipping Four Arms. These are community reports and not an official bug confirmation. See /birdcage-b2-puzzle/ for the puzzle rule set. (PLAYER_REPORTED)"
             },
             {
               "id": "faq-5",
-              "question": "Q: Where can I find official patch or talisman updates?",
-              "answer": "A: Check the official patch pages and news; as of research checked 2026-09-07 the latest observed patch page is 0.34 (CONFIRMED_OFFICIAL)."
+              "question": "Where can I find official patch or talisman updates?",
+              "answer": "Check official patch pages and the game's Steam patch notes. As of research checked 2026-09-10 the latest released official patch is 0.36 (released 2026-09-09); primary patch source observed: SteamDB / Steam patch 0.36 notes (CONFIRMED_OFFICIAL)."
             }
-          ]
+          ],
+          "metaDescription": "How arm and body talismans work in Early Access (70+ items), plus official 0.36 The Freak attack classifications and Four Eyes miscount fix — not a tier list."
         },
-        "facts": [],
+        "facts": [
+          {
+            "id": "fact-talismans-quick",
+            "label": "Quick answer",
+            "value": "Arm talismans modify your limb attacks (they can boost damage or reduce resource use) and body talismans occupy four separate slots that provide protective effects or can retrigger arm talisman effects (CONFIRMED_OFFICIAL). The Early Access build contains 70+ talismans and this page is a system overview, not a tier list (CONFIRMED_OFFICIAL). Patch 0.36 (released 2026-09-09) contains named reclassifications for several The Freak talismans and a fix for magic-toll talismans ...",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
+          }
+        ],
         "evidence": [
           {
             "evidenceId": "ev-steam",
             "sourceType": "official",
             "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
             "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-patch-036",
+            "sourceType": "official",
+            "sourceRef": "https://steamdb.info/patchnotes/25191720/",
+            "finding": "Official patch 0.36 notes (released 2026-09-09): Steam Deck Key Bindings editor restoration; Tommy Gun fire fix; The Freak attack reclassifications; Four Eyes magic-toll miscount fix; 0.37 Left Hand Tool upgrading announced as being prepared.",
             "grade": "CONFIRMED_OFFICIAL"
           },
           {
@@ -3090,8 +3225,8 @@
           {
             "evidenceId": "ev-research-window",
             "sourceType": "editorial",
-            "sourceRef": "research-checked:2026-09-07",
-            "finding": "Content research checked 2026-09-07; latest official patch page observed: 0.34; EA release 2026-09-04.",
+            "sourceRef": "research-checked:2026-09-10",
+            "finding": "Content research checked 2026-09-10; latest released official patch 0.36 (2026-09-09); EA release 2026-09-04.",
             "grade": "CONFIRMED_OFFICIAL"
           },
           {
@@ -3139,7 +3274,7 @@
             "primitiveId": "A01",
             "payload": {
               "title": "Withering Realms Talismans Guide",
-              "task": "Arm vs body talismans — system guide, not a tier list.",
+              "task": "Arm vs body talismans, 0.36 The Freak classifications and Four Eyes fix — not a tier list.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -3153,8 +3288,8 @@
             "payload": {
               "facts": [
                 {
-                  "label": "Status",
-                  "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
+                  "label": "Quick answer",
+                  "value": "Arm talismans modify your limb attacks (they can boost damage or reduce resource use) and body talismans occupy four separate slots that provide protective effects or can retrigger arm talisman effects (CONFIRMED_OFFICIAL). The Early Access build contains 70+ talismans and this page is a system overview, not a tier list (CONFIRMED_OFFICIAL). Patch 0.36 (released 2026-09-09) contains named reclassifications for several The Freak talismans and a fix for magic-toll talismans ..."
                 }
               ]
             },
@@ -3196,43 +3331,39 @@
           "draft": false,
           "index": true,
           "needsVerification": false,
-          "researchChecked": "2026-09-07",
-          "patchObserved": "0.34",
+          "researchChecked": "2026-09-10",
+          "patchObserved": "0.36",
           "eaRelease": "2026-09-04",
           "evidenceSummary": [
             "CONFIRMED_OFFICIAL",
             "PLAYER_REPORTED"
           ],
-          "verificationLabel": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07",
+          "verificationLabel": "CONFIRMED_OFFICIAL 0.36 The Freak / Four Eyes · Four Arms Birdcage PLAYER_REPORTED · checked 2026-09-10",
           "articleSource": "content-jobs/talismans/article.md",
-          "writer": "APIMart/shared-article-writer"
+          "writer": "APIMart/shared-article-writer",
+          "metaDescription": "How arm and body talismans work in Early Access (70+ items), plus official 0.36 The Freak attack classifications and Four Eyes miscount fix — not a tier list."
         },
         "presentation": {
           "categoryLabel": "SYSTEMS",
           "homepageCard": {
-            "helper": "Arm vs body talismans — system guide, not a tier list.",
+            "helper": "Arm vs body roles plus official 0.36 The Freak and Four Eyes changes — not a tier list.",
             "tag": "Systems",
-            "tone": "brass",
-            "symbol": "⌁",
+            "tone": "green",
+            "symbol": "✦",
             "shortTitle": "Talismans",
             "hubThumb": "/assets/images/evidence/how-to-cross-gaps/reward-tooltip.webp"
           },
-          "subtitle": "Arm vs body talismans — system guide, not a tier list.",
+          "subtitle": "Arm vs body roles, 0.36 The Freak classifications, Four Eyes fix — not a tier list.",
           "related": [
+            {
+              "id": "birdcage-b2-puzzle",
+              "href": "/birdcage-b2-puzzle/",
+              "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+            },
             {
               "id": "doll-arms-limb-leveling",
               "href": "/doll-arms-limb-leveling/",
               "title": "Withering Realms Doll Arms & Limb Leveling"
-            },
-            {
-              "id": "early-bosses",
-              "href": "/early-bosses/",
-              "title": "Withering Realms Early Bosses — Opening Encounters"
-            },
-            {
-              "id": "how-to-cross-gaps",
-              "href": "/how-to-cross-gaps/",
-              "title": "Withering Realms Grappling Hook — How to Cross Gaps (Chain Hook)"
             }
           ]
         }
@@ -3249,7 +3380,7 @@
             "instanceId": "answer-header",
             "payload": {
               "title": "Withering Realms Talismans Guide",
-              "task": "Arm vs body talismans — system guide, not a tier list.",
+              "task": "Arm vs body talismans, 0.36 The Freak classifications and Four Eyes fix — not a tier list.",
               "subject": "Withering Realms"
             },
             "evidenceRefs": [
@@ -3261,14 +3392,14 @@
           },
           {
             "id": "E01",
-            "label": "Fact Card",
+            "label": "Verified Facts",
             "interactive": false,
             "instanceId": "verified-facts",
             "payload": {
               "facts": [
                 {
-                  "label": "Status",
-                  "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
+                  "label": "Quick answer",
+                  "value": "Arm talismans modify your limb attacks (they can boost damage or reduce resource use) and body talismans occupy four separate slots that provide protective effects or can retrigger arm talisman effects (CONFIRMED_OFFICIAL). The Early Access build contains 70+ talismans and this page is a system overview, not a tier list (CONFIRMED_OFFICIAL). Patch 0.36 (released 2026-09-09) contains named reclassifications for several The Freak talismans and a fix for magic-toll talismans ..."
                 }
               ]
             },
@@ -3276,13 +3407,8 @@
               "ev-steam"
             ],
             "mediaRefs": [],
-            "behavior": "entity-facts",
-            "data": [
-              {
-                "label": "Status",
-                "value": "CONFIRMED_OFFICIAL system · Four Arms PLAYER_REPORTED · checked 2026-09-07"
-              }
-            ]
+            "behavior": "verified-facts",
+            "data": []
           },
           {
             "id": "N01",
@@ -3294,6 +3420,350 @@
                 "id": "birdcage-b2-puzzle",
                 "href": "/birdcage-b2-puzzle/",
                 "title": "Withering Realms Birdcage / B2 Puzzle — A/B Code Guide"
+              }
+            },
+            "evidenceRefs": [],
+            "mediaRefs": [],
+            "behavior": "next-step",
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "steam-deck-key-bindings",
+      "title": "Withering Realms Steam Deck Key Bindings",
+      "href": "/steam-deck-key-bindings/",
+      "pageData": {
+        "pageDataVersion": "v4",
+        "page": {
+          "id": "steam-deck-key-bindings",
+          "title": "Withering Realms Steam Deck Key Bindings",
+          "href": "/steam-deck-key-bindings/",
+          "query": "Why Does The Full Binding Editor Disappear On Steam Deck?",
+          "playerProblem": "Update to 0.36+ — Key Bindings editor restored on Steam Deck."
+        },
+        "state": {},
+        "intent": {
+          "query": "Update to 0.36+ — Key Bindings editor restored on Steam Deck.",
+          "playerProblem": "Update to 0.36+ — Key Bindings editor restored on Steam Deck.",
+          "primaryTask": "procedure",
+          "prototype": "P4",
+          "priority": 8,
+          "primitiveRecipe": [
+            {
+              "primitiveId": "A01",
+              "status": "include",
+              "reason": "Every answer surface identifies its task."
+            },
+            {
+              "primitiveId": "A03",
+              "status": "include",
+              "reason": "Troubleshooting needs scope and conditions."
+            },
+            {
+              "primitiveId": "X03",
+              "status": "omit",
+              "reason": "No formula."
+            },
+            {
+              "primitiveId": "X04",
+              "status": "omit",
+              "reason": "No calculator."
+            },
+            {
+              "primitiveId": "E01",
+              "status": "include",
+              "reason": "Verified facts require a rendered fact card."
+            }
+          ],
+          "resolution": {
+            "basis": "primary-task",
+            "confidence": "high"
+          }
+        },
+        "body": {
+          "intro": "Update to 0.36 or later. Patch 0.36 restored the Key Bindings editor on Steam Deck. (CONFIRMED_OFFICIAL)",
+          "sections": [
+            {
+              "id": "quick-answer",
+              "title": "Quick Answer",
+              "paragraphs": [
+                "Update to 0.36 or later. Patch 0.36 restored the Key Bindings editor on Steam Deck. (CONFIRMED_OFFICIAL)"
+              ],
+              "mediaSlots": [
+                "steam-deck-key-bindings-menu"
+              ]
+            },
+            {
+              "id": "what-changed-in-0-36",
+              "title": "What changed in 0.36",
+              "paragraphs": [
+                "Patch 0.36 (released 2026-09-09) explicitly restored the Key Bindings editor on Steam Deck — CONFIRMED_OFFICIAL. Primary source: Steam patch notes / SteamDB for 0.36. Research checked: 2026-09-10. Early Access Steam release: 2026-09-04."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-to-do",
+              "title": "What to do",
+              "paragraphs": [
+                "1. Make sure your Steam Deck is online and Steam is allowed to update installed games.  \n2. Update Withering Realms to build 0.36 or a later build via Steam.  \n3. After the update finishes, launch the game and open the game’s settings/menu and select Key Bindings. The editor should now appear.  \n4. If the editor still looks missing, close the game and relaunch it once after the update."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "what-not-to-do",
+              "title": "What not to do",
+              "paragraphs": [
+                "- Do not assume Steam Input overlays, desktop-mode remaps, or third‑party tools are required on 0.36+. The official patch restored the in-game editor.  \n- Do not follow community “workaround” instructions as mandatory steps for this specific 0.36+ restoration."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "if-this-didnt-work",
+              "title": "If this didn't work",
+              "paragraphs": [
+                "1. Confirm the installed build is 0.36 or later. Verify via Steam/SteamDB or the game's patch notes (CONFIRMED_OFFICIAL).  \n2. Fully restart the game and, if convenient, reboot the Steam Deck after updating.  \n3. If the game is confirmed 0.36+ and the Key Bindings editor is still missing, treat the issue as NEEDS_VERIFICATION: gather the build/version shown by Steam, a brief description, and (if possible) a screenshot, then report on the game's official support/bug report channels or the Steam discussion thread so the developers can investigate."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "faq",
+              "title": "FAQ",
+              "paragraphs": [
+                "Q: Did the Key Bindings editor permanently disappear for Steam Deck users?\nA: No — patch 0.36 (2026-09-09) restored the Key Bindings editor on Steam Deck (CONFIRMED_OFFICIAL). Update to 0.36+.",
+                "Q: Do I need to use Steam Input or third-party remappers to get the editor back?\nA: No. On 0.36+ the in-game Key Bindings editor is restored; external remappers are not required for this fix.",
+                "Q: Where can I confirm the patch notes?\nA: The 0.36 patch notes are available from the game’s official patch log and SteamDB (primary source referenced as CONFIRMED_OFFICIAL)."
+              ],
+              "mediaSlots": []
+            },
+            {
+              "id": "related-guides",
+              "title": "Related Guides",
+              "paragraphs": [
+                "- /doll-arms-limb-leveling/  \n- /talismans/"
+              ],
+              "mediaSlots": []
+            }
+          ],
+          "faq": [
+            {
+              "id": "faq-1",
+              "question": "Did the Key Bindings editor permanently disappear for Steam Deck users?",
+              "answer": "No — patch 0.36 (2026-09-09) restored the Key Bindings editor on Steam Deck (CONFIRMED_OFFICIAL). Update to 0.36+."
+            },
+            {
+              "id": "faq-2",
+              "question": "Do I need to use Steam Input or third-party remappers to get the editor back?",
+              "answer": "No. On 0.36+ the in-game Key Bindings editor is restored; external remappers are not required for this fix."
+            },
+            {
+              "id": "faq-3",
+              "question": "Where can I confirm the patch notes?",
+              "answer": "The 0.36 patch notes are available from the game’s official patch log and SteamDB (primary source referenced as CONFIRMED_OFFICIAL)."
+            }
+          ],
+          "metaDescription": "Patch 0.36 restored the Key Bindings editor on Steam Deck — update to 0.36 or later."
+        },
+        "facts": [
+          {
+            "id": "fact-steam-deck-key-bindings-quick",
+            "label": "Quick answer",
+            "value": "Update to 0.36 or later. Patch 0.36 restored the Key Bindings editor on Steam Deck. (CONFIRMED_OFFICIAL)",
+            "verified": true,
+            "grade": "CONFIRMED_OFFICIAL"
+          }
+        ],
+        "evidence": [
+          {
+            "evidenceId": "ev-steam",
+            "sourceType": "official",
+            "sourceRef": "https://store.steampowered.com/app/3441990/Withering_Realms/",
+            "finding": "Official Steam store identity, systems, and Early Access listing for Withering Realms.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-patch-036",
+            "sourceType": "official",
+            "sourceRef": "https://steamdb.info/patchnotes/25191720/",
+            "finding": "Official patch 0.36 notes (released 2026-09-09): Steam Deck Key Bindings editor restoration; Tommy Gun fire fix; The Freak attack reclassifications; Four Eyes magic-toll miscount fix; 0.37 Left Hand Tool upgrading announced as being prepared.",
+            "grade": "CONFIRMED_OFFICIAL"
+          },
+          {
+            "evidenceId": "ev-research-window",
+            "sourceType": "editorial",
+            "sourceRef": "research-checked:2026-09-10",
+            "finding": "Content research checked 2026-09-10; latest released official patch 0.36 (2026-09-09); EA release 2026-09-04.",
+            "grade": "CONFIRMED_OFFICIAL"
+          }
+        ],
+        "media": [
+          {
+            "id": "media-steam-deck-key-bindings-menu",
+            "slot": "steam-deck-key-bindings-menu",
+            "status": "MISSING",
+            "caption": "Optional enhancement: current Steam Deck Key Bindings menu screenshot",
+            "src": null
+          }
+        ],
+        "assets": [],
+        "primitiveData": [
+          {
+            "instanceId": "answer-header",
+            "primitiveId": "A01",
+            "payload": {
+              "title": "Withering Realms Steam Deck Key Bindings",
+              "task": "Update to 0.36+ — Key Bindings editor restored on Steam Deck.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": []
+          },
+          {
+            "instanceId": "verified-facts",
+            "primitiveId": "E01",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "Update to 0.36 or later. Patch 0.36 restored the Key Bindings editor on Steam Deck. (CONFIRMED_OFFICIAL)"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": []
+          }
+        ],
+        "primitiveRecipe": [
+          {
+            "primitiveId": "A01",
+            "status": "include",
+            "reason": "Every answer surface identifies its task."
+          },
+          {
+            "primitiveId": "A03",
+            "status": "include",
+            "reason": "Troubleshooting needs scope and conditions."
+          },
+          {
+            "primitiveId": "X03",
+            "status": "omit",
+            "reason": "No formula."
+          },
+          {
+            "primitiveId": "X04",
+            "status": "omit",
+            "reason": "No calculator."
+          },
+          {
+            "primitiveId": "E01",
+            "status": "include",
+            "reason": "Verified facts require a rendered fact card."
+          }
+        ],
+        "publishing": {
+          "publishStatus": "published",
+          "draft": false,
+          "index": true,
+          "needsVerification": false,
+          "researchChecked": "2026-09-10",
+          "patchObserved": "0.36",
+          "eaRelease": "2026-09-04",
+          "metaDescription": "Patch 0.36 restored the Key Bindings editor on Steam Deck — update to 0.36 or later.",
+          "evidenceSummary": [
+            "CONFIRMED_OFFICIAL"
+          ],
+          "verificationLabel": "CONFIRMED_OFFICIAL 0.36 Key Bindings editor on Steam Deck · checked 2026-09-10",
+          "articleSource": "content-jobs/steam-deck-key-bindings/article.md",
+          "writer": "APIMart/shared-article-writer"
+        },
+        "presentation": {
+          "categoryLabel": "CONTROLS",
+          "homepageCard": {
+            "helper": "Patch 0.36 restored the Key Bindings editor on Steam Deck.",
+            "tag": "Controls",
+            "tone": "green",
+            "symbol": "⌨",
+            "shortTitle": "Steam Deck Key Bindings",
+            "hubThumb": "/assets/images/screenshots/screenshot_city.jpg"
+          },
+          "subtitle": "Update to 0.36+ — Key Bindings editor restored on Steam Deck.",
+          "related": [
+            {
+              "id": "doll-arms-limb-leveling",
+              "href": "/doll-arms-limb-leveling/",
+              "title": "Withering Realms Doll Arms & Limb Leveling"
+            },
+            {
+              "id": "talismans",
+              "href": "/talismans/",
+              "title": "Withering Realms Talismans Guide"
+            }
+          ]
+        },
+        "composition": {
+          "surface": "answer",
+          "showHero": false,
+          "hasPermanentDocsSidebar": false,
+          "primitives": []
+        }
+      },
+      "composition": {
+        "surface": "answer",
+        "showHero": false,
+        "hasPermanentDocsSidebar": false,
+        "primitives": [
+          {
+            "id": "A01",
+            "label": "Answer Header",
+            "interactive": false,
+            "instanceId": "answer-header",
+            "payload": {
+              "title": "Withering Realms Steam Deck Key Bindings",
+              "task": "Update to 0.36+ — Key Bindings editor restored on Steam Deck.",
+              "subject": "Withering Realms"
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": [],
+            "behavior": "answer-header",
+            "data": []
+          },
+          {
+            "id": "E01",
+            "label": "Verified Facts",
+            "interactive": false,
+            "instanceId": "verified-facts",
+            "payload": {
+              "facts": [
+                {
+                  "label": "Quick answer",
+                  "value": "Update to 0.36 or later. Patch 0.36 restored the Key Bindings editor on Steam Deck. (CONFIRMED_OFFICIAL)"
+                }
+              ]
+            },
+            "evidenceRefs": [
+              "ev-steam"
+            ],
+            "mediaRefs": [],
+            "behavior": "verified-facts",
+            "data": []
+          },
+          {
+            "id": "N01",
+            "label": "Next Step",
+            "interactive": false,
+            "instanceId": "next-step",
+            "payload": {
+              "next": {
+                "id": "perimeter-guardians",
+                "href": "/perimeter-guardians/",
+                "title": "Perimeter Guardians"
               }
             },
             "evidenceRefs": [],
